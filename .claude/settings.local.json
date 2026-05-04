@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(curl -s http://127.0.0.1:3001)",
+      "Bash(curl *)",
+      "Bash(dir .vitepress\\\\theme\\\\*.css)",
+      "Bash(npm run *)",
+      "Bash(npx vitepress *)",
+      "Bash(./node_modules/.bin/vitepress dev *)",
+      "Bash(node *)",
+      "Bash(npm --version)"
+    ]
+  }
+}
