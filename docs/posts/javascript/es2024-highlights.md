@@ -21,8 +21,6 @@ console.log(sorted); // [1, 1, 3, 4, 5]
 console.log(numbers); // [3, 1, 4, 1, 5] (unchanged)
 ```
 
-![JavaScript Logo](../assets/images/js-logo.png)
-
 ## Object.groupBy()
 
 Group array items by a property:

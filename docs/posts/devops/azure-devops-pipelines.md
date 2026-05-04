@@ -44,8 +44,6 @@ steps:
       projects: '**/*Tests.csproj'
 ```
 
-![Azure DevOps](../assets/images/azure-devops.png)
-
 ## Deployment to Azure App Service
 
 ```yaml

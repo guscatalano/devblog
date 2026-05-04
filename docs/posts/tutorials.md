@@ -4,21 +4,13 @@ This section contains step-by-step tutorials for developers.
 
 ## Getting Started
 
-- [Hello World in C#](/posts/csharp/hello-world)
-- [Your First React App](/posts/javascript/first-react-app)
-- [Docker for Beginners](/posts/devops/docker-basics)
+- [C# 12 Features](/posts/csharp/csharp12-features)
+- [ES2024 Highlights](/posts/javascript/es2024-highlights)
+- [Azure DevOps Pipelines](/posts/devops/azure-devops-pipelines)
 
 ## Advanced Topics
 
-- [C# Async/Await Patterns](/posts/csharp/async-patterns)
-- [React Hooks Deep Dive](/posts/javascript/react-hooks)
-- [Kubernetes Deployment](/posts/devops/kubernetes-deployment)
-
-## Project Walkthroughs
-
-- [Building a REST API](/posts/csharp/rest-api)
-- [Full-Stack Application](/posts/javascript/fullstack-app)
-- [Cloud-Native App](/posts/devops/cloud-native)
+- [.NET 8 Performance](/posts/net/net8-performance)
 
 ---
 

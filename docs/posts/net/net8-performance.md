@@ -22,8 +22,6 @@ var result = SomeMethod();
 var result = SomeMethod(); // Automatically inlined when possible
 ```
 
-![Performance Graph](../assets/images/dotnet-performance.png)
-
 ## AOT Compilation
 
 Ahead-of-Time compilation for smaller, faster applications:
@@ -44,4 +42,4 @@ dotnet publish -c Release -r win-x64 --self-contained true /p:PublishAot=true
 
 ---
 
-**Want more?** Check out our [DevOps](/posts/devops) category for deployment tips!
+**Want more?** Check out our [Tutorials](/posts/tutorials) section for more guides!
