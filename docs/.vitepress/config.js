@@ -3,6 +3,10 @@ export default {
   description: 'Developer, creator, and tech enthusiast',
   base: '/devblog/',
   themeConfig: {
+    darkMode: true,
+    theme: {
+      default: 'dark'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/posts/' },
