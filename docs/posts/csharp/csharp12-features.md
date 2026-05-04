@@ -19,8 +19,6 @@ var numbers = [1, 2, 3, 4, 5];
 var moreNumbers = [.. numbers, 6, 7, 8];
 ```
 
-![Collection Expressions](../assets/images/csharp-collections.png)
-
 ## Default Lambdas
 
 Default parameters for lambda expressions:
