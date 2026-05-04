@@ -2,6 +2,8 @@
 
 A modern, technical blog powered by VitePress with support for categories, code snippets, and images.
 
+[View the Blog](https://guscatalano.github.io/devblog/)
+
 ## Features
 
 - **Category-based organization** - Posts organized by C#, .NET, JavaScript, DevOps
