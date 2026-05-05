@@ -1,3 +1,18 @@
 .VPNavBarTitle .title span {
   display: none !important;
 }
+
+/* Force dark theme */
+html {
+  color-scheme: dark;
+}
+
+:root {
+  --vp-c-bg: #0d0d0d;
+  --vp-c-bg-soft: #1a1a1a;
+  --vp-c-bg-alt: #161616;
+  --vp-c-text: #dcdcdc;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #b3b3b3;
+  --vp-c-text-3: #808080;
+}

@@ -9,7 +9,8 @@
       "Bash(npx vitepress *)",
       "Bash(./node_modules/.bin/vitepress dev *)",
       "Bash(node *)",
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "WebFetch(domain:guscatalano.dev)"
     ]
   }
 }
