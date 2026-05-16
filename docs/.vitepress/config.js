@@ -1,7 +1,7 @@
 export default {
   title: 'Gus Catalano',
   description: 'Developer, creator, and tech enthusiast',
-  base: '/devblog/',
+  base: '/',
   appearance: 'force-dark',
   themeConfig: {
     nav: [
