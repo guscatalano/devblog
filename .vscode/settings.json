@@ -1,0 +1,8 @@
+{
+  "pasteImage.path": "${projectRoot}/docs/assets/images",
+  "pasteImage.basePath": "${projectRoot}/docs",
+  "pasteImage.forceUnixStyleSeparator": true,
+  "pasteImage.prefix": "/",
+  "pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
+  "pasteImage.defaultName": "YYYYMMDD-HHmmss"
+}
