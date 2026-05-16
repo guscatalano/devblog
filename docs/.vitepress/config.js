@@ -6,7 +6,7 @@ export default {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Blog', link: '/posts/welcome' },
+      { text: 'Blog', link: '/posts/level1-kvm-control' },
       { text: 'About', link: '/about' }
     ],
     sidebar: {
@@ -14,6 +14,7 @@ export default {
         {
           text: 'Posts',
           items: [
+            { text: 'Controlling a Level1Techs KVM From Anywhere on My LAN', link: '/posts/level1-kvm-control' },
             { text: 'Welcome', link: '/posts/welcome' }
           ]
         }
