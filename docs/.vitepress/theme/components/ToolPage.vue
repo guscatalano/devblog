@@ -11,9 +11,6 @@ const problem = computed(() => frontmatter.value.problem as string | undefined)
 const install = computed(() => frontmatter.value.install as string | undefined)
 const installLang = computed(() => (frontmatter.value.installLang as string) || 'powershell')
 const screenshot = computed(() => frontmatter.value.screenshot as string | undefined)
-const relatedPosts = computed(
-  () => (frontmatter.value.relatedPosts as Array<{ link: string; text: string }>) || []
-)
 
 const repoUrl = computed(() => (repo.value ? `https://github.com/${repo.value}` : null))
 </script>
@@ -56,15 +53,6 @@ const repoUrl = computed(() => (repo.value ? `https://github.com/${repo.value}` 
 
     <section class="tool-body">
       <slot />
-    </section>
-
-    <section v-if="relatedPosts.length" class="tool-related">
-      <h2>Related Posts</h2>
-      <ul>
-        <li v-for="post in relatedPosts" :key="post.link">
-          <a :href="post.link">{{ post.text }}</a>
-        </li>
-      </ul>
     </section>
   </div>
 </template>
@@ -109,8 +97,5 @@ const repoUrl = computed(() => (repo.value ? `https://github.com/${repo.value}` 
   background: transparent;
   font-family: var(--vp-font-family-mono);
   white-space: pre;
-}
-.tool-related ul {
-  padding-left: 1.2em;
 }
 </style>

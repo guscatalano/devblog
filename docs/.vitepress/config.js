@@ -1,39 +1,57 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import yaml from 'js-yaml'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-function readSimpleFrontmatter(filePath) {
+function readFrontmatter(filePath) {
   const text = fs.readFileSync(filePath, 'utf-8')
   const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)
   if (!match) return {}
-  const out = {}
-  for (const line of match[1].split(/\r?\n/)) {
-    const m = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/)
-    if (!m) continue
-    const [, key, raw] = m
-    const val = raw.trim().replace(/^["']|["']$/g, '')
-    if (val === 'true') out[key] = true
-    else if (val === 'false') out[key] = false
-    else out[key] = val
-  }
-  return out
+  return yaml.load(match[1]) || {}
 }
 
-function gtoolsSidebar() {
+function loadTools() {
   const dir = path.resolve(__dirname, '../gtools')
-  const items = [{ text: 'All Tools', link: '/gtools/' }]
-  if (fs.existsSync(dir)) {
-    for (const file of fs.readdirSync(dir).sort()) {
-      if (!file.endsWith('.md') || file === 'index.md') continue
-      const slug = file.replace(/\.md$/, '')
-      const fm = readSimpleFrontmatter(path.join(dir, file))
-      if (fm.tool !== true) continue
-      items.push({ text: fm.title || slug, link: `/gtools/${slug}` })
-    }
+  const tools = []
+  if (!fs.existsSync(dir)) return tools
+  for (const file of fs.readdirSync(dir).sort()) {
+    if (!file.endsWith('.md') || file === 'index.md') continue
+    const slug = file.replace(/\.md$/, '')
+    const fm = readFrontmatter(path.join(dir, file))
+    if (fm.tool !== true) continue
+    tools.push({
+      slug,
+      title: fm.title || slug,
+      relatedPosts: Array.isArray(fm.relatedPosts) ? fm.relatedPosts : []
+    })
   }
-  return [{ text: 'GTools', items }]
+  return tools
+}
+
+function gtoolsSidebars() {
+  const tools = loadTools()
+  const baseSection = {
+    text: 'GTools',
+    items: [
+      { text: 'All Tools', link: '/gtools/' },
+      ...tools.map((t) => ({ text: t.title, link: `/gtools/${t.slug}` }))
+    ]
+  }
+
+  const sidebars = { '/gtools/': [baseSection] }
+  for (const tool of tools) {
+    const sections = [baseSection]
+    if (tool.relatedPosts.length > 0) {
+      sections.push({
+        text: 'Related Posts',
+        items: tool.relatedPosts.map((p) => ({ text: p.text, link: p.link }))
+      })
+    }
+    sidebars[`/gtools/${tool.slug}`] = sections
+  }
+  return sidebars
 }
 
 export default {
@@ -59,7 +77,7 @@ export default {
           ]
         }
       ],
-      '/gtools/': gtoolsSidebar()
+      ...gtoolsSidebars()
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/guscatalano' },
