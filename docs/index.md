@@ -3,6 +3,7 @@
 ![Gus Catalano](https://github.com/guscatalano.png)
 
 Hi, I'm Gus Catalano — a developer passionate about building great software.
+(Above is obviously not me, pictures are removed to limit deep fakes)
 
 ## About Me
 
@@ -28,3 +29,7 @@ I'm a software developer with experience in:
 
 - GitHub: [guscatalano](https://github.com/guscatalano)
 - LinkedIn: [gustavocatalano](https://www.linkedin.com/in/gustavocatalano)
+
+## Support My Work
+
+If you find my projects or posts useful, you can [buy me a coffee on Ko-fi ☕](https://ko-fi.com/guscatalano).
