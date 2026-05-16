@@ -15,7 +15,7 @@ I'm a software developer with experience in:
 
 ## Projects
 
-- **FindNeedle** — A Windows log search utility with plugin architecture
+- **[FindNeedle](https://github.com/guscatalano/findneedle)** — A Windows log search utility with plugin architecture
 
 ## Contact
 
