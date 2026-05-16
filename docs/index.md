@@ -20,4 +20,4 @@ I'm a software developer with experience in:
 ## Get in Touch
 
 - GitHub: [guscatalano](https://github.com/guscatalano)
-- Email: REDACTED
+- LinkedIn: [gustavocatalano](https://www.linkedin.com/in/gustavocatalano)

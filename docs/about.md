@@ -21,4 +21,4 @@ I'm a software developer with experience in:
 
 - GitHub: [guscatalano](https://github.com/guscatalano)
 - Twitter: [guscatalano](https://twitter.com/guscatalano)
-- Email: REDACTED
+- LinkedIn: [gustavocatalano](https://www.linkedin.com/in/gustavocatalano)
