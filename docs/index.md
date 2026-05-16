@@ -9,12 +9,15 @@ Hi, I'm Gus Catalano — a developer passionate about building great software.
 I'm a software developer with experience in:
 
 - **C# / .NET** — Windows applications, APIs, and services
-- **JavaScript / TypeScript** — Web development with Vue, React, and Node.js
-- **Cloud & DevOps** — Azure, AWS, CI/CD pipelines
+- **C++** — Windows programming, Windows Services and Win32k
+- **Networking Protocols** — Remote Desktop Protocol, HTTP, DNS, etc
+- **Cloud & DevOps** — Azure, Distributed Systems
+- **Web Developer** — HTML, Javascript, CSS, Python, PHP, etc 
 - **Open Source** — Contributing to and creating open source projects
 
 ## Projects
 
+- **Simple Event Viewer** — A replacement for event viewer built in WinUI3 with an MCP server
 - **FindNeedle** — A Windows log search utility with plugin architecture
 
 ## Get in Touch

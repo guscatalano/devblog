@@ -20,6 +20,3 @@ This is my personal blog where I'll be sharing technical posts about:
 
 Hi, I'm Gus Catalano. I'm a software developer passionate about building high-quality software.
 
-## What's Next?
-
-Stay tuned for my first technical post about C# best practices!
