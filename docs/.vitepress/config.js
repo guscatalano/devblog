@@ -64,7 +64,9 @@ export default {
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/posts/simple-event-viewer' },
       { text: 'GTools', link: '/gtools/' },
-      { text: 'About', link: '/about' }
+      { text: 'About', link: '/about' },
+      { text: 'Privacy', link: '/privacy/' },
+      { text: 'Security', link: '/security/' }
     ],
     sidebar: {
       '/posts/': [
@@ -77,6 +79,52 @@ export default {
           ]
         }
       ],
+      '/privacy/': [
+        {
+          text: 'Privacy Policies',
+          items: [
+            { text: 'Overview', link: '/privacy/' },
+            { text: 'Simple Event Viewer', link: '/privacy/simpleeventviewer' },
+            { text: 'Simple PCap Viewer', link: '/privacy/simplepcapviewer' },
+            { text: 'FindNeedle', link: '/privacy/findneedle' },
+            { text: 'BinaryExplorer', link: '/privacy/binaryexplorer' },
+            { text: 'NexusRDM', link: '/privacy/nexusrdm' },
+            { text: 'PixelPet', link: '/privacy/pixelpet' },
+            { text: 'AI Proxy', link: '/privacy/ai-proxy' },
+            { text: 'Level1Techs KVM Control', link: '/privacy/level1techkvm' },
+            { text: 'DonationTracker', link: '/privacy/donationtracker' },
+            { text: 'ProcMonClone', link: '/privacy/procmonclone' },
+            { text: 'RTSP Stream URL Finder', link: '/privacy/rtspstreamurlfinder' },
+            { text: 'FoscamFinder', link: '/privacy/foscamfinder' },
+            { text: 'RDP DVC Watcher', link: '/privacy/rdp-dvc-watcher' },
+            { text: 'HA — Generac/Honeywell', link: '/privacy/ha-generac' },
+            { text: 'HA — Waste Management', link: '/privacy/waste-management' }
+          ]
+        }
+      ],
+      '/security/': [
+        {
+          text: 'Security',
+          items: [
+            { text: 'Overview', link: '/security/' },
+            { text: 'Simple Event Viewer', link: '/security/simpleeventviewer' },
+            { text: 'Simple PCap Viewer', link: '/security/simplepcapviewer' },
+            { text: 'FindNeedle', link: '/security/findneedle' },
+            { text: 'BinaryExplorer', link: '/security/binaryexplorer' },
+            { text: 'NexusRDM', link: '/security/nexusrdm' },
+            { text: 'PixelPet', link: '/security/pixelpet' },
+            { text: 'AI Proxy', link: '/security/ai-proxy' },
+            { text: 'Level1Techs KVM Control', link: '/security/level1techkvm' },
+            { text: 'DonationTracker', link: '/security/donationtracker' },
+            { text: 'ProcMonClone', link: '/security/procmonclone' },
+            { text: 'RTSP Stream URL Finder', link: '/security/rtspstreamurlfinder' },
+            { text: 'FoscamFinder', link: '/security/foscamfinder' },
+            { text: 'RDP DVC Watcher', link: '/security/rdp-dvc-watcher' },
+            { text: 'HA — Generac/Honeywell', link: '/security/ha-generac' },
+            { text: 'HA — Waste Management', link: '/security/waste-management' }
+          ]
+        }
+      ],
       ...gtoolsSidebars()
     },
     socialLinks: [
@@ -84,7 +132,7 @@ export default {
       { icon: 'twitter', link: 'https://twitter.com/guscatalano' }
     ],
     footer: {
-      message: '© 2026 Gus Catalano',
+      message: '<a href="/privacy/">Privacy Policy</a> · <a href="/security/">Security</a> · © 2026 Gus Catalano',
       copyright: 'All rights reserved'
     }
   }
