@@ -129,7 +129,8 @@ export default {
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/guscatalano' },
-      { icon: 'twitter', link: 'https://twitter.com/guscatalano' }
+      { icon: 'twitter', link: 'https://twitter.com/guscatalano' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/gustavocatalano/' }
     ],
     footer: {
       message: '<a href="/privacy/">Privacy Policy</a> · <a href="/security/">Security</a> · © 2026 Gus Catalano',
