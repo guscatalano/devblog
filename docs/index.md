@@ -18,14 +18,34 @@ I'm a software developer with experience in:
 
 ## Projects
 
-For small utilities with setup guides, status, and screenshots, see **[GTools →](/gtools/)**.
+For small utilities with setup guides, status, and screenshots, see **[GTools →](/gtools/)**. Data-handling and hardening details for each app live on the [Privacy](/privacy/) and [Security](/security/) pages.
 
-- **[Simple Event Viewer](https://github.com/guscatalano/SimpleEventViewer)** — A replacement for event viewer built in WinUI3 with an MCP server
-- **[FindNeedle](https://github.com/guscatalano/findneedle)** — A Windows log search utility with plugin architecture
-- **[AI Proxy](https://github.com/guscatalano/AI_Proxy)** — An HTTP proxy that watches what the AI is doing and provides visibility
-- **[NexusRDM](https://github.com/guscatalano/NexusRDM)** — An RDP and SSH manager
-- **[DonationTracker](https://github.com/guscatalano/DonationTracker)** — An app to help you track all of your donations throughout the year locally
-- **[Level1Tech KVM Control](https://github.com/guscatalano/Level1TechKVMControl)** — Control your Level1 KVM through CLI or HTTP
+### Windows diagnostics & debugging
+
+- **[Simple Event Viewer](https://github.com/guscatalano/SimpleEventViewer)** — A WinUI 3 replacement for Windows Event Viewer, with an MCP server
+- **[Simple PCap Viewer](https://github.com/guscatalano/SimplePCapViewer)** — A pcap/pcapng viewer that exposes captures to an MCP server
+- **[FindNeedle](https://github.com/guscatalano/findneedle)** — A Windows log-search utility with a JSON RuleDSL and plugin architecture
+- **[ProcMonClone](https://github.com/guscatalano/ProcMonClone)** — A Process Monitor–style ETW activity monitor (learning project)
+- **[BinaryExplorer](https://github.com/guscatalano/BinaryExplorer)** — Inspect a Windows binary — imports, signatures, strings, disassembly — without running it
+- **[RDP DVC Watcher](https://github.com/guscatalano/RDP_DVC_Watcher)** — Tallies per-channel traffic on RDP dynamic virtual channels
+
+### Remote access & networking
+
+- **[NexusRDM](https://github.com/guscatalano/NexusRDM)** — An RDP and SSH connection manager
+- **[Level1Techs KVM Control](https://github.com/guscatalano/Level1TechKVMControl)** — Control a Level1Techs KVM from a CLI or a phone-friendly web page
+- **[RTSP Stream URL Finder](https://github.com/guscatalano/RTSPStreamUrlFinder)** — Discover valid RTSP stream URLs for a camera you have credentials for
+- **[FoscamFinder](https://github.com/guscatalano/FoscamFinder)** — Find Foscam cameras on your LAN via network broadcast
+
+### AI & developer tools
+
+- **[AI Proxy](https://github.com/guscatalano/AI_Proxy)** — An HTTP proxy that records and visualizes what an AI client is doing
+
+### Home & personal
+
+- **[DonationTracker](https://github.com/guscatalano/DonationTracker)** — Track your charitable donations locally, with photo categorization
+- **[PixelPet](https://github.com/guscatalano/PixelPet)** — A customizable 8-bit pixel-art desktop pet for Windows
+- **[Home Assistant: Generac/Honeywell](https://github.com/guscatalano/ha-generac)** — Home Assistant integration for Generac/Honeywell generators
+- **[Home Assistant: Waste Management](https://github.com/guscatalano/homeassistant-waste_management)** — Home Assistant sensor for your next Waste Management pickup
 
 ## Get in Touch
 
