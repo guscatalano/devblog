@@ -96,9 +96,7 @@ export default {
             { text: 'ProcMonClone', link: '/privacy/procmonclone' },
             { text: 'RTSP Stream URL Finder', link: '/privacy/rtspstreamurlfinder' },
             { text: 'FoscamFinder', link: '/privacy/foscamfinder' },
-            { text: 'RDP DVC Watcher', link: '/privacy/rdp-dvc-watcher' },
-            { text: 'HA — Generac/Honeywell', link: '/privacy/ha-generac' },
-            { text: 'HA — Waste Management', link: '/privacy/waste-management' }
+            { text: 'RDP DVC Watcher', link: '/privacy/rdp-dvc-watcher' }
           ]
         }
       ],
@@ -119,9 +117,7 @@ export default {
             { text: 'ProcMonClone', link: '/security/procmonclone' },
             { text: 'RTSP Stream URL Finder', link: '/security/rtspstreamurlfinder' },
             { text: 'FoscamFinder', link: '/security/foscamfinder' },
-            { text: 'RDP DVC Watcher', link: '/security/rdp-dvc-watcher' },
-            { text: 'HA — Generac/Honeywell', link: '/security/ha-generac' },
-            { text: 'HA — Waste Management', link: '/security/waste-management' }
+            { text: 'RDP DVC Watcher', link: '/security/rdp-dvc-watcher' }
           ]
         }
       ],

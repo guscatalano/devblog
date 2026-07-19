@@ -44,8 +44,13 @@ For small utilities with setup guides, status, and screenshots, see **[GTools �
 
 - **[DonationTracker](https://github.com/guscatalano/DonationTracker)** — Track your charitable donations locally, with photo categorization
 - **[PixelPet](https://github.com/guscatalano/PixelPet)** — A customizable 8-bit pixel-art desktop pet for Windows
-- **[Home Assistant: Generac/Honeywell](https://github.com/guscatalano/ha-generac)** — Home Assistant integration for Generac/Honeywell generators
-- **[Home Assistant: Waste Management](https://github.com/guscatalano/homeassistant-waste_management)** — Home Assistant sensor for your next Waste Management pickup
+
+### Forks & contributions
+
+Projects I run and customize but didn't originate — my forks of other people's work:
+
+- **[Home Assistant: Generac/Honeywell](https://github.com/guscatalano/ha-generac)** — my fork of [binarydev/ha-generac](https://github.com/binarydev/ha-generac), an integration for Generac/Honeywell generators
+- **[Home Assistant: Waste Management](https://github.com/guscatalano/homeassistant-waste_management)** — my fork of [dcmeglio/homeassistant-waste_management](https://github.com/dcmeglio/homeassistant-waste_management), a sensor for your next Waste Management pickup
 
 ## Get in Touch
 

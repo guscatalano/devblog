@@ -60,8 +60,6 @@ data destruction, or testing against systems and networks that aren't yours.
 | [RTSP Stream URL Finder](/security/rtspstreamurlfinder) | Local; talks only to the camera you specify. |
 | [FoscamFinder](/security/foscamfinder) | LAN discovery PoC; login creds sent cleartext to the LAN camera. |
 | [RDP DVC Watcher](/security/rdp-dvc-watcher) | Local; requires admin. Nothing stored or sent. |
-| [HA — Generac/Honeywell](/security/ha-generac) | Talks to Generac's cloud with a session cookie you supply. |
-| [HA — Waste Management](/security/waste-management) | Talks to Waste Management's cloud with credentials you supply. |
 
 For what data each app handles, see the matching [privacy policy](/privacy/).
 

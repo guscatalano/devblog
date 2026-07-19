@@ -43,8 +43,6 @@ comes first.
 | [RTSP Stream URL Finder](/privacy/rtspstreamurlfinder) | Local LAN tool. Talks only to the camera you specify. |
 | [FoscamFinder](/privacy/foscamfinder) | Local LAN discovery tool. No internet, no telemetry. |
 | [RDP DVC Watcher](/privacy/rdp-dvc-watcher) | Local diagnostics. Nothing stored or sent. |
-| [Home Assistant — Generac/Honeywell](/privacy/ha-generac) | Connects to the Generac cloud with credentials you supply. |
-| [Home Assistant — Waste Management](/privacy/waste-management) | Connects to the Waste Management cloud with credentials you supply. |
 
 ## Things that apply to every app
 
