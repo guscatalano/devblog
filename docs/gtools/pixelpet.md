@@ -11,6 +11,7 @@ install: |
   # Installer — PixelPet-Setup-x.y.z.exe (auto-updates)
   # Portable  — PixelPet-x.y.z.exe (just run it)
 installLang: powershell
+screenshot: /screenshots/pixelpet.png
 relatedPosts: []
 ---
 

@@ -9,7 +9,7 @@ install: |
   cd Level1TechKVMControl
   ./kvm.ps1 -PC 2
 installLang: powershell
-screenshot: /assets/images/kvmweb.png
+screenshot: /screenshots/kvmweb.png
 relatedPosts:
   - link: /posts/level1-kvm-control
     text: "Controlling a Level1Techs KVM easily and remotely"

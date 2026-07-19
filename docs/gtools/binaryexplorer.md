@@ -11,6 +11,7 @@ install: |
   # MSI  — self-contained installer, no .NET runtime required
   # MSIX — extract the zip and run Install.ps1 (installs the self-signed cert + app)
 installLang: powershell
+screenshot: /screenshots/binaryexplorer.png
 relatedPosts: []
 ---
 

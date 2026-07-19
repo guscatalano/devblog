@@ -13,6 +13,7 @@ install: |
   cd SimplePCapViewer
   dotnet build
 installLang: powershell
+screenshot: /screenshots/simplepcapviewer.png
 relatedPosts: []
 ---
 

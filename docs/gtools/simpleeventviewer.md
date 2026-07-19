@@ -9,7 +9,7 @@ install: |
   # https://github.com/guscatalano/SimpleEventViewer/releases/latest
   # MSI installer (recommended) or MSIX package, both x64
 installLang: powershell
-screenshot: ../assets/images/simpleeventviewer.png
+screenshot: /screenshots/simpleeventviewer.png
 relatedPosts:
   - link: /posts/simple-event-viewer
     text: "Why I rewrote Windows Event Viewer"
