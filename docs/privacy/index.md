@@ -34,6 +34,7 @@ comes first.
 | [Simple PCap Viewer](/privacy/simplepcapviewer) | Fully local. No network, no telemetry. |
 | [FindNeedle](/privacy/findneedle) | Local by default; optional online log sources you configure. |
 | [BinaryExplorer](/privacy/binaryexplorer) | Local; optional VirusTotal hash lookup you enable. |
+| [DriveVisualizer](/privacy/drivevisualizer) | Fully local. No network at all; snapshots stay in your app data. |
 | [NexusRDM](/privacy/nexusrdm) | Local; credentials in Windows Credential Manager. Connects where you tell it. |
 | [PixelPet](/privacy/pixelpet) | Local; optional AI photo features you configure. |
 | [AI Proxy](/privacy/ai-proxy) | Local observability tool that logs AI traffic on your machine. |

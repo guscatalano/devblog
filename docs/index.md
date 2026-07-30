@@ -28,6 +28,7 @@ For small utilities with setup guides, status, and screenshots, see **[GTools �
 - **[ProcMonClone](https://github.com/guscatalano/ProcMonClone)** — A Process Monitor–style ETW activity monitor (learning project)
 - **[BinaryExplorer](https://github.com/guscatalano/BinaryExplorer)** — Inspect a Windows binary — imports, signatures, strings, disassembly — without running it
 - **[RDP DVC Watcher](https://github.com/guscatalano/RDP_DVC_Watcher)** — Tallies per-channel traffic on RDP dynamic virtual channels
+- **[DriveVisualizer](https://github.com/guscatalano/DriveVisualizer)** — A WinDirStat-style disk usage analyzer with treemap, sunburst, and icicle views
 
 ### Remote access & networking
 

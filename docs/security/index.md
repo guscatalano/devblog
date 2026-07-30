@@ -51,6 +51,7 @@ data destruction, or testing against systems and networks that aren't yours.
 | [Simple PCap Viewer](/security/simplepcapviewer) | Local; no egress. Optional loopback MCP server (no auth). |
 | [FindNeedle](/security/findneedle) | Local; opt-in online sources you configure. Tokens DPAPI-encrypted. |
 | [BinaryExplorer](/security/binaryexplorer) | Local; opt-in VirusTotal hash lookup. MCP has no auth; VT key stored in cleartext. |
+| [DriveVisualizer](/security/drivevisualizer) | Local, offline, unelevated. Main risk is its own delete actions (incl. permanent). |
 | [NexusRDM](/security/nexusrdm) | Secrets in Windows Credential Manager; brief plaintext at client launch. |
 | [PixelPet](/security/pixelpet) | Local desktop app; API keys encrypted at rest. |
 | [AI Proxy](/security/ai-proxy) | ⚠️ Binds to all interfaces, no auth; logs headers (API keys) in cleartext. Harden before exposing. |
