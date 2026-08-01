@@ -4,7 +4,7 @@ title: Privacy Policy — DriveVisualizer
 
 # Privacy Policy — DriveVisualizer
 
-_Last updated: July 27, 2026 · [All privacy policies](/privacy/) · [Source](https://github.com/guscatalano/DriveVisualizer)_
+_Last updated: July 31, 2026 · [All privacy policies](/privacy/) · [Source](https://github.com/guscatalano/DriveVisualizer)_
 
 **Summary: DriveVisualizer scans your disk and draws the results on your own
 machine. It has no network code at all — no telemetry, no analytics, no update
@@ -19,6 +19,14 @@ attributes, and timestamps. It does **not** read file contents, and it does not
 open, execute, or upload anything it finds. File names and paths are used to
 classify entries into categories (apps, pictures, documents, temp & logs, and so
 on) entirely on-device.
+
+It also reads **facts about the drive hardware itself** — model, media and bus
+type, capacity, partitions, firmware and serial number, plus S.M.A.R.T. health
+readings like temperature, wear, power-on hours, and lifetime bytes written.
+These come from Windows (a read-only device query and the storage WMI
+namespace) and are shown in the drive info dialog. The serial number and
+firmware version are displayed there only — they are **not** written into
+snapshots, history, or reports.
 
 ## What leaves your device
 
@@ -36,6 +44,8 @@ local folder when installed as MSIX):
 - **Scan snapshots** (`autosnap\*.dvsnap`) — one automatic baseline per scanned
   target, so the next scan can show what changed. These contain the folder and
   file structure you scanned with sizes, so treat them like a directory listing.
+  Each one also stamps the drive's model, media and bus type, free space, and
+  S.M.A.R.T. readings at that moment — but not its serial number.
 - **Daily history** (`history\`) — one snapshot per day of use per target, which
   feeds the size-over-time chart.
 - **Settings** — your view preferences, in the app's local settings store.

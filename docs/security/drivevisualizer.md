@@ -4,7 +4,7 @@ title: Security — DriveVisualizer
 
 # Security — DriveVisualizer
 
-_Last updated: July 27, 2026 · [All security pages](/security/) · [Privacy](/privacy/drivevisualizer) · [Source](https://github.com/guscatalano/DriveVisualizer)_
+_Last updated: July 31, 2026 · [All security pages](/security/) · [Privacy](/privacy/drivevisualizer) · [Source](https://github.com/guscatalano/DriveVisualizer)_
 
 **Summary: A local, offline desktop app with no network code and no listening
 port. It runs as your normal user, not as admin. The real risk it carries is the
@@ -22,6 +22,14 @@ permanently.**
   your token; directories your account can't read are skipped rather than
   bypassed. Don't run it elevated unless you actually need to see protected
   paths — and understand that doing so also gives its delete actions that reach.
+- **S.M.A.R.T. reads are query-only.** Drive health opens a
+  `\\.\PhysicalDriveN` handle with **zero access rights** and issues a single
+  read-only property query (`IOCTL_STORAGE_QUERY_PROPERTY` for the NVMe health
+  log), falling back to the storage WMI namespace. That's deliberately the one
+  S.M.A.R.T. path available without admin — the app never opens a drive for raw
+  read or write, so it can't read past the filesystem or bypass file ACLs, and
+  it never sends a vendor command to the device. Drives that don't expose the
+  data just show fewer fields.
 - **Untrusted input is your own filesystem.** Scanning a folder full of
   attacker-controlled file names is safe: names are parsed and rendered, not
   interpreted. Reports are generated as static HTML from that data.

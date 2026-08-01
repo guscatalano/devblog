@@ -46,8 +46,13 @@ Point it at a drive or folder and see where the space actually went:
 - **Size history** — a daily snapshot builds into a stacked-bar chart of the
   drive over time, per category. Snapshots can run on a schedule in the
   background, with retention limits you set.
-- **Drive details at a glance** — SSD or HDD, NVMe / SATA / USB bus, health, and
-  capacity for each drive.
+- **Drive health (S.M.A.R.T.)** — a drive info dialog with the hardware facts
+  (SSD or HDD, NVMe / SATA / USB bus, capacity, partitions, firmware) alongside
+  temperature, wear and spare capacity, power-on hours, power cycles, unsafe
+  shutdowns, media errors, and lifetime bytes read/written. Every snapshot
+  stamps those readings too, so the history report grows a drive-health trend
+  table next to the size charts. It reads unelevated — no admin prompt, no
+  driver — and quietly shows less on drives that don't expose the data.
 - **Reports** — self-contained HTML (dark/light aware, prints to PDF) plus
   snapshot files you can compare against later.
 - **Stays current** — refresh a single folder from its context menu, or turn on
