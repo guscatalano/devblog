@@ -1,0 +1,486 @@
+{
+  "benchId": "b_a29bf50fb1c1",
+  "meta": {
+    "suite": "coding-v1",
+    "context": "short",
+    "thinking": "off",
+    "cache": "cold",
+    "entityCount": 19,
+    "temperature": 0,
+    "axis": {
+      "key": "cache",
+      "primary": "cached",
+      "secondary": "cold"
+    },
+    "tasks": 18,
+    "runsPerCell": 36,
+    "gpus": [
+      "NVIDIA GB10"
+    ],
+    "memTotalGb": 0,
+    "backends": [
+      "llamacpp",
+      "ollama",
+      "vllm"
+    ],
+    "rowCount": 38
+  },
+  "models": [
+    {
+      "model": "gemma4:26b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 487.3509145108983,
+        "decode": 63.53346159711379,
+        "total": 2777.6009380468167,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 475.4685634979978,
+        "decode": 63.54099856261224,
+        "total": 2779.88197497325,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      }
+    },
+    {
+      "model": "llama4:latest",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 831.1714610317722,
+        "decode": 18.09447801487579,
+        "total": 7214.415916474536,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 819.3132849992253,
+        "decode": 18.149024916874623,
+        "total": 6837.05498254858,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      }
+    },
+    {
+      "model": "qwen3-coder-next:latest",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 351.41506494255736,
+        "decode": 51.57880993371101,
+        "total": 3490.280599449761,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 286.305166548118,
+        "decode": 51.58964073712376,
+        "total": 3434.7321589593776,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      }
+    },
+    {
+      "model": "qwen3-coder:tuned",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 318.12173494836316,
+        "decode": 60.555662312855304,
+        "total": 2988.7039470486343,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 251.86686543747783,
+        "decode": 60.53816947533747,
+        "total": 2928.3701275126077,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      }
+    },
+    {
+      "model": "qwen3-coder-next",
+      "backend": "vllm",
+      "variant": null,
+      "quant": "NVFP4",
+      "secondary": {
+        "ttft": 150.20309697138146,
+        "decode": 62.30038766423064,
+        "total": 2582.447108987253,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 146.73818997107446,
+        "decode": 62.08531299273099,
+        "total": 2467.5680875079706,
+        "perfect": 1,
+        "cases": 1,
+        "core": 1,
+        "hard": 1
+      }
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731-UD-IQ2_XXS",
+      "backend": "llamacpp",
+      "variant": "32k ctx",
+      "quant": "IQ2_XXS",
+      "secondary": {
+        "ttft": 336.1904874909669,
+        "decode": 17.65864780032708,
+        "total": 8389.867557532853,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 139.6661504986696,
+        "decode": 17.771650418102013,
+        "total": 8112.140094017377,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731-UD-IQ2_XXS",
+      "backend": "llamacpp",
+      "variant": "128k ctx",
+      "quant": "IQ2_XXS",
+      "secondary": {
+        "ttft": 298.23732102522627,
+        "decode": 17.644335788712922,
+        "total": 8412.099555513123,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 140.664973994717,
+        "decode": 17.675069962583777,
+        "total": 8117.799241503235,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "DeepSeek-V4-Flash-0731-UD-IQ2_XXS",
+      "backend": "llamacpp",
+      "variant": "256k ctx",
+      "quant": "IQ2_XXS",
+      "secondary": {
+        "ttft": 294.22100400552154,
+        "decode": 17.653050908587907,
+        "total": 8406.883441988612,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 143.21377952001058,
+        "decode": 17.750146509783633,
+        "total": 8103.35391049739,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "gemma3:27b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 638.3915129699744,
+        "decode": 11.533201009410998,
+        "total": 19465.197777491994,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9382716049382716,
+        "core": 1,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 610.7096294872463,
+        "decode": 11.531403541117113,
+        "total": 19138.54536449071,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9382716049382716,
+        "core": 1,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "qwen3.6:27b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 545.3740690136328,
+        "decode": 12.120161642076443,
+        "total": 10749.665624054614,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 472.5334675167687,
+        "decode": 12.121918628583048,
+        "total": 10655.830650066491,
+        "perfect": 0.9444444444444444,
+        "cases": 0.9259259259259259,
+        "core": 1,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "gemma4:latest",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 465.506074950099,
+        "decode": 55.7280163480835,
+        "total": 6497.651580488309,
+        "perfect": 0.8333333333333334,
+        "cases": 0.8333333333333334,
+        "core": 0.9166666666666666,
+        "hard": 0.6666666666666666
+      },
+      "primary": {
+        "ttft": 447.0860695000738,
+        "decode": 55.654466914912,
+        "total": 6496.470712532755,
+        "perfect": 0.8333333333333334,
+        "cases": 0.8333333333333334,
+        "core": 0.9166666666666666,
+        "hard": 0.6666666666666666
+      }
+    },
+    {
+      "model": "llama3:70b-instruct",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 473.61242352053523,
+        "decode": 5.580474632720758,
+        "total": 17152.876591018867,
+        "perfect": 0.8611111111111112,
+        "cases": 0.9567901234567902,
+        "core": 0.8333333333333334,
+        "hard": 0.9166666666666666
+      },
+      "primary": {
+        "ttft": 431.6779979853891,
+        "decode": 5.583382516257684,
+        "total": 17071.290136955213,
+        "perfect": 0.8333333333333334,
+        "cases": 0.9382716049382716,
+        "core": 0.8333333333333334,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "qwen3-coder:30b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 264.0056149684824,
+        "decode": 83.37614658866579,
+        "total": 2233.3154139923863,
+        "perfect": 0.8333333333333334,
+        "cases": 0.8765432098765432,
+        "core": 0.75,
+        "hard": 1
+      },
+      "primary": {
+        "ttft": 210.8683869591914,
+        "decode": 83.8610643380398,
+        "total": 2144.207219942473,
+        "perfect": 0.8333333333333334,
+        "cases": 0.8765432098765432,
+        "core": 0.75,
+        "hard": 1
+      }
+    },
+    {
+      "model": "gpt-oss:120b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 657.9740315210074,
+        "decode": 37.84280924328674,
+        "total": 9745.669227966573,
+        "perfect": 0.8055555555555556,
+        "cases": 0.808641975308642,
+        "core": 0.7916666666666666,
+        "hard": 0.8333333333333334
+      },
+      "primary": {
+        "ttft": 532.95004053507,
+        "decode": 38.4917879567532,
+        "total": 8825.224966567475,
+        "perfect": 0.8055555555555556,
+        "cases": 0.808641975308642,
+        "core": 0.7916666666666666,
+        "hard": 0.8333333333333334
+      }
+    },
+    {
+      "model": "minicpm-v4.5:latest",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 242.575544398278,
+        "decode": 39.907425990488264,
+        "total": 2713.0994919571094,
+        "perfect": 0.6666666666666666,
+        "cases": 0.8209876543209876,
+        "core": 0.6666666666666666,
+        "hard": 0.6666666666666666
+      },
+      "primary": {
+        "ttft": 238.42777346726507,
+        "decode": 39.90115958690259,
+        "total": 2720.469061518088,
+        "perfect": 0.6388888888888888,
+        "cases": 0.8024691358024691,
+        "core": 0.625,
+        "hard": 0.6666666666666666
+      }
+    },
+    {
+      "model": "qwen3:0.6b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 207.63255999190733,
+        "decode": 305.5371389742277,
+        "total": 652.8634215355851,
+        "perfect": 0.16666666666666666,
+        "cases": 0.47530864197530864,
+        "core": 0.20833333333333334,
+        "hard": 0.08333333333333333
+      },
+      "primary": {
+        "ttft": 193.4771915548481,
+        "decode": 307.0900393909901,
+        "total": 686.3185774418525,
+        "perfect": 0.2222222222222222,
+        "cases": 0.5246913580246914,
+        "core": 0.25,
+        "hard": 0.16666666666666666
+      }
+    },
+    {
+      "model": "codellama:70b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 320.08236594265327,
+        "decode": 5.653575352301749,
+        "total": 36129.78599395137,
+        "perfect": 0.16666666666666666,
+        "cases": 0.24691358024691357,
+        "core": 0.16666666666666666,
+        "hard": 0.16666666666666666
+      },
+      "primary": {
+        "ttft": 257.01895845122635,
+        "decode": 5.655365598133205,
+        "total": 36147.4187260028,
+        "perfect": 0.16666666666666666,
+        "cases": 0.24074074074074073,
+        "core": 0.16666666666666666,
+        "hard": 0.16666666666666666
+      }
+    },
+    {
+      "model": "qwen3:4b",
+      "backend": "ollama",
+      "variant": null,
+      "quant": null,
+      "secondary": {
+        "ttft": 261.31910749245435,
+        "decode": 72.08319258296594,
+        "total": 7353.612977953162,
+        "perfect": 0.1111111111111111,
+        "cases": 0.13580246913580246,
+        "core": 0.16666666666666666,
+        "hard": 0
+      },
+      "primary": {
+        "ttft": 230.16712750541046,
+        "decode": 72.65143200409128,
+        "total": 7276.494280493353,
+        "perfect": 0.1111111111111111,
+        "cases": 0.13580246913580246,
+        "core": 0.16666666666666666,
+        "hard": 0
+      }
+    },
+    {
+      "model": "ornith-nvfp4",
+      "backend": "vllm",
+      "variant": null,
+      "quant": "NVFP4",
+      "secondary": {
+        "ttft": null,
+        "decode": null,
+        "total": null,
+        "perfect": null,
+        "cases": null,
+        "core": null,
+        "hard": null
+      },
+      "primary": {
+        "ttft": null,
+        "decode": null,
+        "total": null,
+        "perfect": null,
+        "cases": null,
+        "core": null,
+        "hard": null
+      }
+    }
+  ]
+}

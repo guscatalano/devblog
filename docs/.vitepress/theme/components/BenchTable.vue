@@ -1,7 +1,8 @@
 <script setup lang="ts">
-// Dense model-comparison table. Every measure is shown as "alone → under 4×
-// concurrent load", because the gap between those two is the thing worth
-// looking at and a flat row-per-run table hides it.
+// Dense model-comparison table. Every measure is shown as "primary → secondary"
+// along whichever axis the run varied (alone vs concurrent, warm vs cold, …),
+// because the gap between those two states is the thing worth looking at and a
+// flat row-per-run table hides it.
 //
 // Encoding, per the data-viz method:
 //   correctness → meter (a share of a fixed 0–100 whole), sequential blue
@@ -13,6 +14,10 @@ import { data as runs } from '../../../benchmarks/runs.data.ts'
 const props = defineProps<{ benchId: string }>()
 const run = computed(() => runs[props.benchId])
 
+const axis = computed(() => run.value?.meta?.axis ?? null)
+const primaryLabel = computed(() => axis.value?.primary ?? 'measured')
+const secondaryLabel = computed(() => axis.value?.secondary ?? null)
+
 type SortKey = 'model' | 'perfect' | 'decode' | 'ttft' | 'total'
 const sortKey = ref<SortKey>('perfect')
 const sortAsc = ref(false)
@@ -21,7 +26,7 @@ function setSort(key: SortKey) {
   if (sortKey.value === key) sortAsc.value = !sortAsc.value
   else {
     sortKey.value = key
-    // Names read best A→Z; every measure reads best big-first, except latency.
+    // Names read best A→Z; measures big-first, except latency where less is better.
     sortAsc.value = key === 'model' || key === 'ttft' || key === 'total'
   }
 }
@@ -31,14 +36,14 @@ const rows = computed(() => {
   const dir = sortAsc.value ? 1 : -1
   return list.sort((a, b) => {
     if (sortKey.value === 'model') return dir * String(a.model).localeCompare(String(b.model))
-    const av = a.solo?.[sortKey.value] ?? -Infinity
-    const bv = b.solo?.[sortKey.value] ?? -Infinity
+    const av = a.primary?.[sortKey.value] ?? -Infinity
+    const bv = b.primary?.[sortKey.value] ?? -Infinity
     return dir * (av - bv)
   })
 })
 
 const maxDecode = computed(() =>
-  Math.max(1, ...rows.value.flatMap((r) => [r.solo?.decode ?? 0, r.par?.decode ?? 0]))
+  Math.max(1, ...rows.value.flatMap((r) => [r.primary?.decode ?? 0, r.secondary?.decode ?? 0]))
 )
 
 const pct = (v?: number | null) => (v == null ? null : Math.round(v * 100))
@@ -49,16 +54,36 @@ const ms = (v?: number | null) =>
 const ratio = (a?: number | null, b?: number | null) =>
   a && b ? `${(b / a).toFixed(1)}×` : ''
 
-// Dumbbell geometry, as a percentage of the shared decode scale.
-const lo = (r: any) => (Math.min(r.solo?.decode ?? 0, r.par?.decode ?? 0) / maxDecode.value) * 100
-const hi = (r: any) => (Math.max(r.solo?.decode ?? 0, r.par?.decode ?? 0) / maxDecode.value) * 100
+const scaled = (v?: number | null) => ((v ?? 0) / maxDecode.value) * 100
+const lo = (r: any) => Math.min(scaled(r.primary?.decode), scaled(r.secondary?.decode))
+const hi = (r: any) => Math.max(scaled(r.primary?.decode), scaled(r.secondary?.decode))
+
+// Fields already spent on the axis shouldn't also appear in the caption as if
+// they were constant for the whole run.
+const captionBits = computed(() => {
+  const m = run.value?.meta ?? {}
+  const bits = [`${run.value?.models?.length ?? 0} models`, m.suite]
+  if (m.tasks && m.runsPerCell) bits.push(`${m.tasks} tasks / ${m.runsPerCell} runs`)
+  if (m.context) bits.push(`${m.context} context`)
+  if (axis.value?.key !== 'thinking' && m.thinking) bits.push(`thinking ${m.thinking}`)
+  if (axis.value?.key !== 'cache' && m.cache) bits.push(String(m.cache))
+  if (m.temperature != null) bits.push(`t=${Number(m.temperature).toFixed(1)}`)
+  if (m.gpus?.length) bits.push(m.gpus.join(', '))
+  return bits.filter(Boolean)
+})
 
 function tip(r: any) {
-  const t = [`${r.model} · ${r.backend}${r.quant ? ` · ${r.quant}` : ''}`]
-  for (const [name, m] of [['alone', r.solo], ['4× concurrent', r.par]] as const) {
+  const t = [
+    [r.model, r.variant, r.backend, r.quant].filter(Boolean).join(' · ')
+  ]
+  const states: [string, any][] = [[primaryLabel.value, r.primary]]
+  if (secondaryLabel.value) states.push([secondaryLabel.value, r.secondary])
+  for (const [name, m] of states) {
     if (!m) continue
+    const tiers =
+      m.core != null || m.hard != null ? ` (core ${pct(m.core)}%, hard ${pct(m.hard)}%)` : ''
     t.push(
-      `${name}: ${pct(m.perfect)}% fully correct (core ${pct(m.core)}%, hard ${pct(m.hard)}%) · ` +
+      `${name}: ${pct(m.perfect)}% fully correct${tiers} · ` +
         `${num(m.decode, 1)} tok/s · TTFT ${ms(m.ttft)} · total ${ms(m.total)}`
     )
   }
@@ -75,16 +100,10 @@ function tip(r: any) {
   <figure v-else class="bench">
     <figcaption class="bench-caption">
       <span class="bench-legend">
-        <span class="key"><i class="dot solo" /> alone</span>
-        <span class="key"><i class="dot par" /> 4× concurrent</span>
+        <span class="key"><i class="dot solo" /> {{ primaryLabel }}</span>
+        <span v-if="secondaryLabel" class="key"><i class="dot par" /> {{ secondaryLabel }}</span>
       </span>
-      <span class="bench-meta">
-        {{ run.models.length }} models · {{ run.meta.suite }} ·
-        {{ run.meta.tasks }} tasks / {{ run.meta.runsPerCell }} runs · thinking
-        {{ run.meta.thinking }} · {{ run.meta.cache }} ·
-        t={{ Number(run.meta.temperature).toFixed(1) }} ·
-        {{ run.meta.gpus.join(', ') }}
-      </span>
+      <span class="bench-meta">{{ captionBits.join(' · ') }}</span>
     </figcaption>
 
     <div class="bench-scroll">
@@ -109,21 +128,28 @@ function tip(r: any) {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="r in rows" :key="r.model + r.backend" :title="tip(r)">
+          <tr v-for="r in rows" :key="r.model + r.backend + (r.variant ?? '')" :title="tip(r)">
             <td class="col-model">
               <span class="name">{{ r.model }}</span>
+              <span v-if="r.variant" class="variant">{{ r.variant }}</span>
               <span class="backend">{{ r.backend }}</span>
             </td>
 
             <td class="col-correct">
-              <div class="meter" :aria-label="`${pct(r.solo?.perfect)}% alone, ${pct(r.par?.perfect)}% under load`">
+              <div class="meter">
                 <div class="meter-track">
-                  <div class="meter-fill" :style="{ width: `${pct(r.solo?.perfect) ?? 0}%` }" />
-                  <div v-if="r.par?.perfect != null" class="meter-tick" :style="{ left: `${pct(r.par.perfect)}%` }" />
+                  <div class="meter-fill" :style="{ width: `${pct(r.primary?.perfect) ?? 0}%` }" />
+                  <div
+                    v-if="r.secondary?.perfect != null"
+                    class="meter-tick"
+                    :style="{ left: `${pct(r.secondary.perfect)}%` }"
+                  />
                 </div>
                 <span class="meter-value">
-                  {{ pct(r.solo?.perfect) ?? '—' }}<span class="pctsign">%</span>
-                  <span class="meter-delta">→ {{ pct(r.par?.perfect) ?? '—' }}%</span>
+                  {{ pct(r.primary?.perfect) ?? '—' }}<span class="pctsign">%</span>
+                  <span v-if="secondaryLabel" class="meter-delta">
+                    → {{ pct(r.secondary?.perfect) ?? '—' }}%
+                  </span>
                 </span>
               </div>
             </td>
@@ -131,27 +157,35 @@ function tip(r: any) {
             <td class="col-decode">
               <div class="dumbbell">
                 <div class="db-track">
-                  <div class="db-link" :style="{ left: `${lo(r)}%`, width: `${Math.max(0, hi(r) - lo(r))}%` }" />
-                  <i class="dot par" :style="{ left: `${((r.par?.decode ?? 0) / maxDecode) * 100}%` }" />
-                  <i class="dot solo" :style="{ left: `${((r.solo?.decode ?? 0) / maxDecode) * 100}%` }" />
+                  <div
+                    class="db-link"
+                    :style="{ left: `${lo(r)}%`, width: `${Math.max(0, hi(r) - lo(r))}%` }"
+                  />
+                  <i
+                    v-if="r.secondary?.decode != null"
+                    class="dot par"
+                    :style="{ left: `${scaled(r.secondary.decode)}%` }"
+                  />
+                  <i class="dot solo" :style="{ left: `${scaled(r.primary?.decode)}%` }" />
                 </div>
                 <span class="db-value">
-                  {{ num(r.solo?.decode, 1) }}
-                  <span class="db-delta">→ {{ num(r.par?.decode, 1) }}</span>
+                  {{ num(r.primary?.decode, 1) }}
+                  <span v-if="secondaryLabel" class="db-delta">→ {{ num(r.secondary?.decode, 1) }}</span>
                 </span>
               </div>
             </td>
 
             <td class="col-ttft num">
-              {{ ms(r.solo?.ttft) }}
-              <span class="sub">→ {{ ms(r.par?.ttft) }}
-                <span class="ratio">{{ ratio(r.solo?.ttft, r.par?.ttft) }}</span>
+              {{ ms(r.primary?.ttft) }}
+              <span v-if="secondaryLabel" class="sub">
+                → {{ ms(r.secondary?.ttft) }}
+                <span class="ratio">{{ ratio(r.primary?.ttft, r.secondary?.ttft) }}</span>
               </span>
             </td>
 
             <td class="col-total num">
-              {{ ms(r.solo?.total) }}
-              <span class="sub">→ {{ ms(r.par?.total) }}</span>
+              {{ ms(r.primary?.total) }}
+              <span v-if="secondaryLabel" class="sub">→ {{ ms(r.secondary?.total) }}</span>
             </td>
           </tr>
         </tbody>
@@ -196,6 +230,7 @@ function tip(r: any) {
 .bench-legend .dot {
   position: static;
   transform: none;
+  margin: 0;
 }
 .bench-meta {
   min-width: 0;
@@ -261,6 +296,7 @@ function tip(r: any) {
   font-size: 0.82rem;
   color: var(--vp-c-text-1);
 }
+.col-model .variant,
 .col-model .backend {
   display: inline-block;
   margin-left: 0.5em;
@@ -270,11 +306,16 @@ function tip(r: any) {
   font-size: 0.68rem;
   color: var(--vp-c-text-3);
   vertical-align: 1px;
+  white-space: nowrap;
+}
+.col-model .variant {
+  border-color: color-mix(in srgb, var(--correct) 45%, transparent);
+  color: var(--vp-c-text-2);
 }
 
 /* correctness — meter against a fixed 0–100 whole */
 .col-correct {
-  width: 34%;
+  width: 32%;
 }
 .meter {
   display: flex;
@@ -320,9 +361,9 @@ function tip(r: any) {
   font-size: 0.78rem;
 }
 
-/* decode — dumbbell, alone → under load */
+/* decode — dumbbell between the two states */
 .col-decode {
-  width: 26%;
+  width: 24%;
 }
 .dumbbell {
   display: flex;

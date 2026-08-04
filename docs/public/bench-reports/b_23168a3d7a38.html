@@ -483,10 +483,7 @@ def semver_cmp(a: str, b: str) -&gt; int:
                 num_a = int(id_a)
                 num_b = int(id_b)
                 if num_a &lt;
-… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>roman_strict</code><span> — Roman to int, rejecting non-canonical forms · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: unterminated string literal (detected at line 1) (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>Here's the implementation:
-
-```python
-def roman_strict(s: str) -&gt; int | None:
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>roman_strict</code><span> — Roman to int, rejecting non-canonical forms · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: unterminated string literal (detected at line 1) (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def roman_strict(s: str) -&gt; int | None:
     # Mapping of Roman numeral symbols to their integer values
     values = {
         'I': 1, 'V': 5, 'X': 10, 'L': 50,
@@ -537,7 +534,8 @@ def roman_strict(s: str) -&gt; int | None:
         # Check if current pair is a valid subtractive pair
         if i + 1 &lt; len(s) and s[i:i+2] in subtractive_pairs:
             i += 2
-   
+        else:
+            # Check if curr
 … (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def roman_strict(s: str) -&gt; int | None:
     # Define the value mapping
     values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
@@ -3345,54 +3343,18 @@ body {
    &lt;tbody&gt;
      &lt;tr&gt;
    
-… (truncated)</pre></details></li><li><b>qwen3:4b · ollama · 4</b> — <code>count of &quot;table&quot; → 2, expected 1</code><details class="fxc"><summary>the code it wrote</summary><pre>We are to create an HTML fragment for a table with:
- - A caption: exactly 'Quarterly revenue'
- - A thead with a single row containing three th cells, each with scope=&quot;col&quot;
- - A tbody with exactly two rows, each row having three td cells.
-
- We'll choose some example data for the cells.
-
- Steps:
- 1. Start with the table tag: &lt;table&gt;
- 2. Add the caption: &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
- 3. Add the thead: &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
- 4. Add the tbody: &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
-
- We have to choose three column headers and two rows of data.
-
- Example:
-   Columns: Q1, Q2, Q3, Q4? But note: the problem says three columns. So let's do three quarters? 
-   However, the problem says &quot;quarterly revenue&quot;, so we can have three quarters? But typically quarterly revenue would be four quarters.
-
- But the problem says: three &lt;th&gt; cells. So we have three columns.
-
- Let's choose:
-   Column 1: &quot;Q1&quot;
-   Column 2: &quot;Q2&quot;
-   Column 3: &quot;Q3&quot;
-
- And two rows of data (for two years? or two quarters? but we have three columns so we'll do two rows of three numbers)
-
- Example data:
-   Row 1: $1000, $1500, $2000
-   Row 2: $1200, $1800, $2200
-
- However, the problem says: &quot;Cell contents are yours to choose.&quot;
-
- Let's write the HTML.
-
- Important: The problem says &quot;Return only the fragment in a single ```html code block.&quot;
-
- So we output:
-
- ```html
- &lt;table&gt;
+… (truncated)</pre></details></li><li><b>qwen3:4b · ollama · 4</b> — <code>count of &quot;table&quot; → 2, expected 1</code><details class="fxc"><summary>the code it wrote</summary><pre> &lt;table&gt;
    &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
    &lt;thead&gt;
      &lt;tr&gt;
        &lt;th scope=&quot;col&quot;&gt;Q1&lt;/th&gt;
-       &lt;th scope=
-… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>balanced_depth</code><span> — Max bracket nesting depth, -1 if unbalanced · 4 examples</span></summary><ul><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>We are to compute the maximum nesting depth of round brackets in the string s.
+       &lt;th scope=&quot;col&quot;&gt;Q2&lt;/th&gt;
+       &lt;th scope=&quot;col&quot;&gt;Q3&lt;/th&gt;
+     &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+     &lt;tr&gt;
+       &lt;td&gt;$100</pre></details></li></ul></details><details class="fx"><summary><code>balanced_depth</code><span> — Max bracket nesting depth, -1 if unbalanced · 4 examples</span></summary><ul><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>We are to compute the maximum nesting depth of round brackets in the string s.
  Steps:
  1. We traverse the string and ignore non-bracket characters.
  2. We maintain a counter for the current depth (starting at 0).

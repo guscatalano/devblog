@@ -39,7 +39,9 @@ function benchmarksSidebar() {
       const slug = file.replace(/\.md$/, '')
       const fm = readFrontmatter(path.join(dir, file))
       if (fm.benchmark !== true) continue
-      const date = fm.date ? String(fm.date).slice(0, 10) : ''
+      const date = fm.date instanceof Date
+        ? fm.date.toISOString().slice(0, 10)
+        : fm.date ? String(fm.date).slice(0, 10) : ''
       reports.push({ slug, title: fm.title || slug, date })
     }
   }
