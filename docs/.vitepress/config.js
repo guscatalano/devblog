@@ -30,6 +30,31 @@ function loadTools() {
   return tools
 }
 
+function benchmarksSidebar() {
+  const dir = path.resolve(__dirname, '../benchmarks')
+  const reports = []
+  if (fs.existsSync(dir)) {
+    for (const file of fs.readdirSync(dir)) {
+      if (!file.endsWith('.md') || file === 'index.md') continue
+      const slug = file.replace(/\.md$/, '')
+      const fm = readFrontmatter(path.join(dir, file))
+      if (fm.benchmark !== true) continue
+      const date = fm.date ? String(fm.date).slice(0, 10) : ''
+      reports.push({ slug, title: fm.title || slug, date })
+    }
+  }
+  reports.sort((a, b) => b.date.localeCompare(a.date))
+  return [
+    {
+      text: 'Benchmarks',
+      items: [
+        { text: 'Overview', link: '/benchmarks/' },
+        ...reports.map((r) => ({ text: r.title, link: `/benchmarks/${r.slug}` }))
+      ]
+    }
+  ]
+}
+
 function gtoolsSidebars() {
   const tools = loadTools()
   const baseSection = {
@@ -64,6 +89,7 @@ export default {
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/posts/simple-event-viewer' },
       { text: 'GTools', link: '/gtools/' },
+      { text: 'Benchmarks', link: '/benchmarks/' },
       { text: 'About', link: '/about' },
       { text: 'Privacy', link: '/privacy/' },
       { text: 'Security', link: '/security/' }
@@ -123,6 +149,7 @@ export default {
           ]
         }
       ],
+      '/benchmarks/': benchmarksSidebar(),
       ...gtoolsSidebars()
     },
     socialLinks: [
