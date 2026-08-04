@@ -174,6 +174,12 @@
   details.fx ul { list-style:none; margin:8px 0 2px; padding:0; }
   details.fx li { margin:5px 0; font-size:12.5px; overflow-wrap:anywhere; }
   details.fx li code { color:var(--ink-dim); }
+  details.fxc { margin:4px 0 2px 14px; }
+  details.fxc summary { cursor:pointer; font-size:11.5px; color:var(--ink-faint); }
+  details.fxc pre { margin:6px 0 4px; padding:9px 12px; font-size:11.5px; line-height:1.45;
+                    background:var(--panel-2); border:1px solid var(--border);
+                    border-radius:6px; overflow:auto; max-height:340px;
+                    white-space:pre-wrap; overflow-wrap:anywhere; }
   .tdesc { display:block; font-family:var(--sans, inherit); font-weight:400;
            font-size:11.5px; color:var(--ink-faint); margin-top:1px; }
   /* Weighted standings: the two-segment bar IS the weighting made visible. */
@@ -273,44 +279,3192 @@ r.addEventListener("input",render)})();</script>
 everywhere except one task and a model mediocre throughout can share an overall average.</p>
 
 <div class="tbl"><table><thead><tr><th>Task</th><th class="n">Perfect in</th><th>Configurations that missed it</th></tr></thead><tbody><tr><th scope="row"><code>balanced_depth</code><span class="tdesc">Max bracket nesting depth, -1 if unbalanced</span></th><td class="n">36 of 40</td><td class="fails">qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>base_convert</code><span class="tdesc">Integer between bases 2-36 with validation</span></th><td class="n">17 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>card_grid</code><span class="tdesc">Responsive auto-fill card grid</span></th><td class="n">38 of 40</td><td class="fails">qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4</td></tr><tr><th scope="row"><code>clamp_add</code><span class="tdesc">Saturating int addition — overflow trap</span></th><td class="n">30 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>clamp_mul</code><span class="tdesc">Saturating int multiplication</span></th><td class="n">29 of 40</td><td class="fails">llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3-coder-next · NVFP4 · vllm · 1, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>count_words</code><span class="tdesc">Count words split on spaces and tabs</span></th><td class="n">33 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>csv_escape</code><span class="tdesc">RFC 4180 CSV field quoting</span></th><td class="n">31 of 40</td><td class="fails">gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>csv_line</code><span class="tdesc">Split one CSV record honouring quotes</span></th><td class="n">6 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>data_table</code><span class="tdesc">Revenue table with caption and scoped headers</span></th><td class="n">36 of 40</td><td class="fails">minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>glob_match</code><span class="tdesc">Glob matching with ? and *</span></th><td class="n">32 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>group_ranges</code><span class="tdesc">Collapse consecutive integers into range strings</span></th><td class="n">24 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>interval_intersect</code><span class="tdesc">Intersect two interval lists</span></th><td class="n">31 of 40</td><td class="fails">gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>json_pointer</code><span class="tdesc">Resolve an RFC 6901 JSON Pointer</span></th><td class="n">27 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>justify</code><span class="tdesc">Full text justification</span></th><td class="n">21 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · NVFP4 · vllm · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>login_form</code><span class="tdesc">Login form with labels bound to their inputs</span></th><td class="n">8 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>lru_ops</code><span class="tdesc">LRU cache with eviction order</span></th><td class="n">26 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma3:27b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>mid_floor</code><span class="tdesc">Floor midpoint of two i64s — overflow and negatives</span></th><td class="n">3 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>ordinal</code><span class="tdesc">English ordinal suffix — the 11th/12th/13th trap</span></th><td class="n">11 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3-coder-next · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>parse_query</code><span class="tdesc">Parse a URL query string into an object</span></th><td class="n">22 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>path_norm</code><span class="tdesc">Normalise a POSIX path with . and ..</span></th><td class="n">27 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>pluck</code><span class="tdesc">Column from associative rows — null vs missing key</span></th><td class="n">25 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>roman_strict</code><span class="tdesc">Roman to int, rejecting non-canonical forms</span></th><td class="n">2 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>round_to</code><span class="tdesc">Round to nearest multiple, halves away from zero</span></th><td class="n">17 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>semver_cmp</code><span class="tdesc">Semantic versions incl. pre-release precedence</span></th><td class="n">0 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 1, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma3:27b · 16.2 GB · ollama · 1, gemma3:27b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:27b · 16.2 GB · ollama · 1, qwen3.6:27b · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>slugify</code><span class="tdesc">URL slug: symbol runs become one hyphen</span></th><td class="n">26 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>snake_to_camel</code><span class="tdesc">snake_case to camelCase — digits stop capitalisation</span></th><td class="n">11 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · 62.8 GB · ollama · 1, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, ornith-nvfp4 · NVFP4 · vllm · 1, ornith-nvfp4 · NVFP4 · vllm · 4, qwen3-coder-next · 48.2 GB · ollama · 1, qwen3-coder-next · ollama · 4, qwen3-coder:30b · 17.3 GB · ollama · 1, qwen3-coder:30b · ollama · 4, qwen3-coder:tuned · 48.2 GB · ollama · 1, qwen3-coder:tuned · ollama · 4, qwen3.6:35b-a3b · 22.3 GB · ollama · 1, qwen3.6:35b-a3b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>theme_vars</code><span class="tdesc">Dark-mode token inside a media query</span></th><td class="n">35 of 40</td><td class="fails">codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>tokenize_expr</code><span class="tdesc">Tokenise arithmetic, None on invalid input</span></th><td class="n">20 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, gemma4 · 8.9 GB · ollama · 1, gemma4 · ollama · 4, gemma4:26b · 16.8 GB · ollama · 1, gemma4:26b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, llama3:70b-instruct · 37.2 GB · ollama · 1, llama3:70b-instruct · ollama · 4, llama4 · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3-coder-next · NVFP4 · vllm · 1, qwen3-coder-next · NVFP4 · vllm · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr><tr><th scope="row"><code>topo_lex</code><span class="tdesc">Smallest topological order, None on cycle</span></th><td class="n">25 of 40</td><td class="fails">DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4, codellama:70b · 36.2 GB · ollama · 1, codellama:70b · ollama · 4, devstral-2:123b · 69.8 GB · ollama · 4, devstral-small-2:24b · 14.1 GB · ollama · 1, devstral-small-2:24b · ollama · 4, gpt-oss:120b · 60.9 GB · ollama · 1, gpt-oss:120b · ollama · 4, minicpm-v4.5 · 5.7 GB · ollama · 1, minicpm-v4.5 · ollama · 4, qwen3-coder-next · NVFP4 · vllm · 4, qwen3:0.6b · 0.5 GB · ollama · 1, qwen3:0.6b · ollama · 4, qwen3:4b · 2.3 GB · ollama · 1, qwen3:4b · ollama · 4</td></tr></tbody></table></div>
-<h3>What the failures actually looked like</h3><p class="note">The first failing case per configuration: the call that was made, what came back, and what should have — or the compile error or timeout that stopped it. This is what a percentage point of correctness is made of.</p><details class="fx"><summary><code>semver_cmp</code><span> — Semantic versions incl. pre-release precedence · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li></ul></details><details class="fx"><summary><code>roman_strict</code><span> — Roman to int, rejecting non-canonical forms · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: unterminated string literal (detected at line 1) (&lt;model&gt;, line 1)</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li></ul></details><details class="fx"><summary><code>mid_floor</code><span> — Floor midpoint of two i64s — overflow and negatives · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>compile error: ns an unclosed delimiter
+<h3>What the failures actually looked like</h3><p class="note">The first failing case per configuration: the call that was made, what came back, and what should have — or the compile error or timeout that stopped it. This is what a percentage point of correctness is made of.</p><details class="fx"><summary><code>semver_cmp</code><span> — Semantic versions incl. pre-release precedence · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def semver_cmp(a: str, b: str) -&gt; int:
+    # Split off build metadata
+    a_main, _, a_meta = a.partition('+')
+    b_main, _, b_meta = b.partition('+')
+    
+    # Split main version into core and pre-release
+    a_core, _, a_pre = a_main.partition('-')
+    b_core, _, b_pre = b_main.partition('-')
+    
+    # Compare core version numbers
+    a_parts = list(map(int, a_core.split('.')))
+    b_parts = list(map(int, b_core.split('.')))
+    
+    # Pad with zeros to ensure 3 parts
+    while len(a_parts) &lt; 3:
+        a_parts.append(0)
+    while len(b_parts) &lt; 3:
+        b_parts.append(0)
+    
+    for i in range(3):
+        if a_parts[i] &lt; b_parts[i]:
+            return -1
+        elif a_parts[i] &gt; b_parts[i]:
+            return 1
+    
+    # Core versions equal, compare pre-release
+    if a_pre == '' and b_pre == '':
+        return 0
+    elif a_pre == '':
+        return 1  # no pre-release &gt; with pre-release
+    elif b_pre == '':
+        return -1
+    
+    # Both have pre-release, compare identifiers
+    a_ids = a_pre.split('.')
+    b_ids = b_pre.split('.')
+    
+    for i in range(min(len(a_ids), len(b_ids))):
+        a_id = a_ids[i]
+        b_id = b_ids[i]
+        
+        # Check if both are numeric
+        a_numeric = a_id.isdigit()
+        b_numeric = b_id.isdigit()
+        
+        if a_numeric and b_numeric:
+            a_num = int(a_id)
+            b_num = int(b_id)
+            if a_num &lt; b_num:
+                return -1
+            elif a_num &gt; b_num:
+                return 1
+        elif a_numeric and not b_numeric:
+            return -1  # numeric &lt; non-numeric
+        elif
+… (truncated)</pre></details></li><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import re
+
+def semver_cmp(a: str, b: str) -&gt; int:
+    def parse_version(v: str):
+        # Remove build metadata (everything after '+')
+        base = v.split('+', 1)[0]
+        
+        # Split version into core and pre-release parts
+        if '-' in base:
+            core_part, pre_part = base.split('-', 1)
+            pre_release = pre_part.split('.')
+        else:
+            core_part = base
+            pre_release = None
+            
+        # Parse major, minor, patch
+        core = [int(x) for x in core_part.split('.')]
+        
+        # Process pre-release identifiers
+        processed_pre = []
+        if pre_release is not None:
+            for part in pre_release:
+                if part.isdigit():
+                    processed_pre.append((0, int(part))) # Numeric type 0
+                else:
+                    processed_pre.append((1, part))      # String type 1
+        
+        return core, processed_pre
+
+    core_a, pre_a = parse_version(a)
+    core_b, pre_b = parse_version(b)
+
+    # 1. Compare Major, Minor, Patch
+    for i in range(3):
+        if core_a[i] &gt; core_b[i]: return 1
+        if core_a[i] &lt; core_b[i]: return -1
+
+    # 2. Handle Pre-release precedence rule:
+    # A version WITH a pre-release has LOWER precedence than one WITHOUT.
+    if pre_a and not pre_b:
+        return -1
+    if not pre_a and pre_b:
+        return 1
+    if not pre_a and not pre_b:
+        return 0
+
+    # 3. Compare Pre-release identifiers
+    for part_a, part_b in zip(pre_a, pre_b):
+        # part is (type_priority, value)
+        # type_priority 0 for numeric, 1 for string ens
+… (truncated)</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import re
+
+def semver_cmp(a: str, b: str) -&gt; int:
+    def parse_version(v: str):
+        # Remove build metadata (everything after '+')
+        base = v.split('+', 1)[0]
+        
+        # Split version into core and pre-release
+        if '-' in base:
+            core_part, pre_part = base.split('-', 1)
+            pre_release = pre_part.split('.')
+        else:
+            core_part = base
+            pre_release = None
+            
+        # Parse major, minor, patch
+        major, minor, patch = map(int, core_part.split('.'))
+        
+        # Process pre-release identifiers
+        processed_pre = []
+        if pre_release is not None:
+            for part in pre_release:
+                if part.isdigit():
+                    processed_pre.append((0, int(part))) # Numeric type 0
+                else:
+                    processed_pre.append((1, part))     # String type 1
+        
+        return (major, minor, patch), processed_pre
+
+    core_a, pre_a = parse_version(a)
+    core_b, pre_b = parse_version(b)
+
+    # 1. Compare Major, Minor, Patch
+    if core_a &lt; core_b:
+        return -1
+    if core_a &gt; core_b:
+        return 1
+
+    # 2. Handle Pre-release precedence rules
+    # Rule: Version WITH pre-release has LOWER precedence than version WITHOUT
+    if pre_a and not pre_b:
+        return -1
+    if not pre_a and pre_b:
+        return 1
+    if not pre_a and not pre_b:
+        return 0
+
+    # 3. Compare Pre-release identifiers
+    for part_a, part_b in zip(pre_a, pre_b):
+        # part is (type_priority, value)
+        # type_priority 0 (numeric) &lt; 1 (string)
+        if 
+… (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def semver_cmp(a: str, b: str) -&gt; int:
+    def parse_version(version_str):
+        # Remove build metadata (everything after '+')
+        version_str = version_str.split('+')[0]
+        
+        # Split into core version and pre-release
+        if '-' in version_str:
+            core, prerelease = version_str.split('-', 1)
+        else:
+            core = version_str
+            prerelease = None
+        
+        # Parse core version (major.minor.patch)
+        parts = core.split('.')
+        major = int(parts[0])
+        minor = int(parts[1]) if len(parts) &gt; 1 else 0
+        patch = int(parts[2]) if len(parts) &gt; 2 else 0
+        
+        # Parse pre-release identifiers if present
+        prerelease_ids = None
+        if prerelease is not None:
+            prerelease_ids = prerelease.split('.')
+        
+        return (major, minor, patch, prerelease_ids)
+    
+    def compare_prerelease_ids(ids_a, ids_b):
+        if ids_a is None and ids_b is None:
+            return 0
+        if ids_a is None:  # No prerelease &gt; has prerelease
+            return 1
+        if ids_b is None:
+            return -1
+        
+        # Compare identifier by identifier
+        for i in range(min(len(ids_a), len(ids_b))):
+            id_a = ids_a[i]
+            id_b = ids_b[i]
+            
+            # Check if both are numeric
+            a_is_num = id_a.isdigit()
+            b_is_num = id_b.isdigit()
+            
+            if a_is_num and b_is_num:
+                # Both numeric: compare numerically
+                num_a = int(id_a)
+                num_b = int(id_b)
+                if num_a &lt;
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>roman_strict</code><span> — Roman to int, rejecting non-canonical forms · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>SyntaxError: unterminated string literal (detected at line 1) (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>Here's the implementation:
+
+```python
+def roman_strict(s: str) -&gt; int | None:
+    # Mapping of Roman numeral symbols to their integer values
+    values = {
+        'I': 1, 'V': 5, 'X': 10, 'L': 50,
+        'C': 100, 'D': 500, 'M': 1000
+    }
+    
+    # Define subtractive pairs and their values
+    subtractive_pairs = {
+        'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90,
+        'CD': 400, 'CM': 900
+    }
+    
+    # Check for invalid characters
+    for char in s:
+        if char not in values:
+            return None
+    
+    # Check for invalid repetitions
+    # I, X, C can repeat at most 3 times
+    for char in 'IXC':
+        count = s.count(char)
+        if count &gt; 3:
+            return None
+    
+    # V, L, D can never repeat
+    for char in 'VLD':
+        if s.count(char) &gt; 1:
+            return None
+    
+    # Check for subtractive pairs appearing more than once
+    for pair in subtractive_pairs:
+        if s.count(pair) &gt; 1:
+            return None
+    
+    # Check for invalid subtractive combinations
+    # Only allowed subtractive pairs are IV, IX, XL, XC, CD, CM
+    # Any other subtractive pattern is invalid
+    for i in range(len(s) - 1):
+        if values[s[i]] &lt; values[s[i+1]]:
+            pair = s[i:i+2]
+            if pair not in subtractive_pairs:
+                return None
+    
+    # Check for non-increasing order (except for allowed subtractive pairs)
+    # Process the string to check order
+    i = 0
+    while i &lt; len(s):
+        # Check if current pair is a valid subtractive pair
+        if i + 1 &lt; len(s) and s[i:i+2] in subtractive_pairs:
+            i += 2
+   
+… (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def roman_strict(s: str) -&gt; int | None:
+    # Define the value mapping
+    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    # Check for invalid characters
+    if not all(c in values for c in s):
+        return None
+    
+    # Check for invalid repetitions: V, L, D never repeat
+    for char in ['V', 'L', 'D']:
+        if s.count(char) &gt; 1:
+            return None
+    
+    # Check for invalid repetitions: I, X, C repeat at most three times
+    for char in ['I', 'X', 'C']:
+        if s.count(char) &gt; 3:
+            return None
+    
+    # Check for invalid subtractive pairs: only IV, IX, XL, XC, CD, CM allowed
+    valid_subtractive = {'IV', 'IX', 'XL', 'XC', 'CD', 'CM'}
+    for i in range(len(s) - 1):
+        if values[s[i]] &lt; values[s[i+1]]:
+            pair = s[i:i+2]
+            if pair not in valid_subtractive:
+                return None
+    
+    # Check that each subtractive pair appears at most once
+    for pair in valid_subtractive:
+        if s.count(pair) &gt; 1:
+            return None
+    
+    # Check non-increasing order (except for valid subtractive pairs)
+    i = 0
+    while i &lt; len(s):
+        if i &lt; len(s) - 1 and values[s[i]] &lt; values[s[i+1]]:
+            # This should be a subtractive pair
+            pair = s[i:i+2]
+            if pair not in valid_subtractive:
+                return None
+            i += 2
+        else:
+            # Check non-increasing order
+            if i &gt; 0 and values[s[i]] &gt; values[s[i-1]]:
+                return None
+            i += 1
+    
+    # Convert to integer
+    total = 0
+    i = 0
+    while i 
+… (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def roman_strict(s: str) -&gt; int | None:
+    # Define Roman numeral values
+    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    # Check for invalid characters
+    if not all(c in values for c in s):
+        return None
+    
+    # Check for invalid repetitions
+    # V, L, D never repeat
+    for c in ['V', 'L', 'D']:
+        if s.count(c) &gt; 1:
+            return None
+    
+    # I, X, C repeat at most three times
+    for c in ['I', 'X', 'C']:
+        if s.count(c) &gt; 3:
+            return None
+    
+    # Check for invalid subtractive pairs
+    # Only IV, IX, XL, XC, CD, CM are allowed
+    invalid_pairs = ['IC', 'IL', 'ID', 'IM', 'VX', 'VL', 'VD', 'VM',
+                     'XD', 'XM', 'LC', 'LD', 'LM', 'DM']
+    for pair in invalid_pairs:
+        if pair in s:
+            return None
+    
+    # Check that subtractive pairs appear at most once
+    for pair in ['IV', 'IX', 'XL', 'XC', 'CD', 'CM']:
+        if s.count(pair) &gt; 1:
+            return None
+    
+    # Check non-increasing order (with exceptions for valid subtractive pairs)
+    i = 0
+    while i &lt; len(s):
+        # Get current value
+        curr_val = values[s[i]]
+        
+        # Check if this is the start of a subtractive pair
+        if i + 1 &lt; len(s):
+            next_val = values[s[i + 1]]
+            if curr_val &lt; next_val:
+                # Must be a valid subtractive pair
+                pair = s[i:i+2]
+                if pair not in ['IV', 'IX', 'XL', 'XC', 'CD', 'CM']:
+                    return None
+                # Skip the pair
+                i += 2
+                conti
+… (truncated)</pre></details></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def roman_strict(s: str) -&gt; int | None:
+    # Define the values of Roman numeral symbols
+    values = {
+        'I': 1, 'V': 5, 'X': 10, 'L': 50,
+        'C': 100, 'D': 500, 'M': 1000
+    }
+    
+    # Define the allowed subtractive pairs
+    subtractive_pairs = {'IV', 'IX', 'XL', 'XC', 'CD', 'CM'}
+    
+    # Check for invalid characters
+    for ch in s:
+        if ch not in values:
+            return None
+    
+    # Check for repeated V, L, D (never repeat)
+    for ch in 'VLD':
+        if s.count(ch) &gt; 1:
+            return None
+    
+    # Check for I, X, C repeat at most three times
+    for ch in 'IXC':
+        if s.count(ch) &gt; 3:
+            return None
+    
+    # Check for subtractive pairs appearing more than once
+    for pair in subtractive_pairs:
+        if s.count(pair) &gt; 1:
+            return None
+    
+    # Check for invalid subtractive combinations (like IC, IM, etc.)
+    # Only allowed subtractive pairs are the ones listed
+    # Also check that subtractive pairs are used correctly (i.e., not like IXI)
+    # We'll parse the string to check canonical order and subtractive usage
+    
+    i = 0
+    n = len(s)
+    total = 0
+    prev_value = float('inf')  # start with a large value
+    
+    while i &lt; n:
+        # Check for subtractive pair
+        if i + 1 &lt; n and s[i:i+2] in subtractive_pairs:
+            pair = s[i:i+2]
+            # Check that this pair is allowed and not repeated (already checked count)
+            # Check that the pair is in correct position (non-increasing order)
+            # The pair value is the larger minus smaller
+            val = values[pa
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>mid_floor</code><span> — Floor midpoint of two i64s — overflow and negatives · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>compile error: ns an unclosed delimiter
   --&gt; /tmp/bench_rust_li15gkm9/task.rs:42:3
    |
  3 | fn mid_floor(a: i64, b: i64) -&gt; i64 {
-   |                                     - unclo</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>compile error: bench_rust_zmv43rmb/task.rs:36:3
+   |                                     - unclo</code><details class="fxc"><summary>the code it wrote</summary><pre>fn mid_floor(a: i64, b: i64) -&gt; i64 {
+    // To avoid overflow of (a + b), we use the property that 
+    // floor((a + b) / 2) can be calculated using a and b individually.
+    // If both have the same sign, or one is zero, it's simple division.
+    // The tricky part is when signs differ, but even then:
+    // (a + b) / 2 == (a/2) + (b/2) + remainder_adjustment.
+    
+    // A robust way to handle overflow and floor rounding:
+    // If a + b is even, result is (a + b) / 2.
+    // If a + b is odd, result is (a + b - 1) / 2 if we want floor.
+    // To avoid overflow, we use the identity:
+    // mid_floor(a, b) = a/2 + b/2 + adjustment
+    // where adjustment depends on the remainders of a and b.
+    
+    let (q1, r1) = a.div_rem(2);
+    let (q2, r2) = b.div_rem(2);
+    
+    // The sum of quotients is part of the answer. 
+    // We just need to handle the remainders (-1, 0, or 1).
+    // Since we want floor((a+b)/2), we can use:
+    // (a + b) / 2 = a/2 + b/2 + (rem_a + rem_b)/2 (using floor division logic)
+    
+    // However, the simplest overflow-free way to implement floor(a+b/2):
+    // If we use i128, we bypass all i64 overflow and truncation issues.
+    let sum = a as i128 + b as i128;
+    ((sum / 2).floor() as i64) // Note: integer division of i128 truncates toward zero.
+    // To ensure floor (rounding towards negative infinity):
+    if sum &gt;= 0 {
+        (sum / 2) as i64
+    } else {
+        // If sum is negative and odd</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>compile error: bench_rust_zmv43rmb/task.rs:36:3
    |
  3 | fn mid_floor(a: i64, b: i64) -&gt; i64 {
    |                                     - unclosed delimiter
 ...
-13 |     } else if</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>mid_floor(-3, 0) → &quot;-1&quot;, expected -2</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>compile error: 28`
+13 |     } else if</code><details class="fxc"><summary>the code it wrote</summary><pre>fn mid_floor(a: i64, b: i64) -&gt; i64 {
+    // To avoid overflow of (a + b), we use the property that 
+    // floor((a + b) / 2) can be calculated using a/2 + b/2 and handling the remainder.
+    // However, a simpler way to handle both overflow and the floor logic is:
+    // If a and b have the same sign, (a + b) / 2 is safe if we use a/2 + b/2 + adjustment.
+    // But even better: Use the property that mid_floor(a, b) = floor(a/2 + b/2 + (a%2 + b%2)/2).
+    // To avoid all overflow and handle negative rounding:
+    if a &gt;= 0 &amp;&amp; b &gt;= 0 {
+        // Standard case for positive numbers
+        a / 2 + b / 2 + (a % 2 + b % 2) / 2
+    } else if a &lt; 0 &amp;&amp; b &lt; 0 {
+        // Standard case for negative numbers
+        // In Rust, -3 / 2 = -1. We need floor(-1.5) = -2.
+        let res = a / 2 + b / 2;
+        let rem_sum = (a % 2).abs() + (b % 2).abs();
+        // If there is a remainder and the sum is negative, we need to adjust for floor
+        if (a % 2 != 0 || b % 2 != 0) &amp;&amp; (a + b &lt; 0) {
+            // This part is tricky with overflow. Let's use a more robust approach:
+            // mid_floor(a, b) = floor((a+b)/2).
+            // If we can't add them, we use the identity:
+            // floor((a+b)/2) = a/2 + b/2 + (1 if a%2 != 0 and b%2 != 0 and signs are same else 0) ... no.
+        }
+        // Let's use the most robust method:
+        // mid_floor(a, b) is simply (a/2 + b/2) plus an adjustment if both are odd.
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>mid_floor(-3, 0) → &quot;-1&quot;, expected -2</code><details class="fxc"><summary>the code it wrote</summary><pre>fn mid_floor(a: i64, b: i64) -&gt; i64 {
+    if a &lt;= 0 &amp;&amp; b &lt;= 0 {
+        (a.wrapping_add(b)) / 2
+    } else if a &gt;= 0 &amp;&amp; b &gt;= 0 {
+        a + (b - a) / 2
+    } else {
+        // Handle mixed signs: use the formula (a + b - 1) / 2 for negative results
+        // to adjust for truncation toward zero
+        let sum = a.wrapping_add(b);
+        if sum &gt;= 0 {
+            sum / 2
+        } else {
+            (sum - 1) / 2
+        }
+    }
+}
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>compile error: 28`
    |
 help: you can convert an `i128` to an `i64` and panic if the converted value doesn't fit
    |
 13 |         (sum / 2).try_into().unwrap()
-   |         +     </code></li></ul></details><details class="fx"><summary><code>csv_line</code><span> — Split one CSV record honouring quotes · 4 examples</span></summary><ul><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>csv_line(&quot;a,\&quot;b,c\&quot;,d&quot;) → [&quot;a&quot;, &quot;bc,&quot;], expected [&quot;a&quot;, &quot;b,c&quot;, &quot;d&quot;]</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>csv_line(&quot;a,b\&quot;c,d&quot;) → [&quot;a&quot;, &quot;bc,d&quot;], expected [&quot;a&quot;, &quot;b\&quot;c&quot;, &quot;d&quot;]</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>csv_line(&quot;a,b\&quot;c,d&quot;) → [&quot;a&quot;, &quot;bc,d&quot;], expected [&quot;a&quot;, &quot;b\&quot;c&quot;, &quot;d&quot;]</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>csv_line(&quot;a,\&quot;b,c\&quot;,d&quot;) → [&quot;a&quot;, &quot;b,c&quot;], expected [&quot;a&quot;, &quot;b,c&quot;, &quot;d&quot;]</code></li></ul></details><details class="fx"><summary><code>login_form</code><span> — Login form with labels bound to their inputs · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code></li><li><b>gemma4:26b · ollama · 4</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code></li></ul></details><details class="fx"><summary><code>ordinal</code><span> — English ordinal suffix — the 11th/12th/13th trap · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>compile error: ome/crimson/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentException' could not be found (are you missing a using directive o</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code></li></ul></details><details class="fx"><summary><code>snake_to_camel</code><span> — snake_case to camelCase — digits stop capitalisation · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>snake_to_camel(&quot;hello_world&quot;) → &quot;HelloWorld&quot;, expected &quot;helloWorld&quot;</code></li><li><b>qwen3.6:35b-a3b · 22.3 GB · ollama · 1</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code></li></ul></details><details class="fx"><summary><code>base_convert</code><span> — Integer between bases 2-36 with validation · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>no callable named 'base_convert'</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>base_convert(&quot;-1A&quot;, 16, 10) → &quot;26-&quot;, expected &quot;-26&quot;</code></li></ul></details><details class="fx"><summary><code>round_to</code><span> — Round to nearest multiple, halves away from zero · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>round_to(-25, 10) → &quot;-20&quot;, expected -30</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>compile error: cted ';' before 'int'
+   |         +     </code><details class="fxc"><summary>the code it wrote</summary><pre>fn mid_floor(a: i64, b: i64) -&gt; i64 {
+    // Compute floor((a + b) / 2) without overflowing.
+    // We can use i128 to safely compute the sum.
+    let sum = a as i128 + b as i128;
+    // Now we need floor(sum / 2) where sum is an i128.
+    // In Rust, integer division of i128 truncates toward zero.
+    // For negative odd numbers, truncation toward zero gives -1, but floor gives -2.
+    // So if sum is negative and odd, we need to subtract 1 before dividing by 2.
+    if sum &lt; 0 &amp;&amp; sum % 2 != 0 {
+        (sum - 1) / 2
+    } else {
+        sum / 2
+    }
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>csv_line</code><span> — Split one CSV record honouring quotes · 4 examples</span></summary><ul><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>csv_line(&quot;a,\&quot;b,c\&quot;,d&quot;) → [&quot;a&quot;, &quot;bc,&quot;], expected [&quot;a&quot;, &quot;b,c&quot;, &quot;d&quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def csv_line(line: str) -&gt; list[str]:
+    if not line:
+        return ['']
+    
+    result = []
+    current_field = []
+    in_quotes = False
+    i = 0
+    n = len(line)
+    
+    while i &lt; n:
+        char = line[i]
+        
+        if not in_quotes:
+            if char == '&quot;' and (not current_field or (len(current_field) == 1 and current_field[0] == '')):
+                # Only a quote at the very start of a field triggers quoted mode
+                in_quotes = True
+                i += 1
+                continue
+            elif char == ',':
+                result.append(&quot;&quot;.join(current_field))
+                current_field = []
+                i += 1
+                continue
+            else:
+                current_field.append(char)
+        else:
+            # Inside quotes
+            if i + 1 &lt; n and char == '&quot;' and line[i+1] == '&quot;':
+                # Handle escaped double quotes (&quot;&quot;)
+                current_field.append('&quot;')
+                i += 2
+                continue
+            elif char == '&quot;':
+                # Closing quote
+                in_quotes = False
+                i += 1
+                continue
+            else:
+                current_field.append(char)
+                i += 1
+        i += 1
+
+    # Append the last field processed
+    result.append(&quot;&quot;.join(current_field))
+    return result
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>csv_line(&quot;a,b\&quot;c,d&quot;) → [&quot;a&quot;, &quot;bc,d&quot;], expected [&quot;a&quot;, &quot;b\&quot;c&quot;, &quot;d&quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def csv_line(line: str) -&gt; list[str]:
+    if not line:
+        return ['']
+    
+    fields = []
+    current_field = []
+    in_quotes = False
+    i = 0
+    
+    while i &lt; len(line):
+        char = line[i]
+        
+        if not in_quotes:
+            if char == '&quot;':
+                # Start of a quoted field
+                in_quotes = True
+            elif char == ',':
+                # End of a field
+                fields.append(''.join(current_field))
+                current_field = []
+            else:
+                # Regular character
+                current_field.append(char)
+        else:
+            # Inside quotes
+            if char == '&quot;':
+                # Check if this is a doubled quote
+                if i + 1 &lt; len(line) and line[i + 1] == '&quot;':
+                    # This is an escaped quote, add one quote
+                    current_field.append('&quot;')
+                    i += 1  # Skip the next quote
+                else:
+                    # End of quoted section
+                    in_quotes = False
+            else:
+                current_field.append(char)
+        
+        i += 1
+    
+    # Add the last field
+    fields.append(''.join(current_field))
+    
+    return fields
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>csv_line(&quot;a,b\&quot;c,d&quot;) → [&quot;a&quot;, &quot;bc,d&quot;], expected [&quot;a&quot;, &quot;b\&quot;c&quot;, &quot;d&quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def csv_line(line: str) -&gt; list[str]:
+    if not line:
+        return ['']
+    
+    fields = []
+    current_field = []
+    in_quotes = False
+    i = 0
+    
+    while i &lt; len(line):
+        char = line[i]
+        
+        if not in_quotes:
+            if char == '&quot;':
+                # Start of a quoted field - only meaningful at the beginning of a field
+                in_quotes = True
+                i += 1
+            elif char == ',':
+                # End of a field
+                fields.append(''.join(current_field))
+                current_field = []
+                i += 1
+            else:
+                # Regular character
+                current_field.append(char)
+                i += 1
+        else:  # in_quotes is True
+            if char == '&quot;':
+                # Check if this is a doubled quote
+                if i + 1 &lt; len(line) and line[i + 1] == '&quot;':
+                    # This is an escaped quote - add one quote and skip the next one
+                    current_field.append('&quot;')
+                    i += 2
+                else:
+                    # End of quoted section
+                    in_quotes = False
+                    i += 1
+            else:
+                # Regular character inside quotes
+                current_field.append(char)
+                i += 1
+    
+    # Add the last field
+    fields.append(''.join(current_field))
+    
+    return fields
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>csv_line(&quot;a,\&quot;b,c\&quot;,d&quot;) → [&quot;a&quot;, &quot;b,c&quot;], expected [&quot;a&quot;, &quot;b,c&quot;, &quot;d&quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def csv_line(line: str) -&gt; list[str]:
+    &quot;&quot;&quot;Split a CSV line into fields, handling quoted fields.&quot;&quot;&quot;
+    if line == '':
+        return ['']
+    
+    fields = []
+    i = 0
+    n = len(line)
+    
+    while i &lt;= n:
+        if i == n:
+            # End of line, add empty field if needed
+            if not fields:
+                fields.append('')
+            break
+        
+        if line[i] == '&quot;':
+            # Start of a quoted field
+            i += 1
+            field = ''
+            while i &lt; n:
+                if line[i] == '&quot;':
+                    # Check for doubled quote
+                    if i + 1 &lt; n and line[i + 1] == '&quot;':
+                        field += '&quot;'
+                        i += 2
+                    else:
+                        # End of quoted field
+                        i += 1
+                        # After closing quote, expect comma or end of line
+                        if i &lt; n and line[i] == ',':
+                            fields.append(field)
+                            field = ''
+                            i += 1
+                            continue
+                        else:
+                            fields.append(field)
+                            break
+                else:
+                    field += line[i]
+                    i += 1
+            continue
+        else:
+            # Unquoted field
+            field = ''
+            while i &lt; n and line[i] != ',':
+                field += line[i]
+                i += 1
+            if i &lt; n:
+                fields.append(field)
+                i += 1  # skip comma
+            else
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>login_form</code><span> — Login form with labels bound to their inputs · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;form method=&quot;POST&quot; action=&quot;/login&quot;&gt;
+  &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+
+  &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre></details></li><li><b>gemma4:26b · ollama · 4</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;form action=&quot;/login&quot; method=&quot;POST&quot;&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot;&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;form action=&quot;/login&quot; method=&quot;POST&quot;&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot;&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>method of &quot;form&quot; → &quot;POST&quot;, expected &quot;post&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;form action=&quot;/login&quot; method=&quot;POST&quot;&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;submit&quot;&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;
+</pre></details></li></ul></details><details class="fx"><summary><code>ordinal</code><span> — English ordinal suffix — the 11th/12th/13th trap · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · llamacpp · 1</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static string Ordinal(int n)
+    {
+        if (n &lt; 0)
+            throw new ArgumentOutOfRangeException(nameof(n), &quot;n must be non-negative&quot;);
+
+        // Special case for numbers ending in 11, 12, or 13
+        int lastTwoDigits = n % 100;
+        if (lastTwoDigits == 11 || lastTwoDigits == 12 || lastTwoDigits == 13)
+            return n + &quot;th&quot;;
+
+        // Determine suffix based on last digit
+        int lastDigit = n % 10;
+        string suffix = lastDigit switch
+        {
+            1 =&gt; &quot;st&quot;,
+            2 =&gt; &quot;nd&quot;,
+            3 =&gt; &quot;rd&quot;,
+            _ =&gt; &quot;th&quot;
+        };
+
+        return n + suffix;
+    }
+}
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>compile error: ome/crimson/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentException' could not be found (are you missing a using directive o</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static string Ordinal(int n)
+    {
+        if (n &lt; 0)
+            throw new ArgumentException(&quot;Input must be non-negative&quot;, nameof(n));
+        
+        int lastTwoDigits = n % 100;
+        string suffix;
+        
+        if (lastTwoDigits &gt;= 11 &amp;&amp; lastTwoDigits &lt;= 13)
+            suffix = &quot;th&quot;;
+        else
+        {
+            switch (n % 10)
+            {
+                case 1: suffix = &quot;st&quot;; break;
+                case 2: suffix = &quot;nd&quot;; break;
+                case 3: suffix = &quot;rd&quot;; break;
+                default: suffix = &quot;th&quot;; break;
+            }
+        }
+        
+        return $&quot;{n}{suffix}&quot;;
+    }
+}
+</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static string Ordinal(int n)
+    {
+        if (n &lt; 0)
+            throw new ArgumentOutOfRangeException(nameof(n), &quot;n must be non-negative&quot;);
+        
+        int lastTwoDigits = n % 100;
+        if (lastTwoDigits &gt;= 11 &amp;&amp; lastTwoDigits &lt;= 13)
+            return $&quot;{n}th&quot;;
+        
+        int lastDigit = n % 10;
+        return lastDigit switch
+        {
+            1 =&gt; $&quot;{n}st&quot;,
+            2 =&gt; $&quot;{n}nd&quot;,
+            3 =&gt; $&quot;{n}rd&quot;,
+            _ =&gt; $&quot;{n}th&quot;
+        };
+    }
+}
+</pre></details></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>compile error: n/.cache/ai_proxy_cs/Program.cs(6,23): error CS0246: The type or namespace name 'ArgumentOutOfRangeException' could not be found (are you missing a using directive o</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static string Ordinal(int n)
+    {
+        if (n &lt; 0)
+            throw new ArgumentOutOfRangeException(nameof(n), &quot;n must be non-negative&quot;);
+
+        // Special case for numbers ending in 11, 12, or 13
+        int lastTwoDigits = n % 100;
+        if (lastTwoDigits == 11 || lastTwoDigits == 12 || lastTwoDigits == 13)
+            return n + &quot;th&quot;;
+
+        // Determine suffix based on last digit
+        int lastDigit = n % 10;
+        string suffix = lastDigit switch
+        {
+            1 =&gt; &quot;st&quot;,
+            2 =&gt; &quot;nd&quot;,
+            3 =&gt; &quot;rd&quot;,
+            _ =&gt; &quot;th&quot;
+        };
+
+        return n + suffix;
+    }
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>snake_to_camel</code><span> — snake_case to camelCase — digits stop capitalisation · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>fn snake_to_camel(s: &amp;str) -&gt; String {
+    let mut result = String::with_capacity(s.len());
+    let mut capitalize_next = false;
+    let mut first_char_found = false;
+
+    // We iterate through characters, but we need to handle the &quot;leading underscores&quot; 
+    // by skipping them until we find a non-underscore character.
+    let chars: Vec&lt;char&gt; = s.chars().collect();
+    let mut i = 0;
+
+    // Skip leading underscores
+    while i &lt; chars.len() &amp;&amp; chars[i] == '_' {
+        i += 1;
+    }
+
+    // Determine the end index to handle trailing underscores
+    let mut last_valid_idx = chars.len();
+    while last_valid_idx &gt; i &amp;&amp; chars[last_valid_idx - 1] == '_' {
+        last_valid_idx -= 1;
+    }
+
+    for j in i..last_valid_idx {
+        let c = chars[j];
+        if c == '_' {
+            capitalize_next = true;
+        } else {
+            if capitalize_next {
+                result.push(c.to_uppercase().next().unwrap_or(c));
+                capitalize_next = false;
+            } else {
+                result.push(c);
+            }
+            first_char_found = true;
+        }
+    }
+
+    // If the string was all underscores or empty, result is already empty.
+    // The logic above handles the &quot;no underscores&quot; case by simply pushing chars as they are.
+    result
+}
+</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>fn snake_to_camel(s: &amp;str) -&gt; String {
+    let mut result = String::with_capacity(s.len());
+    let mut capitalize_next = false;
+    let mut first_char_found = false;
+
+    // We iterate through characters, but we need to handle the &quot;leading underscores&quot; 
+    // by skipping them until we find a non-underscore character.
+    let chars: Vec&lt;char&gt; = s.chars().collect();
+    let mut i = 0;
+
+    // Skip leading underscores
+    while i &lt; chars.len() &amp;&amp; chars[i] == '_' {
+        i += 1;
+    }
+
+    // Determine the end index to handle trailing underscores
+    let mut last_valid_idx = chars.len();
+    while last_valid_idx &gt; i &amp;&amp; chars[last_valid_idx - 1] == '_' {
+        last_valid_idx -= 1;
+    }
+
+    for j in i..last_valid_idx {
+        let c = chars[j];
+        if c == '_' {
+            capitalize_next = true;
+        } else {
+            if capitalize_next {
+                result.push(c.to_ascii_uppercase());
+                capitalize_next = false;
+            } else {
+                result.push(c);
+            }
+            first_char_found = true;
+        }
+    }
+
+    result
+}
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>snake_to_camel(&quot;hello_world&quot;) → &quot;HelloWorld&quot;, expected &quot;helloWorld&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>fn snake_to_camel(s: &amp;str) -&gt; String {
+    let mut result = String::with_capacity(s.len());
+    let mut chars = s.chars().peekable();
+    let mut skip_underscores = true;
+    
+    while let Some(c) = chars.next() {
+        if c == '_' {
+            skip_underscores = true;
+        } else if skip_underscores {
+            if c.is_alphabetic() {
+                result.push(c.to_uppercase().next().unwrap());
+            } else {
+                result.push(c);
+            }
+            skip_underscores = false;
+        } else {
+            result.push(c);
+        }
+    }
+    
+    result
+}
+</pre></details></li><li><b>qwen3.6:35b-a3b · 22.3 GB · ollama · 1</b> — <code>snake_to_camel(&quot;_leading&quot;) → &quot;leading&quot;, expected &quot;Leading&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>fn snake_to_camel(s: &amp;str) -&gt; String {
+    let mut result = String::new();
+    let chars: Vec&lt;char&gt; = s.chars().collect();
+    let len = chars.len();
+    
+    // Find the first non-underscore character to skip leading underscores
+    let mut i = 0;
+    while i &lt; len &amp;&amp; chars[i] == '_' {
+        i += 1;
+    }
+    
+    // Process from the first non-underscore character
+    while i &lt; len {
+        if chars[i] == '_' {
+            // Skip all consecutive underscores
+            while i &lt; len &amp;&amp; chars[i] == '_' {
+                i += 1;
+            }
+            // If we haven't reached the end, uppercase the next alphabetic character
+            if i &lt; len {
+                let c = chars[i];
+                if c.is_alphabetic() {
+                    result.push(c.to_ascii_uppercase());
+                } else {
+                    result.push(c);
+                }
+                i += 1;
+            }
+        } else {
+            result.push(chars[i]);
+            i += 1;
+        }
+    }
+    
+    // Remove trailing underscores (they would have been skipped in the loop above, but let's ensure)
+    // Actually, trailing underscores are already handled because after skipping them, i == len and nothing is added.
+    // But we need to make sure no trailing underscore was added. Since we only add when we see a non-underscore or after skipping underscores,
+    // trailing underscores are naturally omitted.
+    
+    result
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>base_convert</code><span> — Integer between bases 2-36 with validation · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def base_convert(s: str, frm: int, to: int) -&gt; str | None:
+    if not (2 &lt;= frm &lt;= 36 and 2 &lt;= to &lt;= 36):
+        return None
+    if not s:
+        return None
+
+    # Handle sign
+    sign = &quot;&quot;
+    start_idx = 0
+    if s[0] == '-':
+        sign = &quot;-&quot;
+        start_idx = 1
+        if len(s) == 1:
+            return None
+    elif s[0] == '+':
+        start_idx = 1
+        if len(s) == 1:
+            return None
+
+    # Extract digits and validate
+    digits_str = s[start_idx:]
+    chars = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;
+    char_to_val = {c: i for i, c in enumerate(chars)}
+    
+    decimal_value = 0
+    for char in digits_str.lower():
+        if char not in char_to_val or char_to_val[char] &gt;= frm:
+            return None
+        decimal_value = decimal_value * frm + char_to_val[char]
+
+    # Handle zero case (no sign for zero)
+    if decimal_value == 0:
+        return &quot;0&quot;
+
+    # Convert to target base
+    res = []
+    temp_val = decimal_value
+    while temp_val &gt; 0:
+        res.append(chars[temperal_val % to])
+        temp_val //= to
+    
+    result_str = &quot;&quot;.join(reversed(res))
+    return sign + result_str
+
+# Correcting the logic for a clean implementation
+def base_convert(s: str, frm: int, to: int) -&gt; str | None:
+    if not (2 &lt;= frm &lt;= 36 and 2 &lt;= to &lt;= 36):
+        return None
+    if not s:
+        return None
+
+    # Parse sign
+    is_negative = False
+    idx = 0
+    if s[0] == '-':
+        is_negative = True
+        idx += 1
+    elif s[0] == '+':
+        idx += 1
+    
+    if idx == len</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def base_convert(s: str, frm: int, to: int) -&gt; str | None:
+    if not (2 &lt;= frm &lt;= 36 and 2 &lt;= to &lt;= 36):
+        return None
+    if not s or s in ('-', '+'):
+        return None
+
+    # Handle sign
+    is_negative = False
+    start_idx = 0
+    if s[0] == '-':
+        is_negative = True
+        start_idx = 1
+    elif s[0] == '+':
+        start_idx = 1
+
+    # Check if there's actual content after sign
+    digits_part = s[start_idx:]
+    if not digits_part:
+        return None
+
+    chars = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;
+    char_to_val = {c: i for i, c in enumerate(chars)}
+    
+    # Convert input string to decimal integer
+    decimal_value = 0
+    for char in digits_part.lower():
+        if char not in char_to_val or char_to_val[char] &gt;= frm:
+            return None
+        decimal_value = decimal_value * frm + char_to_val[char]
+
+    # Handle zero case explicitly (no sign, no leading zeros)
+    if decimal_value == 0:
+        return &quot;0&quot;
+
+    # Convert decimal to target base
+    res = []
+    temp_val = decimal_value
+    while temp_val &gt; 0:
+        res.append(chars[temperal_val % to])
+        temp_val //= to
+    
+    result_str = &quot;&quot;.join(reversed(res))
+    return (&quot;-&quot; if is_negative else &quot;&quot;) + result_str
+
+# Re-implementing logic cleanly for the final block
+def base_convert(s: str, frm: int, to: int) -&gt; str | None:
+    if not (2 &lt;= frm &lt;= 36 and 2 &lt;= to &lt;= 36):
+        return None
+    if not s or s in ('-', '+'):
+        return None
+
+    chars = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;
+    char_to_val = {c: i for i, c in enumerate(</pre></details></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>no callable named 'base_convert'</code><details class="fxc"><summary>the code it wrote</summary><pre>def base_conversion(s, frm, to):
+    if frm &lt; 2 or frm &gt; 36 or to &lt; 2 or to &gt; 36:
+        return None
+    if not s:
+        return None
+    sign = ''
+    if s[0] == '-':
+        sign = '-'
+        s = s[1:]
+    elif s[0] == '+':
+        s = s[1:]
+    if not s:
+        return None
+
+    digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    val = 0
+    for ch in s:
+        if ch not in digits[:frm]:
+            return None
+        val = val * frm + digits.index(ch)
+
+    if val == 0:
+        return '0'
+
+    res = ''
+    while val &gt; 0:
+        res = digits[val % to] + res
+        val //= to
+
+    return sign + res
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>base_convert(&quot;-1A&quot;, 16, 10) → &quot;26-&quot;, expected &quot;-26&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>def base_convert(s: str, frm: int, to: int) -&gt; str | None:
+    # Validate bases
+    if not (2 &lt;= frm &lt;= 36) or not (2 &lt;= to &lt;= 36):
+        return None
+    
+    # Check for empty string
+    if not s:
+        return None
+    
+    # Check if string is only a sign
+    if s in ('+', '-'):
+        return None
+    
+    # Parse the sign
+    negative = False
+    if s[0] == '-':
+        negative = True
+        s = s[1:]
+    elif s[0] == '+':
+        s = s[1:]
+    
+    # Check if after removing sign, string is empty
+    if not s:
+        return None
+    
+    # Convert from base frm to integer
+    try:
+        num = int(s, frm)
+    except ValueError:
+        return None
+    
+    # If the original string had a negative sign, negate
+    if negative:
+        num = -num
+    
+    # Handle zero
+    if num == 0:
+        return '0'
+    
+    # Convert integer to base 'to'
+    digits = '0123456789abcdefghijklmnopqrstuvwxyz'
+    
+    if num &lt; 0:
+        result = '-'
+        num = -num
+    else:
+        result = ''
+    
+    while num &gt; 0:
+        result = digits[num % to] + result
+        num //= to
+    
+    return result
+</pre></details></li></ul></details><details class="fx"><summary><code>round_to</code><span> — Round to nearest multiple, halves away from zero · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>round_to(-25, 10) → &quot;-20&quot;, expected -30</code><details class="fxc"><summary>the code it wrote</summary><pre>int round_to(int n, int m) {
+    if (m &lt;= 0) return n; // Handle invalid m, though problem states m &gt; 0
+    
+    int quotient = n / m;
+    int remainder = n % m;
+    
+    // For positive n: if remainder &gt;= m/2, round up; else round down
+    // For negative n: if remainder &lt;= -m/2, round down (more negative); else round up
+    // Since C truncates toward zero, remainder has same sign as n
+    
+    if (n &gt;= 0) {
+        if (remainder &gt;= m - remainder) {
+            return (quotient + 1) * m;
+        } else {
+            return quotient * m;
+        }
+    } else {
+        // n &lt; 0 case
+        if (remainder &lt;= -(m - remainder)) {
+            return (quotient - 1) * m;
+        } else {
+            return quotient * m;
+        }
+    }
+}
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>compile error: cted ';' before 'int'
     6 | ```c
       |     ^
       |     ;
     7 | int round_to(int n, int m) {
       | ~~~  
-/tmp/bench_c_l2kd8s7i/task.c: In function 'round_to</code></li><li><b>qwen3.6:35b-a3b · 22.3 GB · ollama · 1</b> — <code>round_to(-25, 10) → &quot;-35&quot;, expected -30</code></li><li><b>qwen3.6:35b-a3b · ollama · 4</b> — <code>round_to(-25, 10) → &quot;-35&quot;, expected -30</code></li></ul></details><details class="fx"><summary><code>tokenize_expr</code><span> — Tokenise arithmetic, None on invalid input · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>tokenize_expr(&quot;1.2.3&quot;) → [1.2, 0.3], expected null</code></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>tokenize_expr(&quot;1.2.3&quot;) → [1.2, 0.3], expected null</code></li></ul></details><details class="fx"><summary><code>justify</code><span> — Full text justification · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>justify([&quot;aa&quot;, &quot;bb&quot;], 5) → [&quot;aa   &quot;, &quot;bb   &quot;], expected [&quot;aa bb&quot;]</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>justify([&quot;This&quot;, &quot;is&quot;, &quot;an&quot;, &quot;example&quot;, &quot;of&quot;, &quot;text&quot;, &quot;justification.&quot;], 16) → null, expected [&quot;This    is    an&quot;, &quot;example  of text&quot;, &quot;justification.  &quot;]</code></li></ul></details><details class="fx"><summary><code>parse_query</code><span> — Parse a URL query string into an object · 4 examples</span></summary><ul><li><b>gemma3:27b · 16.2 GB · ollama · 1</b> — <code>ReferenceError: parseQuery is not defined</code></li><li><b>gemma3:27b · ollama · 4</b> — <code>ReferenceError: parseQuery is not defined</code></li><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>parseQuery(&quot;a=%3D=&amp;b&quot;) → {&quot;a&quot;: &quot;=&quot;, &quot;b&quot;: &quot;&quot;}, expected {&quot;a&quot;: &quot;==&quot;, &quot;b&quot;: &quot;&quot;}</code></li><li><b>llama4 · ollama · 4</b> — <code>parseQuery(&quot;a=%3D=&amp;b&quot;) → {&quot;a&quot;: &quot;=&quot;, &quot;b&quot;: &quot;&quot;}, expected {&quot;a&quot;: &quot;==&quot;, &quot;b&quot;: &quot;&quot;}</code></li></ul></details><details class="fx"><summary><code>group_ranges</code><span> — Collapse consecutive integers into range strings · 4 examples</span></summary><ul><li><b>gemma3:27b · 16.2 GB · ollama · 1</b> — <code>ReferenceError: groupRanges is not defined</code></li><li><b>qwen3.6:27b · ollama · 4</b> — <code>groupRanges([1, 2, 3, 7, 9, 10, 11]) → &quot;1,3-2,7-3,9-7,10-9,11-10&quot;, expected &quot;1-3,7,9-11&quot;</code></li><li><b>qwen3.6:27b · 16.2 GB · ollama · 1</b> — <code>groupRanges([1, 2, 3, 7, 9, 10, 11]) → &quot;1,3-2,7-3,9-7,10-9,11-10&quot;, expected &quot;1-3,7,9-11&quot;</code></li><li><b>gemma3:27b · ollama · 4</b> — <code>ReferenceError: groupRanges is not defined</code></li></ul></details><details class="fx"><summary><code>topo_lex</code><span> — Smallest topological order, None on cycle · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>topo_lex(4, [[0, 1], [1, 2], [2, 3]]) → null, expected [0, 1, 2, 3]</code></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>topo_lex(2, [[0, 1], [1, 0]]) → [], expected null</code></li><li><b>devstral-2:123b · 69.8 GB · ollama · 4</b> — <code>topo_lex(3, [[1, 0]]) → [1, 2, 0], expected [1, 0, 2]</code></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>topo_lex(3, [[1, 0]]) → [1, 2, 0], expected [1, 0, 2]</code></li></ul></details><details class="fx"><summary><code>pluck</code><span> — Column from associative rows — null vs missing key · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → {&quot;0&quot;: 1, &quot;2&quot;: 3}, expected [1, 3]</code></li><li><b>devstral-2:123b · 69.8 GB · ollama · 1</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code></li><li><b>devstral-2:123b · 69.8 GB · ollama · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code></li></ul></details><details class="fx"><summary><code>lru_ops</code><span> — LRU cache with eviction order · 4 examples</span></summary><ul><li><b>gemma3:27b · ollama · 4</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;put&quot;, 1, 10], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 1]]) → null, expected [-1, 10]</code></li><li><b>qwen3-coder:30b · 17.3 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;get&quot;, 1], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 3]]) → [1, 2, 3], expected [1, -1, 3]</code></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;get&quot;, 1], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 3]]) → null, expected [1, -1, 3]</code></li></ul></details><details class="fx"><summary><code>slugify</code><span> — URL slug: symbol runs become one hyphen · 4 examples</span></summary><ul><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;Warning: preg_replace(): Unknown modifier '+' in /tmp/bench_\u2026&quot;, expected &quot;hello-world&quot;</code></li><li><b>llama4 · ollama · 4</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;Warning: preg_replace(): Unknown modifier '+' in /tmp/bench_\u2026&quot;, expected &quot;hello-world&quot;</code></li><li><b>gemma4 · 8.9 GB · ollama · 1</b> — <code>slugify(&quot;a--b__c&quot;) → &quot;a-b__c&quot;, expected &quot;a-b-c&quot;</code></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;hello--world&quot;, expected &quot;hello-world&quot;</code></li></ul></details><details class="fx"><summary><code>json_pointer</code><span> — Resolve an RFC 6901 JSON Pointer · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>no callable named 'json_pointer'</code></li><li><b>gemma4 · 8.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gemma4 · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>no code in response</code></li></ul></details><details class="fx"><summary><code>path_norm</code><span> — Normalise a POSIX path with . and .. · 4 examples</span></summary><ul><li><b>qwen3-coder:30b · ollama · 4</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code></li><li><b>qwen3-coder:30b · 17.3 GB · ollama · 1</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code></li></ul></details><details class="fx"><summary><code>clamp_mul</code><span> — Saturating int multiplication · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>Sol.ClampMul(-3, -4) → &quot;2147483647&quot;, expected 12</code></li><li><b>qwen3.6:27b · ollama · 4</b> — <code>compile error:  the current context [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
-/home/crimson/.cache/ai_proxy_cs/Program.cs(9,19): error CS0103: The name 'Math' does not exi</code></li><li><b>qwen3.6:27b · 16.2 GB · ollama · 1</b> — <code>compile error:  the current context [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
-/home/crimson/.cache/ai_proxy_cs/Program.cs(9,19): error CS0103: The name 'Math' does not exi</code></li><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>compile error: text [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
+/tmp/bench_c_l2kd8s7i/task.c: In function 'round_to</code><details class="fxc"><summary>the code it wrote</summary><pre>int round_to(int n, int m) {
+    // Round n to the nearest multiple of m, with exact halves rounding away from zero.
+    // For positive n: (n + m/2) / m * m works, but we need to handle negatives correctly.
+    // Use floor division: floor((n + m/2) / m) * m for positive, but for negative it fails.
+    // Better approach: compute the remainder and adjust.
+    
+    // We can use the fact that C integer division truncates toward zero.
+    // To round to nearest multiple of m (m &gt; 0), with ties away from zero:
+    // If n &gt;= 0: result = ((n + m/2) / m) * m
+    // If n &lt; 0: result = -((-n + m/2) / m) * m  -- but this doesn't handle ties correctly.
+    
+    // Let's think about it differently.
+    // The &quot;round half away from zero&quot; means:
+    // - For positive numbers, 25 rounds to 30 (since 25 is exactly halfway between 20 and 30, we go to 30)
+    // - For negative numbers, -25 rounds to -30
+    
+    // A clean way: use floor division.
+    // floor_div(a, b) = (a &gt;= 0 || a % b == 0) ? a / b : (a - b + 1) / b ... actually let's just compute it directly.
+    
+    // Let's use: q = (n + m/2) / m for positive, but for negative we need different logic.
+    
+    // Actually, let's just do it with a conditional or a clever formula.
+    // One approach: 
+    //   sign = n &gt;= 0 ? 1 : -1
+    //   abs_n = n &gt;= 0 ? n : -n
+    //   result = sign * ((abs_n + m/2) / m) * m
+    // But this fails for exact halves? Let's check: n=25, m=10: abs_n=25, (25+5)/10 = 30, *1 = 30. Good.
+    // n=-25, m=10: abs_n</pre></details></li><li><b>qwen3.6:35b-a3b · 22.3 GB · ollama · 1</b> — <code>round_to(-25, 10) → &quot;-35&quot;, expected -30</code><details class="fxc"><summary>the code it wrote</summary><pre>int round_to(int n, int m) {
+    if (m &lt;= 0) return n;
+    
+    // Handle positive and negative numbers separately to avoid truncation issues
+    if (n &gt;= 0) {
+        return ((n + m / 2) / m) * m;
+    } else {
+        // For negative numbers, we need to round away from zero on exact halves
+        // n is negative, so let's work with absolute value conceptually
+        // We want: if n = -k*m - r where 0 &lt;= r &lt; m, then:
+        //   if r == 0: result is n (already a multiple)
+        //   if r &gt; 0 and r &lt; m/2: round toward zero -&gt; n + r = n - (-r) ... let's think differently
+        
+        // Alternative approach: use division that rounds toward negative infinity for the quotient
+        // For negative n, C division truncates toward zero, so n/m is like ceil(|n|/m) in magnitude but positive direction
+        
+        // Let's compute the remainder properly
+        int abs_n = -n;  // since n &lt; 0
+        int r = abs_n % m;
+        
+        if (r == 0) {
+            return n;
+        }
+        
+        // Now we have n = -(q*m + r) where q &gt;= 0, 0 &lt; r &lt; m
+        // We want to round away from zero on exact halves
+        // So if r &gt; m/2 or (r == m/2 and m is even, i.e., exact half), we round further from zero
+        // If r &lt; m/2, we round toward zero
+        
+        // For exact half: r == m/2 requires m to be even
+        int threshold = m / 2;
+        
+        if (r &gt; threshold || (m % 2 == 0 &amp;&amp; r == threshold)) {
+            // Round away from zero: make the magnitude larger
+            // n is negative, so we subtract more
+            return n - m;
+        } else 
+… (truncated)</pre></details></li><li><b>qwen3.6:35b-a3b · ollama · 4</b> — <code>round_to(-25, 10) → &quot;-35&quot;, expected -30</code><details class="fxc"><summary>the code it wrote</summary><pre>int round_to(int n, int m) {
+    if (m &lt;= 0) return n;
+    
+    // Handle positive and negative numbers separately to avoid truncation issues
+    if (n &gt;= 0) {
+        return ((n + m / 2) / m) * m;
+    } else {
+        // For negative numbers, we need to round away from zero on exact halves
+        // n is negative, so let's work with absolute value conceptually
+        // We want: if n = -k*m - r where 0 &lt;= r &lt; m, then:
+        //   if r == 0: result is n (already a multiple)
+        //   if r &gt; 0 and r &lt; m/2: round toward zero -&gt; n + r = n - (-r) ... let's think differently
+        
+        // Alternative approach: use division that rounds toward negative infinity for the quotient
+        // For negative n, C division truncates toward zero, so n/m is like ceil(|n|/m) in magnitude but positive direction
+        
+        // Let's compute the remainder properly
+        int abs_n = -n;  // since n &lt; 0
+        int r = abs_n % m;
+        
+        if (r == 0) {
+            return n;
+        }
+        
+        // Now we have n = -(q*m + r) where q &gt;= 0, 0 &lt; r &lt; m
+        // We want to round away from zero on exact halves
+        // So if r &gt; m/2 or (r == m/2 and m is even, i.e., exact half), we round further from zero
+        // If r &lt; m/2, we round toward zero
+        
+        // For exact half: r == m/2 requires m to be even
+        int threshold = m / 2;
+        
+        if (r &gt; threshold || (m % 2 == 0 &amp;&amp; r == threshold)) {
+            // Round away from zero: make the magnitude larger
+            // n is negative, so we subtract more
+            return n - m;
+        } else 
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>tokenize_expr</code><span> — Tokenise arithmetic, None on invalid input · 4 examples</span></summary><ul><li><b>gemma4:26b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import re
+
+def tokenize_expr(s: str) -&gt; list | None:
+    # Regex to find all potential tokens: numbers, operators, or parentheses
+    # We use a pattern that captures sequences of digits/dots OR single characters
+    pattern = r'(\d+\.\d+|\d+|[+\-*/()])'
+    
+    # First, check for invalid characters (anything not digit, dot, operator, paren, or whitespace)
+    allowed_chars = set(&quot;0123456789.+*/()- \t\n\r&quot;)
+    if not all(c in allowed_chars for c in s):
+        return None
+
+    tokens = []
+    # We use finditer to scan the string and manually validate structure
+    # However, a simpler way is to split by whitespace and then refine tokens.
+    # But since operators don't require whitespace (e.g., &quot;1+2&quot;), we use regex.
+    
+    # Find all matches of our pattern
+    matches = list(re.finditer(pattern, s))
+    
+    # Check if the sum of lengths of matched tokens and ignored whitespace equals string length
+    # This ensures no &quot;garbage&quot; characters were skipped by the regex
+    covered_indices = []
+    for m in matches:
+        tokens.append(m.group())
+        covered_indices.extend(range(m.start(), m.end()))
+    
+    # Check if there are any non-whitespace characters not covered by tokens
+    for i, char in enumerate(s):
+        if char not in &quot; \t\n\r&quot; and i not in covered_indices:
+            return None
+
+    processed_tokens = []
+    for t in tokens:
+        # Check for invalid number format (multiple dots) - though regex handles most
+        if '.' in t:
+            if t.count('.') &gt; 1:
+                return None
+            # Convert to float
+            try:
+           
+… (truncated)</pre></details></li><li><b>gemma4:26b · 16.8 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import re
+
+def tokenize_expr(s: str) -&gt; list | None:
+    # Regex to find all potential tokens: numbers, operators, or parentheses
+    # We use a pattern that captures sequences of digits/dots OR single characters
+    pattern = r'(\d+\.\d+|\d+|[+\-*/()])'
+    
+    # First, check for invalid characters (anything not digit, dot, operator, paren, or whitespace)
+    allowed_chars = set(&quot;0123456789.+*/()- \t\n\r&quot;)
+    if not all(c in allowed_chars for c in s):
+        return None
+
+    tokens = []
+    # We use finditer to scan the string and manually validate structure
+    # However, a simpler way is to split by whitespace and then refine tokens.
+    # But since operators don't require whitespace (e.g., &quot;1+2&quot;), we use regex.
+    
+    # Find all matches of our pattern
+    matches = list(re.finditer(pattern, s))
+    
+    # Check if the sum of lengths of matched tokens and ignored whitespace equals string length
+    # This ensures no &quot;garbage&quot; characters were skipped by the regex
+    covered_indices = []
+    for m in matches:
+        tokens.append(m.group())
+        covered_indices.extend(range(m.start(), m.end()))
+    
+    # Check if there are any non-whitespace characters not covered by tokens
+    for i, char in enumerate(s):
+        if char not in &quot; \t\n\r&quot; and i not in covered_indices:
+            return None
+
+    processed_tokens = []
+    for t in tokens:
+        # Check for invalid number format (multiple dots) - though regex handles most
+        if '.' in t:
+            if t.count('.') &gt; 1:
+                return None
+            # Convert to float
+            try:
+           
+… (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>tokenize_expr(&quot;1.2.3&quot;) → [1.2, 0.3], expected null</code><details class="fxc"><summary>the code it wrote</summary><pre>def tokenize_expr(s: str) -&gt; list | None:
+    tokens = []
+    i = 0
+    n = len(s)
+    
+    while i &lt; n:
+        if s[i].isspace():
+            i += 1
+            continue
+        
+        if s[i] in '+-*/()':
+            tokens.append(s[i])
+            i += 1
+            continue
+        
+        if s[i].isdigit() or s[i] == '.':
+            # Start of a number
+            start = i
+            has_dot = False
+            
+            # Check for leading dot (e.g., &quot;.5&quot;)
+            if s[i] == '.':
+                has_dot = True
+                i += 1
+                # Must have at least one digit after the dot
+                if i &gt;= n or not s[i].isdigit():
+                    return None
+                while i &lt; n and s[i].isdigit():
+                    i += 1
+            else:
+                # Digits before dot
+                while i &lt; n and s[i].isdigit():
+                    i += 1
+                # Check for decimal point
+                if i &lt; n and s[i] == '.':
+                    if has_dot:  # Already found a dot
+                        return None
+                    has_dot = True
+                    i += 1
+                    # Must have at least one digit after the dot
+                    if i &gt;= n or not s[i].isdigit():
+                        return None
+                    while i &lt; n and s[i].isdigit():
+                        i += 1
+            
+            # Extract the number string
+            num_str = s[start:i]
+            
+            # Validate: no more than one dot (already handled above)
+            # Check for invalid characters in the num
+… (truncated)</pre></details></li><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>tokenize_expr(&quot;1.2.3&quot;) → [1.2, 0.3], expected null</code><details class="fxc"><summary>the code it wrote</summary><pre>def tokenize_expr(s: str) -&gt; list | None:
+    tokens = []
+    i = 0
+    n = len(s)
+    
+    while i &lt; n:
+        if s[i].isspace():
+            i += 1
+            continue
+        
+        if s[i] in '+-*/()':
+            tokens.append(s[i])
+            i += 1
+            continue
+        
+        if s[i].isdigit() or s[i] == '.':
+            # Start of a number
+            start = i
+            has_dot = False
+            
+            # Check for leading dot (like &quot;.5&quot;)
+            if s[i] == '.':
+                has_dot = True
+                i += 1
+                # Must have at least one digit after the dot
+                if i &gt;= n or not s[i].isdigit():
+                    return None
+            else:
+                # Consume digits before any dot
+                while i &lt; n and s[i].isdigit():
+                    i += 1
+                
+                # Check for decimal point
+                if i &lt; n and s[i] == '.':
+                    if has_dot:  # Already had a dot
+                        return None
+                    has_dot = True
+                    i += 1
+                    
+                    # Must have at least one digit after the dot
+                    if i &gt;= n or not s[i].isdigit():
+                        return None
+            
+            # Consume remaining digits after the dot
+            while i &lt; n and s[i].isdigit():
+                i += 1
+            
+            num_str = s[start:i]
+            
+            # Validate number format: must have at most one dot
+            if num_str.count('.') &gt; 1:
+                return None
+         
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>justify</code><span> — Full text justification · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>justify([&quot;aa&quot;, &quot;bb&quot;], 5) → [&quot;aa   &quot;, &quot;bb   &quot;], expected [&quot;aa bb&quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def justify(words: list, width: int) -&gt; list:
+    result = []
+    i = 0
+    n = len(words)
+    
+    while i &lt; n:
+        # Find how many words can fit in current line
+        line_words = []
+        line_length = 0
+        
+        while i &lt; n and line_length + len(words[i]) + (1 if line_words else 0) &lt;= width:
+            line_words.append(words[i])
+            line_length += len(words[i]) + (1 if line_words else 0)
+            i += 1
+        
+        # Build the line
+        if i == n or len(line_words) == 1:
+            # Last line or single word line: left justified
+            line = ' '.join(line_words)
+            line += ' ' * (width - len(line))
+        else:
+            # Distribute spaces evenly
+            total_spaces = width - sum(len(w) for w in line_words)
+            gaps = len(line_words) - 1
+            base_spaces = total_spaces // gaps
+            extra_spaces = total_spaces % gaps
+            
+            # Build line with extra spaces on left gaps
+            line_parts = []
+            for j, word in enumerate(line_words):
+                line_parts.append(word)
+                if j &lt; gaps:  # Not the last word
+                    spaces = base_spaces + (1 if j &lt; extra_spaces else 0)
+                    line_parts.append(' ' * spaces)
+            line = ''.join(line_parts)
+        
+        result.append(line)
+    
+    return result
+</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def justify(words: list, width: int) -&gt; list:
+    &quot;&quot;&quot;
+    Perform full text justification.
+    
+    Args:
+        words: List of words to justify.
+        width: The target width for each line.
+    
+    Returns:
+        List of strings, each of length 'width', with proper justification.
+    &quot;&quot;&quot;
+    if not words:
+        return []
+    
+    # Build lines: each line is a list of words
+    lines = []
+    current_line = []
+    current_length = 0
+    
+    for word in words:
+        # If adding this word would exceed width, start a new line
+        if current_line and current_length + 1 + len(word) &gt; width:
+            lines.append(current_line)
+            current_line = [word]
+            current_length = len(word)
+        else:
+            current_line.append(word)
+            current_length += 1 + len(word)  # +1 for the space
+    
+    # Add the last line
+    if current_line:
+        lines.append(current_line)
+    
+    # Now justify each line
+    result = []
+    num_lines = len(lines)
+    
+    for i, line in enumerate(lines):
+        if i == num_lines - 1:
+            # Last line: left-justified
+            line_str = ' '.join(line)
+            line_str += ' ' * (width - len(line_str))
+            result.append(line_str)
+        elif len(line) == 1:
+            # Single word line: left-justified
+            line_str = line[0]
+            line_str += ' ' * (width - len(line_str))
+            result.append(line_str)
+        else:
+            # Full justification
+            total_words_length = sum(len(w) for w in line)
+            total_spaces = width - total_words_length
+     
+… (truncated)</pre></details></li><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def justify(words: list, width: int) -&gt; list:
+    &quot;&quot;&quot;
+    Perform full text justification.
+    
+    Pack as many words per line as fit with at least one space between them.
+    Pad each line to exactly width by distributing spaces between words as evenly
+    as possible, putting the extra spaces on the LEFT gaps first.
+    The last line, and any line holding a single word, is left justified with
+    the remaining space on the right.
+    &quot;&quot;&quot;
+    if not words:
+        return []
+    
+    # Group words into lines
+    lines = []
+    current_line = []
+    current_length = 0
+    
+    for word in words:
+        # Calculate the length needed if we add this word
+        if current_line:
+            needed = current_length + 1 + len(word)
+        else:
+            needed = len(word)
+        
+        if needed &lt;= width:
+            current_line.append(word)
+            current_length = needed if current_line else 0
+            # Recalculate current_length properly
+            current_length = sum(len(w) for w in current_line) + (len(current_line) - 1)
+        else:
+            lines.append(current_line)
+            current_line = [word]
+            current_length = len(word)
+    
+    if current_line:
+        lines.append(current_line)
+    
+    # Justify each line
+    result = []
+    for i, line in enumerate(lines):
+        if i == len(lines) - 1 or len(line) == 1:
+            # Last line or single word: left justified
+            line_str = ' '.join(line)
+            line_str = line_str + ' ' * (width - len(line_str))
+            result.append(line_str)
+        else:
+            # Full
+… (truncated)</pre></details></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>justify([&quot;This&quot;, &quot;is&quot;, &quot;an&quot;, &quot;example&quot;, &quot;of&quot;, &quot;text&quot;, &quot;justification.&quot;], 16) → null, expected [&quot;This    is    an&quot;, &quot;example  of text&quot;, &quot;justification.  &quot;]</code><details class="fxc"><summary>the code it wrote</summary><pre>def justify(words: list, width: int) -&gt; list:
+    def pack_line(start):
+        line_words = []
+        total_chars = 0
+        for i in range(start, len(words)):
+            word = words[i]
+            if total_chars + len(word) &gt; width and line_words:
+                break
+            line_words.append(word)
+            total_chars += len(word) + 1  # +1 for space
+        return start + len(line_words), line_words
+
+    lines = []
+    i = 0
+    while i &lt; len(words):
+        num_words, line_words = pack_line(i)
+        if not line_words:
+            break
+        lines.append((num_words, line_words))
+        i = num_words
+
+    justified_lines = []
+    for num_words, line_words in lines[:-1]:
+        total_spaces = width - sum(len(word) for word in line_words)
+        gaps = num_words - 1
+        if gaps == 0:
+            justified_lines.append(line_words[0].ljust(width))
+            continue
+
+        base_spaces = total_spaces // gaps
+        extra_spaces = total_spaces % gaps
+
+        line = []
+        for j in range(gaps):
+            spaces = base_spaces + (1 if j &lt; extra_spaces else 0)
+            line.append(line_words[j])
+            line.append(' ' * spaces)
+        line.append(line_words[-1])
+        justified_lines.append(''.join(line))
+
+    # Handle last line
+    if lines:
+        num_words, line_words = lines[-1]
+        last_line = ' '.join(line_words).ljust(width)
+        justified_lines.append(last_line)
+
+    return justified_lines
+</pre></details></li></ul></details><details class="fx"><summary><code>parse_query</code><span> — Parse a URL query string into an object · 4 examples</span></summary><ul><li><b>gemma3:27b · 16.2 GB · ollama · 1</b> — <code>ReferenceError: parseQuery is not defined</code><details class="fxc"><summary>the code it wrote</summary><pre>/**
+ * Parses a URL query string into a plain object.
+ *
+ * @param {string} qs The query string to parse.
+ * @returns {object} A plain object representing the parsed query string.
+ */
+const parseQuery = (qs) =&gt; {
+  if (!qs) {
+    return {};
+  }
+
+  if (qs.startsWith('?')) {
+    qs = qs.slice(1);
+  }
+
+  const result = {};
+  const pairs = qs.split('&amp;');
+
+  for (const pair of pairs) {
+    if (!pair) {
+      continue;
+    }
+
+    const [key, value] = pair.split('=', 1);
+
+    let decodedKey = key ? decodeURIComponent(key.replace(/\+/g, ' ')) : '';
+    let decodedValue = value !== undefined ? decodeURIComponent(value.replace(/\+/g, ' ')) : '';
+
+
+    if (result.hasOwnProperty(decodedKey)) {
+      if (!Array.isArray(result[decodedKey])) {
+        result[decodedKey] = [result[decodedKey]];
+      }
+      result[decodedKey].push(decodedValue);
+    } else {
+      result[decodedKey] = decodedValue;
+    }
+  }
+
+  return result;
+};
+</pre></details></li><li><b>gemma3:27b · ollama · 4</b> — <code>ReferenceError: parseQuery is not defined</code><details class="fxc"><summary>the code it wrote</summary><pre>/**
+ * Parses a URL query string into a plain object.
+ *
+ * @param {string} qs The query string to parse.
+ * @returns {object} A plain object representing the parsed query string.
+ */
+const parseQuery = (qs) =&gt; {
+  if (!qs) {
+    return {};
+  }
+
+  if (qs.startsWith('?')) {
+    qs = qs.slice(1);
+  }
+
+  const result = {};
+  const pairs = qs.split('&amp;');
+
+  for (const pair of pairs) {
+    if (!pair) {
+      continue;
+    }
+
+    const [key, value] = pair.split('=', 1);
+
+    let decodedKey = key ? decodeURIComponent(key.replace(/\+/g, ' ')) : '';
+    let decodedValue = value !== undefined ? decodeURIComponent(value.replace(/\+/g, ' ')) : '';
+
+
+    if (result.hasOwnProperty(decodedKey)) {
+      if (!Array.isArray(result[decodedKey])) {
+        result[decodedKey] = [result[decodedKey]];
+      }
+      result[decodedKey].push(decodedValue);
+    } else {
+      result[decodedKey] = decodedValue;
+    }
+  }
+
+  return result;
+};
+</pre></details></li><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>parseQuery(&quot;a=%3D=&amp;b&quot;) → {&quot;a&quot;: &quot;=&quot;, &quot;b&quot;: &quot;&quot;}, expected {&quot;a&quot;: &quot;==&quot;, &quot;b&quot;: &quot;&quot;}</code><details class="fxc"><summary>the code it wrote</summary><pre>function parseQuery(qs) {
+    if (!qs || qs[0] === '?') qs = qs.substring(1);
+    const result = {};
+    if (!qs) return result;
+
+    qs.split('&amp;').forEach(pair =&gt; {
+        if (!pair) return;
+        let [key, value] = pair.split('=', 2);
+        key = decodeURIComponent(key.replace(/\+/g, ' '));
+        value = value === undefined ? '' : decodeURIComponent(value.replace(/\+/g, ' '));
+
+        if (result[key]) {
+            if (!Array.isArray(result[key])) result[key] = [result[key]];
+            result[key].push(value);
+        } else {
+            result[key] = value;
+        }
+    });
+
+    return result;
+}
+</pre></details></li><li><b>llama4 · ollama · 4</b> — <code>parseQuery(&quot;a=%3D=&amp;b&quot;) → {&quot;a&quot;: &quot;=&quot;, &quot;b&quot;: &quot;&quot;}, expected {&quot;a&quot;: &quot;==&quot;, &quot;b&quot;: &quot;&quot;}</code><details class="fxc"><summary>the code it wrote</summary><pre>function parseQuery(qs) {
+    if (!qs || qs[0] === '?') qs = qs.substring(1);
+    const result = {};
+    if (!qs) return result;
+
+    qs.split('&amp;').forEach(pair =&gt; {
+        if (!pair) return;
+        let [key, value] = pair.split('=', 2);
+        key = decodeURIComponent(key.replace(/\+/g, ' '));
+        value = value === undefined ? '' : decodeURIComponent(value.replace(/\+/g, ' '));
+
+        if (result[key]) {
+            if (!Array.isArray(result[key])) result[key] = [result[key]];
+            result[key].push(value);
+        } else {
+            result[key] = value;
+        }
+    });
+
+    return result;
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>group_ranges</code><span> — Collapse consecutive integers into range strings · 4 examples</span></summary><ul><li><b>gemma3:27b · 16.2 GB · ollama · 1</b> — <code>ReferenceError: groupRanges is not defined</code><details class="fxc"><summary>the code it wrote</summary><pre>/**
+ * Formats a strictly increasing array of integers as a compact range string.
+ * Consecutive runs collapse to 'start-end'; isolated values stand alone; parts join with ','.
+ * Two adjacent values are already a range ('1-2'). Negative numbers keep their sign, so -3..-1 renders as '-3--1'.
+ * An empty array returns ''.
+ * @param {number[]} nums The input array of integers.
+ * @returns {string} The formatted range string.
+ */
+const groupRanges = (nums) =&gt; {
+  if (!nums || nums.length === 0) {
+    return '';
+  }
+
+  const result = [];
+  let start = nums[0];
+  let end = nums[0];
+
+  for (let i = 1; i &lt; nums.length; i++) {
+    if (nums[i] === end + 1) {
+      end = nums[i];
+    } else {
+      if (start === end) {
+        result.push(String(start));
+      } else {
+        result.push(`${start}-${end}`);
+      }
+      start = nums[i];
+      end = nums[i];
+    }
+  }
+
+  if (start === end) {
+    result.push(String(start));
+  } else {
+    result.push(`${start}-${end}`);
+  }
+
+  return result.join(',');
+};
+</pre></details></li><li><b>qwen3.6:27b · ollama · 4</b> — <code>groupRanges([1, 2, 3, 7, 9, 10, 11]) → &quot;1,3-2,7-3,9-7,10-9,11-10&quot;, expected &quot;1-3,7,9-11&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function groupRanges(nums) {
+  if (nums.length === 0) return '';
+  
+  const result = [];
+  let start = nums[0];
+  let prev = nums[0];
+  
+  for (let i = 1; i &lt;= nums.length; i++) {
+    // When we reach the end or find a non-consecutive number
+    if (i === nums.length || nums[i] !== prev + 1) {
+      if (start === prev) {
+        result.push(String(start));
+      } else {
+        result.push(`${start}-${prev}`);
+      }
+      // Reset start for the next range
+      if (i &lt; nums.length) {
+        start = nums[i];
+      }
+    }
+    prev = nums[i - 1];
+  }
+  
+  return result.join(',');
+}
+</pre></details></li><li><b>qwen3.6:27b · 16.2 GB · ollama · 1</b> — <code>groupRanges([1, 2, 3, 7, 9, 10, 11]) → &quot;1,3-2,7-3,9-7,10-9,11-10&quot;, expected &quot;1-3,7,9-11&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function groupRanges(nums) {
+  if (nums.length === 0) return '';
+  
+  const result = [];
+  let start = nums[0];
+  let prev = nums[0];
+  
+  for (let i = 1; i &lt;= nums.length; i++) {
+    // When we reach the end or find a non-consecutive number
+    if (i === nums.length || nums[i] !== prev + 1) {
+      if (start === prev) {
+        result.push(String(start));
+      } else {
+        result.push(`${start}-${prev}`);
+      }
+      // Reset start for the next range
+      if (i &lt; nums.length) {
+        start = nums[i];
+      }
+    }
+    prev = nums[i - 1];
+  }
+  
+  return result.join(',');
+}
+</pre></details></li><li><b>gemma3:27b · ollama · 4</b> — <code>ReferenceError: groupRanges is not defined</code><details class="fxc"><summary>the code it wrote</summary><pre>/**
+ * Formats a strictly increasing array of integers as a compact range string.
+ * Consecutive runs collapse to 'start-end'; isolated values stand alone; parts join with ','.
+ * Two adjacent values are already a range ('1-2'). Negative numbers keep their sign, so -3..-1 renders as '-3--1'.
+ * An empty array returns ''.
+ * @param {number[]} nums The input array of integers.
+ * @returns {string} The formatted range string.
+ */
+const groupRanges = (nums) =&gt; {
+  if (!nums || nums.length === 0) {
+    return '';
+  }
+
+  const result = [];
+  let start = nums[0];
+  let end = nums[0];
+
+  for (let i = 1; i &lt; nums.length; i++) {
+    if (nums[i] === end + 1) {
+      end = nums[i];
+    } else {
+      if (start === end) {
+        result.push(String(start));
+      } else {
+        result.push(`${start}-${end}`);
+      }
+      start = nums[i];
+      end = nums[i];
+    }
+  }
+
+  if (start === end) {
+    result.push(String(start));
+  } else {
+    result.push(`${start}-${end}`);
+  }
+
+  return result.join(',');
+};
+</pre></details></li></ul></details><details class="fx"><summary><code>topo_lex</code><span> — Smallest topological order, None on cycle · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 4</b> — <code>topo_lex(4, [[0, 1], [1, 2], [2, 3]]) → null, expected [0, 1, 2, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>from collections import defaultdict, deque
+
+def topo_lex(n: int, edges: list) -&gt; list | None:
+    # Build adjacency list and in-degree count
+    graph = defaultdict(list)
+    in_degree = [0] * n
+    
+    for u, v in edges:
+        if 0 &lt;= u &lt; n and 0 &lt;= v &lt; n:
+            graph[u].append(v)
+            in_degree[v] += 1
+    
+    # Use a min-heap (priority queue) to always get the smallest available node
+    # Since heapq is a min-heap, we can use it directly
+    heap = []
+    for i in range(n):
+        if in_degree[i] == 0:
+            heapq.heappush(heap, i)
+    
+    result = []
+    while heap:
+        node = heapq.heappop(heap)
+        result.append(node)
+        
+        for neighbor in graph[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                heapq.heappush(heap, neighbor)
+    
+    # If we couldn't process all nodes, there's a cycle
+    if len(result) != n:
+        return None
+    
+    return result
+</pre></details></li><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>topo_lex(2, [[0, 1], [1, 0]]) → [], expected null</code><details class="fxc"><summary>the code it wrote</summary><pre>def topo_lex(n, edges):
+    from collections import defaultdict, deque
+    adj = defaultdict(list)
+    indeg = [0]*n
+    for u, v in edges:
+        adj[u].append(v)
+        indeg[v] += 1
+    q = deque([i for i in range(n) if indeg[i]==0])
+    res = []
+    while q:
+        # pop smallest available node
+        u = min(q)
+        q.remove(u)
+        res.append(u)
+        for v in adj[u]:
+            indeg[v] -= 1
+            if indeg[v]==0:
+                q.append(v)
+    if len(res) != n:
+        return []  # cycle
+    return res
+</pre></details></li><li><b>devstral-2:123b · 69.8 GB · ollama · 4</b> — <code>topo_lex(3, [[1, 0]]) → [1, 2, 0], expected [1, 0, 2]</code><details class="fxc"><summary>the code it wrote</summary><pre>def topo_lex(n: int, edges: list) -&gt; list | None:
+    from collections import deque
+
+    # Build adjacency list and in-degree count
+    adj = [[] for _ in range(n)]
+    in_degree = [0] * n
+
+    for u, v in edges:
+        if u != v:  # Ignore self-loops (they create cycles)
+            adj[u].append(v)
+            in_degree[v] += 1
+
+    # Initialize queue with nodes having zero in-degree
+    q = deque()
+    for i in range(n):
+        if in_degree[i] == 0:
+            q.append(i)
+
+    topo_order = []
+    while q:
+        # To get lexicographically smallest, process nodes in order
+        u = q.popleft()
+        topo_order.append(u)
+
+        for v in adj[u]:
+            in_degree[v] -= 1
+            if in_degree[v] == 0:
+                q.append(v)
+
+    # Check if topological sort is possible (no cycle)
+    if len(topo_order) != n:
+        return None
+
+    return topo_order
+</pre></details></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>topo_lex(3, [[1, 0]]) → [1, 2, 0], expected [1, 0, 2]</code><details class="fxc"><summary>the code it wrote</summary><pre>def topo_lex(n: int, edges: list) -&gt; list | None:
+    from collections import defaultdict, deque
+
+    # Build adjacency list and in-degree count
+    adj = defaultdict(list)
+    in_degree = [0] * n
+    for u, v in edges:
+        if u == v or u &lt; 0 or u &gt;= n or v &lt; 0 or v &gt;= n:
+            continue  # Skip invalid edges (though problem says nodes are 0..n-1)
+        adj[u].append(v)
+        in_degree[v] += 1
+
+    # Initialize queue with nodes having zero in-degree, sorted for lex order
+    q = deque()
+    for i in range(n):
+        if in_degree[i] == 0:
+            q.append(i)
+
+    topo_order = []
+    while q:
+        # Process nodes in lexicographical order
+        u = q.popleft()
+        topo_order.append(u)
+
+        for v in sorted(adj[u]):
+            in_degree[v] -= 1
+            if in_degree[v] == 0:
+                q.append(v)
+
+    if len(topo_order) != n:
+        return None  # Cycle detected
+
+    return topo_order
+</pre></details></li></ul></details><details class="fx"><summary><code>pluck</code><span> — Column from associative rows — null vs missing key · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → {&quot;0&quot;: 1, &quot;2&quot;: 3}, expected [1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>function pluck(array $rows, string $key): array {
+    return array_map(
+        function($row) use ($key) {
+            return $row[$key];
+        },
+        array_filter($rows, function($row) use ($key) {
+            return array_key_exists($key, $row);
+        })
+    );
+}
+</pre></details></li><li><b>devstral-2:123b · 69.8 GB · ollama · 1</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>function pluck(array $rows, string $key): array {
+    return array_map(
+        fn($row) =&gt; array_key_exists($key, $row) ? $row[$key] : null,
+        $rows
+    );
+}
+</pre></details></li><li><b>devstral-2:123b · 69.8 GB · ollama · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>function pluck(array $rows, string $key): array {
+    return array_map(
+        fn($row) =&gt; array_key_exists($key, $row) ? $row[$key] : null,
+        $rows
+    );
+}
+</pre></details></li><li><b>devstral-small-2:24b · ollama · 4</b> — <code>pluck([{&quot;a&quot;: 1}, {&quot;b&quot;: 9}, {&quot;a&quot;: 3}], &quot;a&quot;) → [1, null, 3], expected [1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>function pluck(array $rows, string $key): array {
+    return array_map(
+        fn($row) =&gt; array_key_exists($key, $row) ? $row[$key] : null,
+        $rows
+    );
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>lru_ops</code><span> — LRU cache with eviction order · 4 examples</span></summary><ul><li><b>gemma3:27b · ollama · 4</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;put&quot;, 1, 10], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 1]]) → null, expected [-1, 10]</code><details class="fxc"><summary>the code it wrote</summary><pre>def lru_ops(capacity: int, ops: list) -&gt; list:
+    &quot;&quot;&quot;Simulates an LRU cache and returns results of 'get' operations.
+
+    Args:
+        capacity: The maximum capacity of the cache.
+        ops: A list of operations to perform on the cache. Each operation is a list
+            of the form ['put', key, value] or ['get', key].
+
+    Returns:
+        A list of results of the 'get' operations only, using -1 for a miss.
+    &quot;&quot;&quot;
+    cache = {}
+    usage = []  # List to track usage order (most recent last)
+    results = []
+
+    for op in ops:
+        if op[0] == 'put':
+            key = op[1]
+            value = op[2]
+            if key in cache:
+                cache[key] = value
+                usage.remove(key)  # Move to end (most recently used)
+            else:
+                if len(cache) &gt;= capacity:
+                    lru_key = usage.pop(0)  # Evict least recently used
+                    del cache[lru_key]
+                cache[key] = value
+                usage.append(key)  # Add to end (most recently used)
+        elif op[0] == 'get':
+            key = op[1]
+            if key in cache:
+                usage.remove(key)  # Move to end (most recently used)
+                usage.append(key)
+                results.append(cache[key])
+            else:
+                results.append(-1)
+
+    return results
+</pre></details></li><li><b>qwen3-coder:30b · 17.3 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>```python code
+def lru_ops(capacity: int, ops: list) -&gt; list:
+    cache = {}
+    usage_order = []
+    
+    def update_usage(key):
+        if key in usage_order:
+            usage_order.remove(key)
+        usage_order.append(key)
+    
+    results = []
+    
+    for op in ops:
+        if op[0] == 'put':
+            key, value = op[1], op[2]
+            if key in cache:
+                cache[key] = value
+                update_usage(key)
+            else:
+                if len(cache) &gt;= capacity:
+                    lru_key = usage_order.pop(0)
+                    del cache[lru_key]
+                cache[key] = value
+                update_usage(key)
+        elif op[0] == 'get':
+            key = op[1]
+            if key in cache:
+                update_usage(key)
+                results.append(cache[key])
+            else:
+                results.append(-1)
+    
+    return results
+```</pre></details></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;get&quot;, 1], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 3]]) → [1, 2, 3], expected [1, -1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>def lru_ops(capacity: int, ops: list) -&gt; list:
+    cache = {}
+    result = []
+    for op in ops:
+        if op[0] == 'put':
+            if len(cache) &gt;= capacity and op[1] not in cache:
+                lru_key = min(cache, key=cache.get)
+                del cache[lru_key]
+            cache[op[1]] = (op[2], len(cache))
+        elif op[0] == 'get':
+            if op[1] in cache:
+                value, _ = cache[op[1]]
+                cache[op[1]] = (value, len(cache))
+                result.append(value)
+            else:
+                result.append(-1)
+    return result
+</pre></details></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>lru_ops(2, [[&quot;put&quot;, 1, 1], [&quot;put&quot;, 2, 2], [&quot;get&quot;, 1], [&quot;put&quot;, 3, 3], [&quot;get&quot;, 2], [&quot;get&quot;, 3]]) → null, expected [1, -1, 3]</code><details class="fxc"><summary>the code it wrote</summary><pre>def lru_ops(capacity: int, ops: list) -&gt; list:
+    cache = {}
+    result = []
+    for op in ops:
+        if op[0] == 'put':
+            if op[1] in cache:
+                del cache[op[1]]
+            elif len(cache) &gt;= capacity:
+                lru_key = min(cache, key=cache.get)
+                del cache[lru_key]
+            cache[op[1]] = op[2]
+        elif op[0] == 'get':
+            if op[1] in cache:
+                result.append(cache[op[1]])
+                del cache[op[1]]
+                cache[op[1]] = cache.get(op[1], None)
+            else:
+                result.append(-1)
+    return result
+</pre></details></li></ul></details><details class="fx"><summary><code>slugify</code><span> — URL slug: symbol runs become one hyphen · 4 examples</span></summary><ul><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;Warning: preg_replace(): Unknown modifier '+' in /tmp/bench_\u2026&quot;, expected &quot;hello-world&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function slugify(string $s): string {
+    $slug = preg_replace('[^[:alnum:]]+', '-', strtolower($s));
+    return trim($slug, '-');
+}
+</pre></details></li><li><b>llama4 · ollama · 4</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;Warning: preg_replace(): Unknown modifier '+' in /tmp/bench_\u2026&quot;, expected &quot;hello-world&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function slugify(string $s): string {
+    $slug = preg_replace('[^[:alnum:]]+', '-', strtolower($s));
+    return trim($slug, '-');
+}
+</pre></details></li><li><b>gemma4 · 8.9 GB · ollama · 1</b> — <code>slugify(&quot;a--b__c&quot;) → &quot;a-b__c&quot;, expected &quot;a-b-c&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function slugify(string $s): string {
+    // Convert to lowercase
+    $slug = strtolower($s);
+
+    // Replace non-alphanumeric characters with a hyphen, but only if they are not already hyphens.
+    // This handles cases like &quot;a---b&quot; -&gt; &quot;a-b&quot; and &quot;a!@#b&quot; -&gt; &quot;a-b&quot;.
+    $slug = preg_replace('/[^\w\d]+/', '-', $slug);
+
+    // Trim leading and trailing hyphens
+    $slug = trim($slug, '-');
+
+    // If the original string contained nothing alphanumeric, the result after trimming might be empty.
+    // The regex replacement above ensures that if only special characters were present, it becomes a sequence of hyphens,
+    // which then gets trimmed to an empty string, satisfying the requirement.
+
+    return $slug;
+}
+</pre></details></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>slugify(&quot;Hello, World!&quot;) → &quot;hello--world&quot;, expected &quot;hello-world&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>function slugify(string $s): string {
+    $s = preg_replace('/[^a-z0-9]/i', '-', $s);
+    $s = trim($s, '-');
+    return strtolower($s);
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>json_pointer</code><span> — Resolve an RFC 6901 JSON Pointer · 4 examples</span></summary><ul><li><b>DeepSeek-V4-Flash-0731-UD-IQ2_XXS · IQ2_XXS · 84.6 GB · llamacpp · 4</b> — <code>no callable named 'json_pointer'</code><details class="fxc"><summary>the code it wrote</summary><pre>
+def resolve_pointer(doc, pointer):
+    if pointer == &quot;&quot;:
+        return doc
+    tokens = pointer.split(&quot;/&quot;)[1:]  # skip the leading '/'
+    current = doc
+    for token in tokens:
+        # decode ~1 -&gt; / and ~0 -&gt; ~ (order matters)
+        decoded = token.replace(&quot;~1&quot;, &quot;/&quot;).replace(&quot;~0&quot;, &quot;~&quot;)
+        if isinstance(current, list):
+            if decoded == &quot;-&quot;:
+                # indicates the &quot;next&quot; element, but we don't support that here
+                return None
+            try:
+                idx = int(decoded)
+            except ValueError:
+                return None
+            if idx &lt; 0 or idx &gt;= len(current):
+                return None
+            current = current[idx]
+        elif isinstance(current, dict):
+            if decoded not in current:
+                return None
+            current = current[decoded]
+        else:
+            return None
+    return current
+</pre></details></li><li><b>gemma4 · 8.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import re
+
+def json_pointer(doc, pointer: str):
+    &quot;&quot;&quot;
+    Resolves an RFC 6901 JSON Pointer against doc, returning the referenced value or None if it does not resolve.
+
+    Args:
+        doc: The document (Python object) to query.
+        pointer: The JSON Pointer string.
+
+    Returns:
+        The referenced value, or None if the pointer is invalid or out of bounds.
+    &quot;&quot;&quot;
+    if not pointer:
+        return doc
+
+    # 1. Decode the pointer according to RFC 6901 rules for escaped characters
+    def decode_token(token):
+        # '~1' decodes to '/' and '~0' decodes to '~'
+        # The rule states '~1' must be decoded BEFORE '~0'.
+        decoded = token.replace('~1', '/').replace('~0', '~')
+        return decoded
+
+    # Split the pointer by '/', but we need a custom split/decode process because 
+    # the components themselves might contain escaped slashes or tildes.
+    
+    # A simpler approach is to first decode the whole string, then split by '/'
+    # However, standard JSON Pointer decoding requires careful handling of escapes *within* tokens.
+
+    # Let's use a regex-based iterative decoding/splitting process that respects escaping:
+    tokens = []
+    current_token = &quot;&quot;
+    i = 0
+    while i &lt; len(pointer):
+        char = pointer[i]
+        if char == '/':
+            if current_token:
+                # Decode the accumulated token before appending it
+                decoded_token = decode_token(current_token)
+                tokens.append(decoded_token)
+                current_token = &quot;&quot;
+            else:
+                # Handle leading/consecutive slashes if th
+… (truncated)</pre></details></li><li><b>gemma4 · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>import json
+
+def json_pointer(doc, pointer: str):
+    &quot;&quot;&quot;
+    Resolves an RFC 6901 JSON Pointer against doc, returning the referenced value or None if it does not resolve.
+
+    Args:
+        doc: The document (Python object) to query.
+        pointer: The JSON Pointer string.
+
+    Returns:
+        The referenced value, or None if the pointer is invalid or out of bounds.
+    &quot;&quot;&quot;
+    if not pointer:
+        return doc
+
+    # 1. Decode the pointer according to RFC 6901 rules for escaped characters
+    def decode_token(token):
+        # '~1' decodes to '/' and '~0' decodes to '~'
+        # The rule states '~1' must be decoded BEFORE '~0'.
+        decoded = token.replace('~1', '/').replace('~0', '~')
+        return decoded
+
+    # Split the pointer by '/', but we need a custom split that handles escaped slashes correctly
+    # Since the input 'pointer' is assumed to be already processed for escaping, 
+    # and the standard library approach of splitting on '/' will break if '/' was encoded as '\/',
+    # we rely on the fact that the tokens themselves are separated by unescaped '/'.
+
+    # The problem description implies a pre-processed pointer where only '~1' and '~0' need decoding,
+    # and the structure is token/token/...
+    tokens = []
+    current_token = &quot;&quot;
+    i = 0
+    while i &lt; len(pointer):
+        char = pointer[i]
+        if char == '/':
+            tokens.append(decode_token(current_token))
+            current_token = &quot;&quot;
+            i += 1
+        else:
+            current_token += char
+            i += 1
+    tokens.append(decode_token(current_token))
+
+    # 2. Trave
+… (truncated)</pre></details></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>no code in response</code></li></ul></details><details class="fx"><summary><code>path_norm</code><span> — Normalise a POSIX path with . and .. · 4 examples</span></summary><ul><li><b>qwen3-coder:30b · ollama · 4</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>def path_norm(path: str) -&gt; str:
+    if not path:
+        return '/'
+    
+    # Split path into components
+    components = []
+    current = ''
+    
+    for char in path:
+        if char == '/':
+            if current:
+                components.append(current)
+                current = ''
+            else:
+                # Handle multiple consecutive slashes
+                pass
+        else:
+            current += char
+    
+    # Add the last component if it exists
+    if current:
+        components.append(current)
+    
+    # Process components
+    stack = []
+    
+    for component in components:
+        if component == '.' or component == '':
+            # Current directory or empty component - do nothing
+            continue
+        elif component == '..':
+            # Parent directory - go up one level if possible
+            if stack and stack[-1] != '..':
+                stack.pop()
+            elif not stack or stack[-1] == '..':
+                # At root or already at root, stay at root
+                stack.append('..')
+        else:
+            stack.append(component)
+    
+    # Handle special case where we're left with only '..' components
+    # This represents the root directory
+    if not stack:
+        return '/'
+    
+    # Reconstruct path
+    result = '/'
+    for i, component in enumerate(stack):
+        if i &gt; 0:
+            result += '/'
+        result += component
+    
+    return result
+</pre></details></li><li><b>qwen3-coder:30b · 17.3 GB · ollama · 1</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>def path_norm(path: str) -&gt; str:
+    if not path:
+        return '/'
+    
+    # Split path into components
+    components = []
+    current = ''
+    
+    for char in path:
+        if char == '/':
+            if current:
+                components.append(current)
+                current = ''
+        else:
+            current += char
+    
+    # Add the last component if it exists
+    if current:
+        components.append(current)
+    
+    # Process components
+    stack = []
+    
+    for component in components:
+        if component == '.' or component == '':
+            # Skip current directory references and empty components
+            continue
+        elif component == '..':
+            # Go up one level if possible
+            if stack and stack[-1] != '..':
+                stack.pop()
+            else:
+                # Stay at root if already at root
+                stack.append(component)
+        else:
+            stack.append(component)
+    
+    # Handle the case where we're at the root
+    # If we have a .. at the beginning, we should keep it
+    result = '/' + '/'.join(stack)
+    
+    # If result is just '/', return it
+    if result == '/':
+        return '/'
+    
+    # Remove trailing slash
+    if result.endswith('/'):
+        result = result[:-1]
+    
+    return result
+</pre></details></li><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>def path_norm(path: str) -&gt; str:
+    stack = []
+    for component in filter(None, path.split('/')):
+        if component == '..':
+            if stack and stack[-1] != '..':
+                stack.pop()
+            elif not stack:
+                stack.append('..')
+        elif component != '.':
+            stack.append(component)
+    return '/' + '/'.join(stack) if stack else '/'
+</pre></details></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>path_norm(&quot;/../&quot;) → &quot;/..&quot;, expected &quot;/&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>def path_norm(path: str) -&gt; str:
+    stack = []
+    for component in filter(None, path.split('/')):
+        if component == '..':
+            if stack and stack[-1] != '..':
+                stack.pop()
+            elif not stack:
+                stack.append('..')
+        elif component != '.':
+            stack.append(component)
+    return '/' + '/'.join(stack) if stack else '/'
+</pre></details></li></ul></details><details class="fx"><summary><code>clamp_mul</code><span> — Saturating int multiplication · 4 examples</span></summary><ul><li><b>qwen3-coder-next · NVFP4 · vllm · 1</b> — <code>Sol.ClampMul(-3, -4) → &quot;2147483647&quot;, expected 12</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static int ClampMul(int a, int b)
+    {
+        if (a == 0 || b == 0)
+            return 0;
+        
+        // Check for overflow using division
+        if (a &gt; 0)
+        {
+            if (b &gt; 0)
+            {
+                if (a &gt; int.MaxValue / b)
+                    return int.MaxValue;
+            }
+            else // b &lt; 0
+            {
+                if (b &lt; int.MinValue / a)
+                    return int.MinValue;
+            }
+        }
+        else // a &lt; 0
+        {
+            if (b &gt; 0)
+            {
+                if (a &lt; int.MinValue / b)
+                    return int.MinValue;
+            }
+            else // b &lt; 0
+            {
+                if (a != 0 &amp;&amp; b &gt; int.MaxValue / a)
+                    return int.MaxValue;
+            }
+        }
+        
+        return a * b;
+    }
+}
+</pre></details></li><li><b>qwen3.6:27b · ollama · 4</b> — <code>compile error:  the current context [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
+/home/crimson/.cache/ai_proxy_cs/Program.cs(9,19): error CS0103: The name 'Math' does not exi</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static int ClampMul(int a, int b)
+    {
+        if (a == 0 || b == 0) return 0;
+
+        bool negative = (a &lt; 0) ^ (b &lt; 0);
+        long la = Math.Abs((long)a);
+        long lb = Math.Abs((long)b);
+        long product = la * lb;
+
+        if (negative)
+        {
+            if (product &gt; (long)(uint.MaxValue &gt;&gt; 1) + 1) // overflow below int.MinValue
+                return int.MinValue;
+            return -(int)product;
+        }
+        else
+        {
+            if (product &gt; int.MaxValue)
+                return int.MaxValue;
+            return (int)product;
+        }
+    }
+}
+</pre></details></li><li><b>qwen3.6:27b · 16.2 GB · ollama · 1</b> — <code>compile error:  the current context [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
+/home/crimson/.cache/ai_proxy_cs/Program.cs(9,19): error CS0103: The name 'Math' does not exi</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol
+{
+    public static int ClampMul(int a, int b)
+    {
+        if (a == 0 || b == 0) return 0;
+
+        bool negative = (a &lt; 0) ^ (b &lt; 0);
+        long la = Math.Abs((long)a);
+        long lb = Math.Abs((long)b);
+        long product = la * lb;
+
+        if (negative)
+        {
+            if (product &gt; (long)(uint.MaxValue &gt;&gt; 1) + 1) // overflow below int.MinValue
+                return int.MinValue;
+            return -(int)product;
+        }
+        else
+        {
+            if (product &gt; int.MaxValue)
+                return int.MaxValue;
+            return (int)product;
+        }
+    }
+}
+</pre></details></li><li><b>llama4 · 62.8 GB · ollama · 1</b> — <code>compile error: text [/home/crimson/.cache/ai_proxy_cs/csrunner.csproj]
 
 Build FAILED.
 
-/home/crimson/.cache/ai_proxy_cs/Program.cs(6,16): error CS0103: The name 'Math' does not exi</code></li></ul></details><details class="fx"><summary><code>clamp_add</code><span> — Saturating int addition — overflow trap · 4 examples</span></summary><ul><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>clamp_add(100, 200) → &quot;-2147483648&quot;, expected 300</code></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>clamp_add(100, 200) → &quot;-2147483648&quot;, expected 300</code></li><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code></li></ul></details><details class="fx"><summary><code>csv_escape</code><span> — RFC 4180 CSV field quoting · 4 examples</span></summary><ul><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>csv_escape(&quot;say \&quot;hi\&quot;&quot;) → &quot;\&quot;say \&quot;hi\&quot;\&quot;&quot;, expected &quot;\&quot;say \&quot;\&quot;hi\&quot;\&quot;\&quot;&quot;</code></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>compile error: pp
+/home/crimson/.cache/ai_proxy_cs/Program.cs(6,16): error CS0103: The name 'Math' does not exi</code><details class="fxc"><summary>the code it wrote</summary><pre>public static class Sol 
+{
+    public static int ClampMul(int a, int b) 
+    {
+        long res = (long)a * b;
+        return Math.Clamp((int)res, int.MinValue, int.MaxValue);
+    }
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>clamp_add</code><span> — Saturating int addition — overflow trap · 4 examples</span></summary><ul><li><b>llama3:70b-instruct · 37.2 GB · ollama · 1</b> — <code>clamp_add(100, 200) → &quot;-2147483648&quot;, expected 300</code><details class="fxc"><summary>the code it wrote</summary><pre>int clamp_add(int a, int b) {
+    if (a &gt; INT_MAX - b) return INT_MAX;
+    if (a &lt; INT_MIN - b) return INT_MIN;
+    return a + b;
+}
+</pre></details></li><li><b>llama3:70b-instruct · ollama · 4</b> — <code>clamp_add(100, 200) → &quot;-2147483648&quot;, expected 300</code><details class="fxc"><summary>the code it wrote</summary><pre>int clamp_add(int a, int b) {
+    if (a &gt; INT_MAX - b) return INT_MAX;
+    if (a &lt; INT_MIN - b) return INT_MIN;
+    return a + b;
+}
+</pre></details></li><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre> Here is an example of a C function `clamp_add` that adds two integers while handling overflows correctly:
+```cpp
+#include &lt;limits.h&gt; // For INT_MAX and INT_MIN
+
+int clamp_add(int a, int b) {
+    if (a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; a + b &lt; 0) {
+        return INT_MAX;
+    } else if (a &lt; 0 &amp;&amp; b &lt; 0 &amp;&amp; a + b &gt; 0) {
+        return INT_MIN;
+    } else {
+        return a + b;
+    }
+}
+```
+This function checks for overflow conditions and returns the appropriate values. If `a` and `b` are both positive and their sum is negative, it means that an overflow has occurred and `INT_MAX` is returned. Similarly, if `a` and</pre></details></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre> Here is an example of a C function `clamp_add` that adds two integers while handling overflows correctly:
+```cpp
+#include &lt;limits.h&gt; // For INT_MAX and INT_MIN
+
+int clamp_add(int a, int b) {
+    if (a &gt; 0 &amp;&amp; b &gt; 0 &amp;&amp; a + b &lt; 0) {
+        return INT_MAX;
+    } else if (a &lt; 0 &amp;&amp; b &lt; 0 &amp;&amp; a + b &gt; 0) {
+        return INT_MIN;
+    } else {
+        return a + b;
+    }
+}
+```
+This function checks for overflow conditions and returns the appropriate values. If `a` and `b` are both positive and their sum is negative, it means that an overflow has occurred and `INT_MAX` is returned. Similarly, if `a` and</pre></details></li></ul></details><details class="fx"><summary><code>csv_escape</code><span> — RFC 4180 CSV field quoting · 4 examples</span></summary><ul><li><b>ornith-nvfp4 · NVFP4 · vllm · 1</b> — <code>csv_escape(&quot;say \&quot;hi\&quot;&quot;) → &quot;\&quot;say \&quot;hi\&quot;\&quot;&quot;, expected &quot;\&quot;say \&quot;\&quot;hi\&quot;\&quot;\&quot;&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>std::string csv_escape(std::string field) {
+    bool needs_quoting = false;
+    for (char c : field) {
+        if (c == ',' || c == '&quot;') {
+            needs_quoting = true;
+            break;
+        }
+    }
+    if (!needs_quoting) {
+        return field;
+    }
+    std::string result;
+    result.reserve(field.size() + 2);
+    result += '&quot;';
+    for (char c : field) {
+        if (c == '&quot;') {
+            result += &quot;\&quot;&quot;;
+        } else {
+            result += c;
+        }
+    }
+    result += '&quot;';
+    return result;
+}
+</pre></details></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>compile error: pp
       | ^
 /tmp/bench_cpp_d_6lbomd/task.cpp:8:2: error: stray '`' in program
     8 | ```cpp
       |  ^
-/tmp/bench_cpp_d_6lbomd/task.cpp:8:3: error: stray '`' in pr</code></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>compile error: pp
+/tmp/bench_cpp_d_6lbomd/task.cpp:8:3: error: stray '`' in pr</code><details class="fxc"><summary>the code it wrote</summary><pre>#include &lt;string&gt;
+
+std::string csv_escape(std::string field) {
+    // Determine whether quoting is required.
+    bool needQuote = false;
+    for (char c : field) {
+        if (c == ',' || c == '&quot;') {   // RFC 4180: quote if comma or double‑quote present
+            needQuote = true;
+            break;
+        }
+    }
+
+    // No quoting needed – return the original string unchanged.
+    if (!needQuote)
+        return field;
+
+    // Build quoted version, doubling interior quotes.
+    std::string result;
+    result.reserve(field.size() * 2 + 2); // worst case: every char is a quote
+    result.push_back('&quot;');
+    for (char c : field) {
+        if (c == '&quot;')
+            result.append(&quot;\&quot;\&quot;&quot;);   // double the quote
+        else
+            result.push_back(c);
+    }
+    result.push_back('&quot;');
+
+    return result</pre></details></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>compile error: pp
       | ^
 /tmp/bench_cpp_iblwew9h/task.cpp:8:2: error: stray '`' in program
     8 | ```cpp
       |  ^
-/tmp/bench_cpp_iblwew9h/task.cpp:8:3: error: stray '`' in pr</code></li><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>compile error:  = char; _Traits = std::char_traits&lt;char&gt;; _Alloc = std::allocator&lt;char&gt;; size_type = long unsigned int]'
- 2713 |       find(_CharT __c, size_type __pos = 0) const _</code></li></ul></details><details class="fx"><summary><code>interval_intersect</code><span> — Intersect two interval lists · 4 examples</span></summary><ul><li><b>gemma4 · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>interval_intersect([[0, 2], [5, 10]], [[1, 5], [8, 12]]) → [[1, 2]], expected [[1, 2], [5, 5], [8, 10]]</code></li></ul></details><details class="fx"><summary><code>glob_match</code><span> — Glob matching with ? and * · 4 examples</span></summary><ul><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code></li><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>glob_match(&quot;a?c&quot;, &quot;ac&quot;) → null, expected false</code></li><li><b>codellama:70b · ollama · 4</b> — <code>glob_match(&quot;a?c&quot;, &quot;ac&quot;) → null, expected false</code></li></ul></details><details class="fx"><summary><code>count_words</code><span> — Count words split on spaces and tabs · 4 examples</span></summary><ul><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code></li><li><b>minicpm-v4.5 · ollama · 4</b> — <code>count_words(&quot;hello world&quot;) → &quot;12&quot;, expected 2</code></li><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code></li></ul></details><details class="fx"><summary><code>theme_vars</code><span> — Dark-mode token inside a media query · 4 examples</span></summary><ul><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code></li><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>decl → null, expected &quot;var(--ink)&quot;</code></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>decl → null, expected &quot;var(--ink)&quot;</code></li></ul></details><details class="fx"><summary><code>data_table</code><span> — Revenue table with caption and scoped headers · 4 examples</span></summary><ul><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>count of &quot;thead th&quot; → 2, expected 3</code></li><li><b>minicpm-v4.5 · ollama · 4</b> — <code>count of &quot;thead th&quot; → 2, expected 3</code></li><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>count of &quot;thead th&quot; → 4, expected 3</code></li><li><b>qwen3:4b · ollama · 4</b> — <code>count of &quot;table&quot; → 2, expected 1</code></li></ul></details><details class="fx"><summary><code>balanced_depth</code><span> — Max bracket nesting depth, -1 if unbalanced · 4 examples</span></summary><ul><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code></li><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>balanced_depth(&quot;(a(b)c)&quot;) → &quot;-1&quot;, expected 2</code></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>balanced_depth(&quot;(a(b)c)&quot;) → &quot;-1&quot;, expected 2</code></li><li><b>qwen3:4b · ollama · 4</b> — <code>no code in response</code></li></ul></details><details class="fx"><summary><code>card_grid</code><span> — Responsive auto-fill card grid · 2 examples</span></summary><ul><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>decl → null, expected &quot;translateY(-2px)&quot;</code></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>decl → null, expected &quot;translateY(-2px)&quot;</code></li></ul></details>
+/tmp/bench_cpp_iblwew9h/task.cpp:8:3: error: stray '`' in pr</code><details class="fxc"><summary>the code it wrote</summary><pre>#include &lt;string&gt;
+
+std::string csv_escape(std::string field) {
+    // Determine whether quoting is required.
+    bool need_quotes = false;
+    for (char c : field) {
+        if (c == ',' || c == '&quot;') {   // comma or double‑quote triggers quoting
+            need_quotes = true;
+            break;
+        }
+    }
+
+    // If no quoting needed, return the original field unchanged.
+    if (!need_quotes)
+       </pre></details></li><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>compile error:  = char; _Traits = std::char_traits&lt;char&gt;; _Alloc = std::allocator&lt;char&gt;; size_type = long unsigned int]'
+ 2713 |       find(_CharT __c, size_type __pos = 0) const _</code><details class="fxc"><summary>the code it wrote</summary><pre>#include &lt;string&gt;
+
+std::string csv_escape(const std::string&amp; field) {
+    if (field.empty()) return &quot;&quot;;
+    size_t comma_pos = field.find(',');
+    size_t quote_pos = field.find('&quot;');
+    bool has_comma = (comma_pos != std::string::npos &amp;&amp; comma_pos &lt;= field.size() - 1);
+    bool has_quote = (quote_pos != std::string::npos &amp;&amp; quote_pos &lt;= field.size() - 2);
+    if (has_comma || has_quote) {
+        size_t start = 0;
+        std::string escaped;
+        while (start &lt; field.size()) {
+            size_t end = field.find(',', start, 1);
+            if (end == std::string::npos) end = field.size();
+            size_t quote_end = field.find('&quot;', start + 1);
+            if (quote_end != std::string::npos &amp;&amp; quote_end &lt;= end - 2) {
+                escaped += '&quot;';
+                for (size_t i = start + 1; i &lt; quote_end; ++i) {
+                    char c = field[i];
+                    if (c == '&quot;') escaped += '&quot;';
+                    else escaped += c;
+                }
+                escaped += '&quot;';
+                start = quote_end + 1;
+            } else {
+                size_t sub_start = end &gt; start ? end : std::string::npos;
+                for (size_t i = start; i &lt; field.size() &amp;&amp; i &lt;= sub_start; ++i) {
+                    char c = field[i];
+                    if (c == '&quot;') escaped += '&quot;';
+                    else escaped += c;
+                }
+                start = sub_start + 1;
+            }
+        }
+        return '&quot;' + escaped + '&quot;';
+    } else {
+        return field;
+    }
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>interval_intersect</code><span> — Intersect two interval lists · 4 examples</span></summary><ul><li><b>gemma4 · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def interval_intersect(a: list, b: list) -&gt; list:
+    &quot;&quot;&quot;
+    Returns the intersection of two lists of closed intervals [start, end].
+
+    Each input list is sorted and its own intervals are disjoint.
+    Intervals that merely touch (one ends where the next begins) DO intersect 
+    and the shared point is a valid result interval. The results are returned in order.
+
+    Args:
+        a: List of closed intervals for set A, e.g., [[s1, e1], [s2, e2], ...].
+        b: List of closed intervals for set B, e.g., [[s'1, e'1], [s'2, e'2], ...].
+
+    Returns:
+        List of intersecting closed intervals, sorted by start point.
+    &quot;&quot;&quot;
+    intersections = []
+    i = 0  # Pointer for list a
+    j = 0  # Pointer for list b
+
+    while i &lt; len(a) and j &lt; len(b):
+        interval_a = a[i]
+        interval_b = b[j]
+
+        start_a, end_a = interval_a
+        start_b, end_b = interval_b
+
+        # Calculate the intersection of [start_a, end_a] and [start_b, end_b]
+        # The intersection starts at the maximum of the two starts.
+        overlap_start = max(start_a, start_b)
+        # The intersection ends at the minimum of the two ends.
+        overlap_end = min(end_a, end_b)
+
+        # An intersection exists if the calculated start is less than or equal to the calculated end.
+        # Since intervals are closed, touching counts as an intersection (e.g., [1, 2] and [2, 3] intersect at [2, 2]).
+        if overlap_start &lt;= overlap_end:
+            intersections.append([overlap_start, overlap_end])
+
+        # Advance the pointer associated with the interval that finishes earliest.
+       
+… (truncated)</pre></details></li><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def interval_intersect(a: list[list[int]], b: list[list[int]]) -&gt; list[list[int]]:
+    &quot;&quot;&quot;
+    Return the intersection of two sorted, disjoint lists of closed intervals.
+    
+    Intervals that merely touch (e.g., [1, 3] and [3, 5]) are considered intersecting,
+    producing a single‑point interval [3, 3].
+
+    Parameters
+    ----------
+    a, b : list of [start, end]
+        Each list is sorted by start coordinate and contains non‑overlapping intervals.
+
+    Returns
+    -------
+    list of [start, end]
+        Intersections in ascending order.
+    &quot;&quot;&quot;
+    i = j = 0
+    result: list[list[int]] = []
+
+    while i &lt; len(a) and j &lt; len(b):
+        # Compute overlap between a[i] and b[j]
+        start = max(a[i][0], b[j][0])
+        end   = min(a[i][1], b[j][1])
+
+        if start &lt;= end:              </pre></details></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def interval_intersect(a: list, b: list) -&gt; list:
+    &quot;&quot;&quot;
+    Return the intersection of two sorted, internally disjoint lists of closed intervals.
+    
+    Each interval is a two‑element list or tuple [start, end] (inclusive).
+    Intervals that only touch at an endpoint are considered intersecting,
+    and the shared point forms a valid result interval.
+
+    Parameters
+    ----------
+    a : list of [int|float, int|float]
+        First list of intervals, sorted by start coordinate.
+    b : list of [int|float, int|float]
+        Second list of intervals, sorted by start coordinate.
+
+    Returns
+    -------
+    list of [int|float, int|float]
+        List of intersecting intervals in ascending order.
+    &quot;&quot;&quot;
+    i = j = 0
+    result = []
+
+    while i &lt; len(a) and j &lt; len(b):
+        a_start, a_end = a[i]
+        b_start, b_end = b[j]
+
+        # Overlap (including touching endpoints)
+        lo = max(a_start, b_start)
+        hi = min(a_end, b_end)
+
+        if lo &lt;= hi:                    </pre></details></li><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>interval_intersect([[0, 2], [5, 10]], [[1, 5], [8, 12]]) → [[1, 2]], expected [[1, 2], [5, 5], [8, 10]]</code><details class="fxc"><summary>the code it wrote</summary><pre>def interval_intersect(a: list, b: list) -&gt; list:
+    i = j = 0
+    res = []
+    while i &lt; len(a) and j &lt; len(b):
+        start = max(a[i][0], b[j][0])
+        end = min(a[i][1], b[j][1])
+        if start &lt;= end:
+            res.append([start, end])
+        if a[i][1] &gt; b[j][1]:
+            i += 1
+        else:
+            j += 1
+    return res
+</pre></details></li></ul></details><details class="fx"><summary><code>glob_match</code><span> — Glob matching with ? and * · 4 examples</span></summary><ul><li><b>gpt-oss:120b · 60.9 GB · ollama · 1</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def glob_match(pattern: str, text: str) -&gt; bool:
+    &quot;&quot;&quot;
+    Return True if the whole `text` matches the wildcard `pattern`.
+    '?'  – matches exactly one character.
+    '*'  – matches any sequence of characters (including empty).
+    All other characters match themselves.
+    &quot;&quot;&quot;
+    m, n = len(pattern), len(text)
+    # dp[i][j] == pattern[:i] matches text[:j]
+    dp = [[False] * (n + 1) for _ in range(m + 1)]
+    dp[0][0] = True
+
+    # Patterns that consist only of '*' can match an empty string.
+    for i in range(1, m + 1):
+        if pattern[i - 1</pre></details></li><li><b>gpt-oss:120b · ollama · 4</b> — <code>SyntaxError: invalid syntax (&lt;model&gt;, line 1)</code><details class="fxc"><summary>the code it wrote</summary><pre>def glob_match(pattern: str, text: str) -&gt; bool:
+    &quot;&quot;&quot;
+    Return True if the whole `text` matches the glob `pattern`.
+    '?'  – matches exactly one character.
+    '*'  – matches any sequence of characters (including empty).
+    All other characters match themselves.
+    &quot;&quot;&quot;
+    p_len, t_len = len(pattern), len(text)
+
+    # dp[j] == pattern[:i] matches text[:j]
+    dp = [False] * (t_len + 1)
+    dp[0] = True                     # empty pattern matches empty text
+
+    for i in range(1, p_len + 1):
+        pc</pre></details></li><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>glob_match(&quot;a?c&quot;, &quot;ac&quot;) → null, expected false</code><details class="fxc"><summary>the code it wrote</summary><pre>def glob_match(pattern: str, text: str) -&gt; bool:
+    def match(text_index, pattern_index):
+        if text_index == len(text) and pattern_index == len(pattern):
+            return True  # Both strings are fully matched.
+        elif text_index != len(text) and pattern_index == len(pattern):
+            return False  # Pattern is exhausted but there's still text left.
+        elif text_index == len(text) and pattern[pattern_index] == '*':
+            return match(text_index, pattern_index + 1)  # Text is exhausted; skip asterisks.
+        else:
+            if (pattern[pattern_index] == '?' and text_index &lt; len(text)) or (pattern[pattern_index] == text[text_index]):
+                return match(text_index + 1, pattern_index + 1)  # Matched a character or question mark.
+            elif pattern[pattern_index] == '*':
+                return match(text_index, pattern_index + 1) or match(text_index + 1, pattern_index)  # Skip the asterisk or skip both.
+            else:
+                return False  # Mismatch without wildcards.
+    return match(0, 0)
+</pre></details></li><li><b>codellama:70b · ollama · 4</b> — <code>glob_match(&quot;a?c&quot;, &quot;ac&quot;) → null, expected false</code><details class="fxc"><summary>the code it wrote</summary><pre>def glob_match(pattern: str, text: str) -&gt; bool:
+    def match(text_index, pattern_index):
+        if text_index == len(text) and pattern_index == len(pattern):
+            return True  # Both strings are fully matched.
+        elif text_index != len(text) and pattern_index == len(pattern):
+            return False  # Pattern is exhausted but there's still text left.
+        elif text_index == len(text) and pattern[pattern_index] == '*':
+            return match(text_index, pattern_index + 1)  # Text is exhausted; skip asterisks.
+        else:
+            if (pattern[pattern_index] == '?' and text_index &lt; len(text)) or (pattern[pattern_index] == text[text_index]):
+                return match(text_index + 1, pattern_index + 1)  # Matched a character or question mark.
+            elif pattern[pattern_index] == '*':
+                return match(text_index, pattern_index + 1) or match(text_index + 1, pattern_index)  # Skip the asterisk or skip both.
+            else:
+                return False  # Mismatched characters.
+    return match(0, 0)
+</pre></details></li></ul></details><details class="fx"><summary><code>count_words</code><span> — Count words split on spaces and tabs · 4 examples</span></summary><ul><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre> Here is the C function to count words in a given string:
+```cpp
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int count_words(const char *s) {
+    int wordCount = 0;
+    
+    while (*s != '\0') {
+        // Skip leading separators (spaces and tabs)
+        while (*s == ' ' || *s == '\t') {
+            s++;
+        }
+        
+        if (*s != '\0') {
+            wordCount++;
+            
+            // Skip the current word
+            while (*s != ' ' &amp;&amp; *s != '\t' &amp;&amp; *s != '\0') {
+                s++;
+            }
+        }
+    }
+    
+    return wordCount;
+}
+```
+This function iterates through the</pre></details></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre> Here is the C function to count words in a given string:
+```cpp
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int count_words(const char *s) {
+    int wordCount = 0;
+    
+    while (*s != '\0') {
+        // Skip leading separators (spaces and tabs)
+        while (*s == ' ' || *s == '\t') {
+            s++;
+        }
+        
+        if (*s != '\0') {
+            wordCount++;
+            
+            // Skip the current word
+            while (*s != ' ' &amp;&amp; *s != '\t' &amp;&amp; *s != '\0') {
+                s++;
+            }
+        }
+    }
+    
+    return wordCount;
+}
+```
+This function iterates through the</pre></details></li><li><b>minicpm-v4.5 · ollama · 4</b> — <code>count_words(&quot;hello world&quot;) → &quot;12&quot;, expected 2</code><details class="fxc"><summary>the code it wrote</summary><pre>int count_words(const char *s) {
+    if (s == NULL || s[0] == '\0') return 0;
+    int count = 0, i = 0;
+    while (s[i]) {
+        if (!isspace(s[i])) {
+            if (i &gt; 0 &amp;&amp; isspace(s[i-1])) count++;
+            count++;
+        }
+        i++;
+    }
+    return count + (s[0] != '\0');
+}
+</pre></details></li><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>We are counting words in a string s. A word is a maximal run of non-space and non-tab characters.
+ We note: 
+   - Leading, trailing, and repeated separators (spaces or tabs) are legal and do not count as words.
+   - We return 0 for an empty string or a string that is all separators.
+
+ Approach:
+   We traverse the string and skip any leading separators (spaces or tabs).
+   Then, we look for a run of non-separator characters (which is a word). Each such run is one word.
+   We then skip the trailing separators.
+
+ However, note: the problem says &quot;maximal run of characters that are not spaces or ta</pre></details></li></ul></details><details class="fx"><summary><code>theme_vars</code><span> — Dark-mode token inside a media query · 4 examples</span></summary><ul><li><b>codellama:70b · 36.2 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>1. Write CSS implementing a two-theme token: :root defines --ink as #111111; inside an @media (prefers-color-scheme: dark) block, :root redefines --ink as #eeeeee; and body sets color to var(--ink). The trap is scope — the dark value must live inside the media query, not beside it.
+Return only the CSS in a single ```css code block. </pre></details></li><li><b>codellama:70b · ollama · 4</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>1. Write CSS implementing a two-theme token: :root defines --ink as #111111; inside an @media (prefers-color-scheme: dark) block, :root redefines --ink as #eeeeee; and body sets color to var(--ink). The trap is scope — the dark value must live inside the media query, not beside it.
+Return only the CSS in a single ```css code block. </pre></details></li><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>decl → null, expected &quot;var(--ink)&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>:root {
+  --ink: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #eeeeee;
+  }
+}
+
+body {
+  --ink: #eeeeee;
+}
+</pre></details></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>decl → null, expected &quot;var(--ink)&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>:root {
+  --ink: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #eeeeee;
+  }
+}
+
+body {
+  --ink: #eeeeee;
+}
+</pre></details></li></ul></details><details class="fx"><summary><code>data_table</code><span> — Revenue table with caption and scoped headers · 4 examples</span></summary><ul><li><b>minicpm-v4.5 · 5.7 GB · ollama · 1</b> — <code>count of &quot;thead th&quot; → 2, expected 3</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;table&gt;
+  &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr scope=&quot;col&quot;&gt;Q1&lt;/scope&gt;
+    &lt;th scope=&quot;col&quot;&gt;Q2&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Q3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Revenue: $50,000&lt;/td&gt;
+      &lt;td&gt;Revenue: $65,000&lt;/td&gt;
+      &lt;td&gt;Revenue: $72,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Growth: 10%&lt;/td&gt;
+      &lt;td&gt;Growth: 8%&lt;/td&gt;
+      &lt;td&gt;Growth: 4%&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre></details></li><li><b>minicpm-v4.5 · ollama · 4</b> — <code>count of &quot;thead th&quot; → 2, expected 3</code><details class="fxc"><summary>the code it wrote</summary><pre>&lt;table&gt;
+  &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr scope=&quot;col&quot;&gt;Q1&lt;/scope&gt;
+    &lt;th scope=&quot;col&quot;&gt;Q2&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Q3&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Revenue: $50,000&lt;/td&gt;
+      &lt;td&gt;Revenue: $65,000&lt;/td&gt;
+      &lt;td&gt;Revenue: $72,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Growth: 10%&lt;/td&gt;
+      &lt;td&gt;Growth: 8%&lt;/td&gt;
+      &lt;td&gt;Growth: 4%&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre></details></li><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>count of &quot;thead th&quot; → 4, expected 3</code><details class="fxc"><summary>the code it wrote</summary><pre>We are to create an HTML fragment for a table with:
+ - A caption: exactly 'Quarterly revenue'
+ - A thead with a single row containing three th cells, each with scope=&quot;col&quot;
+ - A tbody with exactly two rows, each row having three td cells.
+
+ We'll choose some example data for the cells.
+
+ Steps:
+ 1. Start with the table tag: &lt;table&gt;
+ 2. Add the caption: &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+ 3. Add the thead: &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+ 4. Add the tbody: &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+
+ We have to choose three column headers and two rows of data.
+
+ Example:
+   Columns: Q1, Q2, Q3, Q4? But note: the problem says three columns. So let's do three quarters? 
+   However, the problem says &quot;quarterly revenue&quot;, so we can have three quarters? But typically quarterly revenue would be four quarters.
+
+ But the problem says: three &lt;th&gt; cells. So we have three columns.
+
+ Let's choose:
+   Column 1: &quot;Q1&quot;
+   Column 2: &quot;Q2&quot;
+   Column 3: &quot;Q3&quot;
+
+ And two rows of data (for two years? or two quarters? but we have three columns so we'll do two rows of three numbers)
+
+ Example data:
+   Row 1: $100,000, $150,000, $200,000
+   Row 2: $120,000, $160,000, $220,000
+
+ However, the problem says &quot;cell contents are yours to choose&quot;. So we can pick any.
+
+ Let's write:
+
+   &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+   &lt;thead&gt;
+     &lt;tr&gt;
+        &lt;th scope=&quot;col&quot;&gt;Q1&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;Q2&lt;/th&gt;
+        &lt;th scope=&quot;col&quot;&gt;Q3&lt;/th&gt;
+     &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+     &lt;tr&gt;
+   
+… (truncated)</pre></details></li><li><b>qwen3:4b · ollama · 4</b> — <code>count of &quot;table&quot; → 2, expected 1</code><details class="fxc"><summary>the code it wrote</summary><pre>We are to create an HTML fragment for a table with:
+ - A caption: exactly 'Quarterly revenue'
+ - A thead with a single row containing three th cells, each with scope=&quot;col&quot;
+ - A tbody with exactly two rows, each row having three td cells.
+
+ We'll choose some example data for the cells.
+
+ Steps:
+ 1. Start with the table tag: &lt;table&gt;
+ 2. Add the caption: &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+ 3. Add the thead: &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+ 4. Add the tbody: &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+
+ We have to choose three column headers and two rows of data.
+
+ Example:
+   Columns: Q1, Q2, Q3, Q4? But note: the problem says three columns. So let's do three quarters? 
+   However, the problem says &quot;quarterly revenue&quot;, so we can have three quarters? But typically quarterly revenue would be four quarters.
+
+ But the problem says: three &lt;th&gt; cells. So we have three columns.
+
+ Let's choose:
+   Column 1: &quot;Q1&quot;
+   Column 2: &quot;Q2&quot;
+   Column 3: &quot;Q3&quot;
+
+ And two rows of data (for two years? or two quarters? but we have three columns so we'll do two rows of three numbers)
+
+ Example data:
+   Row 1: $1000, $1500, $2000
+   Row 2: $1200, $1800, $2200
+
+ However, the problem says: &quot;Cell contents are yours to choose.&quot;
+
+ Let's write the HTML.
+
+ Important: The problem says &quot;Return only the fragment in a single ```html code block.&quot;
+
+ So we output:
+
+ ```html
+ &lt;table&gt;
+   &lt;caption&gt;Quarterly revenue&lt;/caption&gt;
+   &lt;thead&gt;
+     &lt;tr&gt;
+       &lt;th scope=&quot;col&quot;&gt;Q1&lt;/th&gt;
+       &lt;th scope=
+… (truncated)</pre></details></li></ul></details><details class="fx"><summary><code>balanced_depth</code><span> — Max bracket nesting depth, -1 if unbalanced · 4 examples</span></summary><ul><li><b>qwen3:4b · 2.3 GB · ollama · 1</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>We are to compute the maximum nesting depth of round brackets in the string s.
+ Steps:
+ 1. We traverse the string and ignore non-bracket characters.
+ 2. We maintain a counter for the current depth (starting at 0).
+ 3. When we see an opening bracket '(', we increase the counter by 1.
+ 4. When we see a closing bracket ')', we decrease the counter by 1.
+ 5. However, if at any point the counter becomes negative, that means there's a closing bracket without an opener -&gt; not balanced -&gt; return -1.
+ 6. Also, at the end, if the counter is not zero, then there are unclosed openers -&gt; not balanced -&gt; re</pre></details></li><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>balanced_depth(&quot;(a(b)c)&quot;) → &quot;-1&quot;, expected 2</code><details class="fxc"><summary>the code it wrote</summary><pre>#include &lt;string&gt;
+#include &lt;cctype&gt;
+
+int balanced_depth(const std::string&amp; s) {
+    int depth = 0;
+    for (char c : s) {
+        if (c == '(') {
+            depth++;
+        } else if (c == ')') {
+            depth--;
+        } else {
+            continue;
+        }
+    }
+    return depth == 0 ? -1 : depth;
+}
+</pre></details></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>balanced_depth(&quot;(a(b)c)&quot;) → &quot;-1&quot;, expected 2</code><details class="fxc"><summary>the code it wrote</summary><pre>#include &lt;string&gt;
+#include &lt;cctype&gt;
+
+int balanced_depth(const std::string&amp; s) {
+    int depth = 0;
+    for (char c : s) {
+        if (c == '(') {
+            depth++;
+        } else if (c == ')') {
+            depth--;
+        } else {
+            continue;
+        }
+    }
+    return depth == 0 ? -1 : depth;
+}
+</pre></details></li><li><b>qwen3:4b · ollama · 4</b> — <code>no code in response</code><details class="fxc"><summary>no code block — raw reply</summary><pre>We are to compute the maximum nesting depth of round brackets in the string s.
+ Steps:
+ 1. We traverse the string.
+ 2. We ignore non-bracket characters.
+ 3. We maintain a counter for the current depth (starting at 0).
+ 4. When we see an opening bracket '(', we increase the counter by 1.
+ 5. When we see a closing bracket ')', we decrease the counter by 1.
+ 6. However, if at any point the counter becomes negative, that means there's a closing bracket without an opener -&gt; not balanced -&gt; return -1.
+ 7. Also, at the end, if the counter is not 0, then there are unclosed openers -&gt; return -1.
+
+ But </pre></details></li></ul></details><details class="fx"><summary><code>card_grid</code><span> — Responsive auto-fill card grid · 2 examples</span></summary><ul><li><b>qwen3:0.6b · 0.5 GB · ollama · 1</b> — <code>decl → null, expected &quot;translateY(-2px)&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+</pre></details></li><li><b>qwen3:0.6b · ollama · 4</b> — <code>decl → null, expected &quot;translateY(-2px)&quot;</code><details class="fxc"><summary>the code it wrote</summary><pre>.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border-radius: 8px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+</pre></details></li></ul></details>
+
+  <h2>Hardware</h2><div class="spec"><div><p class="k">GPU</p><p class="v">NVIDIA GB10 · 122 GB</p></div><div><p class="k">Unified memory</p><p class="v">122 GB</p></div><div><p class="k">CPU</p><p class="v">Cortex-X925</p></div><div><p class="k">Cores</p><p class="v">20</p></div><div><p class="k">OS</p><p class="v">Ubuntu 24.04.4 LTS (aarch64)</p></div><div><p class="k">Kernel</p><p class="v">6.17.0-1018-nvidia</p></div><div><p class="k">Proxy</p><p class="v">0.2.0</p></div></div><p class="note">CPU, OS and kernel read from the host at report time — this run predates their capture, and they do not change between runs.</p>
 
   
   <h2>What was tested</h2>

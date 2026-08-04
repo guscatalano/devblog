@@ -4,6 +4,7 @@ import StatusBadge from './components/StatusBadge.vue'
 import ToolPage from './components/ToolPage.vue'
 import ToolList from './components/ToolList.vue'
 import BenchmarkList from './components/BenchmarkList.vue'
+import BenchTable from './components/BenchTable.vue'
 
 export default {
   extends: DefaultTheme,
@@ -12,5 +13,6 @@ export default {
     app.component('ToolPage', ToolPage)
     app.component('ToolList', ToolList)
     app.component('BenchmarkList', BenchmarkList)
+    app.component('BenchTable', BenchTable)
   }
 }
