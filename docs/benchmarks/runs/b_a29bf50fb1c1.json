@@ -4,7 +4,7 @@
     "suite": "coding-v1",
     "context": "short",
     "thinking": "off",
-    "cache": "cold",
+    "cache": null,
     "entityCount": 19,
     "temperature": 0,
     "axis": {
@@ -17,7 +17,7 @@
     "gpus": [
       "NVIDIA GB10"
     ],
-    "memTotalGb": 0,
+    "memTotalGb": null,
     "backends": [
       "llamacpp",
       "ollama",

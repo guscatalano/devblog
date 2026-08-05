@@ -191,6 +191,7 @@ if (axis && paired < models.length) {
 }
 
 const first = (json.rows || [])[0] || {}
+const constantOr = (value, fn) => (distinct(fn).length === 1 ? value ?? null : null)
 const envs = (json.env || []).filter(Boolean)
 const uniq = (xs) => [...new Set(xs.filter((x) => x != null))]
 
@@ -198,9 +199,12 @@ const data = {
   benchId: ids,
   meta: {
     suite: first.suite ?? null,
-    context: labelParts(first.label)[2] ?? null,
-    thinking: first.thinking ?? null,
-    cache: first.cache ?? null,
+    // Only report a setting in the caption if it actually held for the whole
+    // run. When a knob varies it lives in the axis or the variant badge, and
+    // printing one arbitrary value here would misdescribe half the rows.
+    context: constantOr(labelParts(first.label)[2], (r) => labelParts(r.label)[2]),
+    thinking: constantOr(first.thinking, (r) => r.thinking),
+    cache: constantOr(first.cache, (r) => r.cache),
     entityCount: models.length,
     temperature: first.temperature ?? null,
     axis: axis
