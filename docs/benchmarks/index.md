@@ -9,7 +9,7 @@ and whether the answer was actually correct. Every number here came off a rig I
 control, with the methodology written down, so you can decide how much it should
 transfer to yours.
 
-Runs are executed and graded by [AI Proxy](https://github.com/guscatalano/AI_Proxy),
+Runs are executed and graded by [AI Proxy](/gtools/ai-proxy),
 which sits in front of llama.cpp, Ollama, and vLLM and records every request.
 Reports are exported and committed here rather than served live — the proxy only
 listens on my LAN.

@@ -11,7 +11,7 @@ summary: Eighteen days of everything my local models actually did — 42,987 req
 The other pages here are deliberate benchmarks: fixed suites, controlled knobs,
 one variable at a time. This one is the opposite — it's the log of whatever
 actually happened. Every request that went through
-[AI Proxy](https://github.com/guscatalano/AI_Proxy) between **2026-07-17 and 2026-08-05**, which is 18 days and
+[AI Proxy](/gtools/ai-proxy) between **2026-07-17 and 2026-08-05**, which is 18 days and
 12 hours of real use: agents, editor completions, and my own benchmark runs all
 mixed together.
 
