@@ -9,9 +9,15 @@ and whether the answer was actually correct. Every number here came off a rig I
 control, with the methodology written down, so you can decide how much it should
 transfer to yours.
 
-Runs are executed and graded by [AI Proxy](/gtools/), which sits in front of
-llama.cpp, Ollama, and vLLM and records every request. Reports are exported and
-committed here rather than served live — the proxy only listens on my LAN.
+Runs are executed and graded by [AI Proxy](https://github.com/guscatalano/AI_Proxy),
+which sits in front of llama.cpp, Ollama, and vLLM and records every request.
+Reports are exported and committed here rather than served live — the proxy only
+listens on my LAN.
+
+Most pages here are **benchmarks**: a fixed suite, one knob moved at a time,
+reproducible. The occasional **usage report** is the opposite — a rolling
+snapshot of whatever actually ran. Those are labelled as such, and the column
+guide below applies to the benchmarks.
 
 ## Reports
 
